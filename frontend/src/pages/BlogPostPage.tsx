@@ -37,7 +37,7 @@ const CATEGORY_META: Record<string, { label: string; icon: React.ElementType; co
   'ai-features': { label: 'AI Features', icon: Brain, color: 'from-violet-500 to-purple-500' },
   features: { label: 'Features', icon: Sparkles, color: 'from-blue-500 to-cyan-500' },
   productivity: { label: 'Productivity', icon: Rocket, color: 'from-pink-500 to-rose-500' },
-  'getting-started': { label: 'Getting Started', icon: BookOpen, color: 'from-teal-500 to-emerald-500' },
+  'getting-started': { label: 'Getting Started', icon: BookOpen, color: 'from-teal-500 to-primary' },
 };
 
 function formatDate(dateString: string) {
@@ -151,7 +151,7 @@ function formatCommentDate(dateString: string) {
 }
 
 function RelatedCard({ post }: { post: BlogPost }) {
-  const catMeta = CATEGORY_META[post.category] || { label: post.category, icon: BookOpen, color: 'from-green-500 to-emerald-500' };
+  const catMeta = CATEGORY_META[post.category] || { label: post.category, icon: BookOpen, color: 'from-green-500 to-primary' };
 
   return (
     <Link
@@ -327,7 +327,7 @@ export function BlogPostPage() {
     return (
       <PublicLayout>
         <div className="min-h-[60vh] flex items-center justify-center">
-          <Loader2 className="w-8 h-8 animate-spin text-green-500" />
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </div>
       </PublicLayout>
     );
@@ -335,7 +335,7 @@ export function BlogPostPage() {
 
   if (!post) return null;
 
-  const catMeta = CATEGORY_META[post.category] || { label: post.category, icon: BookOpen, color: 'from-green-500 to-emerald-500' };
+  const catMeta = CATEGORY_META[post.category] || { label: post.category, icon: BookOpen, color: 'from-green-500 to-primary' };
   const CatIcon = catMeta.icon;
 
   return (
@@ -431,7 +431,7 @@ export function BlogPostPage() {
                     )}
                     <div>
                       <p className="font-semibold text-sm">{post.authorName}</p>
-                      <p className="text-xs font-semibold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</p>
+                      <p className="text-xs font-semibold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">PIRAX</p>
                     </div>
                   </div>
                   <Button
@@ -633,7 +633,7 @@ export function BlogPostPage() {
                         onChange={(e) => setNewComment(e.target.value)}
                         placeholder="Share your thoughts..."
                         rows={3}
-                        className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 transition-all"
+                        className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-primary transition-all"
                       />
                       <div className="flex justify-end mt-2">
                         <Button
@@ -852,7 +852,7 @@ export function BlogPostPage() {
                     className={cn(
                       'shrink-0 gap-1.5 transition-all',
                       copied
-                        ? 'bg-green-600 hover:bg-green-700 text-white'
+                        ? 'bg-[#8e5243] hover:bg-green-700 text-white'
                         : 'bg-primary text-primary-foreground'
                     )}
                   >
@@ -868,3 +868,5 @@ export function BlogPostPage() {
     </PublicLayout>
   );
 }
+
+

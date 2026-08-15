@@ -66,12 +66,12 @@ function QuickActionCard({
   return (
     <Link
       to={href}
-      className="bg-card border border-border rounded-xl p-5 hover:border-green-500/50 hover:shadow-lg transition-all group"
+      className="bg-card border border-border rounded-xl p-5 hover:border-primary/50 hover:shadow-lg transition-all group"
     >
       <div className={`w-10 h-10 rounded-lg ${color} flex items-center justify-center mb-3`}>
         <Icon className="w-5 h-5" />
       </div>
-      <h3 className="font-semibold mb-1 group-hover:text-green-500 transition-colors">{title}</h3>
+      <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">{title}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
     </Link>
   );
@@ -115,7 +115,7 @@ function RecentStudySetCard({ studySet }: { studySet: StudySet }) {
   return (
     <Link
       to={`/dashboard/study-sets/${studySet.id}`}
-      className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-green-500/50 hover:shadow-md transition-all"
+      className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 hover:shadow-md transition-all"
     >
       {studySet.coverImageUrl ? (
         <img
@@ -124,8 +124,8 @@ function RecentStudySetCard({ studySet }: { studySet: StudySet }) {
           className="w-12 h-12 rounded-lg object-cover"
         />
       ) : (
-        <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center">
-          <Library className="w-6 h-6 text-green-500" />
+        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+          <Library className="w-6 h-6 text-primary" />
         </div>
       )}
       <div className="flex-1 min-w-0">
@@ -145,12 +145,12 @@ function ContinueStudyCard({ studySet, dueCount }: { studySet: StudySet; dueCoun
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-5"
+      className="bg-gradient-to-br from-primary/10 to-primary/10 border border-primary/20 rounded-xl p-5"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center">
-            <PlayCircle className="w-7 h-7 text-green-500" />
+          <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center">
+            <PlayCircle className="w-7 h-7 text-primary" />
           </div>
           <div>
             <p className="text-sm text-muted-foreground mb-1">{t('dashboard.continueStudying')}</p>
@@ -160,7 +160,7 @@ function ContinueStudyCard({ studySet, dueCount }: { studySet: StudySet; dueCoun
             </p>
           </div>
         </div>
-        <Button className="bg-green-500 hover:bg-green-600" asChild>
+        <Button className="bg-primary hover:bg-[#8e5243]" asChild>
           <Link to={`/dashboard/study-sets/${studySet.id}/study`}>
             <Zap className="w-4 h-4 mr-2" />
             {t('dashboard.studyNow')}
@@ -314,7 +314,7 @@ export function DashboardHomePage() {
             icon={Library}
             value={studySetsCount}
             label={t('dashboard.stats.studySets')}
-            color="bg-green-500/10 text-green-500"
+            color="bg-primary/10 text-primary"
             delay={0.1}
           />
           <StatCard
@@ -354,7 +354,7 @@ export function DashboardHomePage() {
               title={t('dashboard.quickActions.newStudySet')}
               description={t('dashboard.quickActions.newStudySetDesc')}
               href="/dashboard/study-sets/create"
-              color="bg-green-500/10 text-green-500"
+              color="bg-primary/10 text-primary"
             />
             <QuickActionCard
               icon={Brain}
@@ -409,14 +409,14 @@ export function DashboardHomePage() {
             </div>
           ) : recentStudySets.length === 0 ? (
             <div className="text-center py-12 bg-card border border-border rounded-xl">
-              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-                <Library className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Library className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{t('dashboard.noStudySetsYet')}</h3>
               <p className="text-muted-foreground mb-4">
                 {t('dashboard.createFirstStudySet')}
               </p>
-              <Button className="bg-green-500 hover:bg-green-600" asChild>
+              <Button className="bg-primary hover:bg-[#8e5243]" asChild>
                 <Link to="/dashboard/study-sets/create">
                   <Plus className="w-4 h-4 mr-2" />
                   {t('dashboard.createStudySet')}
@@ -451,12 +451,12 @@ export function DashboardHomePage() {
                 .slice(0, 3)
                 .map((studySet) => {
                   const daysUntil = Math.ceil((new Date(studySet.examDate!).getTime() - Date.now()) / 86400000);
-                  const colorClass = daysUntil > 14 ? 'text-green-500 bg-green-500/10' : daysUntil > 7 ? 'text-amber-500 bg-amber-500/10' : 'text-red-500 bg-red-500/10';
+                  const colorClass = daysUntil > 14 ? 'text-primary bg-primary/10' : daysUntil > 7 ? 'text-amber-500 bg-amber-500/10' : 'text-red-500 bg-red-500/10';
                   return (
                     <Link
                       key={studySet.id}
                       to={`/dashboard/study-sets/${studySet.id}`}
-                      className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-green-500/50 transition-all"
+                      className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-all"
                     >
                       <div className={`w-12 h-12 rounded-xl ${colorClass} flex items-center justify-center`}>
                         <Calendar className="w-6 h-6" />
@@ -481,12 +481,12 @@ export function DashboardHomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20"
+            className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/10 border border-primary/20"
           >
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
-                  <Trophy className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <Trophy className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <h3 className="font-semibold">{t('dashboard.upgradeBanner.title')}</h3>
@@ -495,7 +495,7 @@ export function DashboardHomePage() {
                   </p>
                 </div>
               </div>
-              <Button className="bg-green-500 hover:bg-green-600" asChild>
+              <Button className="bg-primary hover:bg-[#8e5243]" asChild>
                 <Link to="/pricing">
                   <Sparkles className="w-4 h-4 mr-2" />
                   {t('common.upgradeNow')}
@@ -508,3 +508,5 @@ export function DashboardHomePage() {
     </DashboardLayout>
   );
 }
+
+

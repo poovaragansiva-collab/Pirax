@@ -70,8 +70,8 @@ const features = [
     descriptionKey: 'featuresFullPage.chat.description',
     benefitsKey: 'featuresFullPage.chat.benefits',
     color: 'from-green-500 to-emerald-600',
-    lightColor: 'bg-green-500/10 text-green-600 dark:text-green-400',
-    borderColor: 'hover:border-green-500/30',
+    lightColor: 'bg-primary/10 text-green-600 dark:text-green-400',
+    borderColor: 'hover:border-primary/30',
     href: '/dashboard/chat',
     category: 'ai',
     featured: true,
@@ -161,9 +161,9 @@ const features = [
     subtitleKey: 'featuresFullPage.analytics.subtitle',
     descriptionKey: 'featuresFullPage.analytics.description',
     benefitsKey: 'featuresFullPage.analytics.benefits',
-    color: 'from-emerald-500 to-emerald-600',
-    lightColor: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
-    borderColor: 'hover:border-emerald-500/30',
+    color: 'from-primary to-emerald-600',
+    lightColor: 'bg-primary/10 text-emerald-600 dark:text-emerald-400',
+    borderColor: 'hover:border-primary/30',
     href: '/dashboard/analytics',
     category: 'tracking',
   },
@@ -215,8 +215,8 @@ export function FeaturesPage() {
       <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-1/4 w-72 h-72 bg-green-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.03)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
         </div>
 
@@ -227,13 +227,13 @@ export function FeaturesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-green-600 dark:text-green-400 text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
                 <span>{t('featuresFullPage.badge')}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 {t('featuresFullPage.title')}{' '}
-                <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-600 to-primary bg-clip-text text-transparent">
                   {t('featuresFullPage.titleHighlight')}
                 </span>
               </h1>
@@ -243,7 +243,7 @@ export function FeaturesPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button
                   size="lg"
-                  className="h-12 px-8 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-lg shadow-green-500/25"
+                  className="h-12 px-8 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-primary text-white shadow-lg shadow-green-500/25"
                   asChild
                 >
                   <Link to={ctaLink}>
@@ -323,7 +323,7 @@ export function FeaturesPage() {
                         key={benefit}
                         className="flex items-start gap-2.5 text-sm"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">{benefit}</span>
                       </li>
                     ))}
@@ -366,7 +366,7 @@ export function FeaturesPage() {
                   className={cn(
                     'px-4 py-2 rounded-full text-sm font-medium transition-all',
                     activeCategory === cat.id
-                      ? 'bg-green-600 text-white shadow-md shadow-green-500/25'
+                      ? 'bg-[#8e5243] text-white shadow-md shadow-green-500/25'
                       : 'bg-background border border-border text-muted-foreground hover:text-foreground hover:border-foreground/20',
                   )}
                 >
@@ -459,7 +459,7 @@ export function FeaturesPage() {
                                   key={benefit}
                                   className="flex items-start gap-2.5 text-sm"
                                 >
-                                  <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                                   <span className="text-muted-foreground">
                                     {benefit}
                                   </span>
@@ -509,7 +509,7 @@ export function FeaturesPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-2">
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-primary bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
                 <p className="text-sm text-muted-foreground">
@@ -525,3 +525,5 @@ export function FeaturesPage() {
     </PublicLayout>
   );
 }
+
+

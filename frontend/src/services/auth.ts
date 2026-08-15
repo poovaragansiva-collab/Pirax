@@ -114,3 +114,4 @@ export const tokenStorage = {
     return !!localStorage.getItem('accessToken');
   },
 };
+

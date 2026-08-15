@@ -101,7 +101,7 @@ interface ExamTemplate {
 }
 
 const DIFFICULTY_COLORS = {
-  easy: 'bg-green-500/10 text-green-500 border-green-500/20',
+  easy: 'bg-primary/10 text-primary border-primary/20',
   medium: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
   hard: 'bg-red-500/10 text-red-500 border-red-500/20',
 };
@@ -288,7 +288,7 @@ export default function ExamDetailPage() {
                         <div
                           className={cn(
                             'h-full rounded-full',
-                            level === 'easy' && 'bg-green-500',
+                            level === 'easy' && 'bg-primary',
                             level === 'medium' && 'bg-amber-500',
                             level === 'hard' && 'bg-red-500'
                           )}
@@ -338,8 +338,8 @@ export default function ExamDetailPage() {
           </div>
           <div className="bg-card border border-border rounded-xl p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-green-500" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{generatedQuestions.length}</p>
@@ -393,7 +393,7 @@ export default function ExamDetailPage() {
                 className={cn(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
                   activeTab === 'generated'
-                    ? 'bg-green-500/10 text-green-500'
+                    ? 'bg-primary/10 text-primary'
                     : 'hover:bg-muted text-muted-foreground'
                 )}
               >
@@ -512,8 +512,8 @@ function ExportPdfModal({
         {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
-              <Download className="w-5 h-5 text-green-500" />
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Download className="w-5 h-5 text-primary" />
             </div>
             <div>
               <h2 className="font-semibold">{t('examDetail.exportToPdf')}</h2>
@@ -601,7 +601,7 @@ function ExportPdfModal({
           <Button variant="outline" onClick={onClose}>
             {t('common.cancel')}
           </Button>
-          <Button onClick={handleExport} className="bg-green-500 hover:bg-green-600">
+          <Button onClick={handleExport} className="bg-primary hover:bg-[#8e5243]">
             <Download className="w-4 h-4 mr-2" />
             {t('examDetail.exportPdf')}
           </Button>
@@ -662,13 +662,13 @@ function AnalyticsTab({ analytics }: { analytics: Analytics | null }) {
         <div className="bg-muted/50 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-2">
             {analytics.improvementTrend >= 0 ? (
-              <TrendingUp className="w-4 h-4 text-green-500" />
+              <TrendingUp className="w-4 h-4 text-primary" />
             ) : (
               <TrendingDown className="w-4 h-4 text-red-500" />
             )}
             <span className="text-xs text-muted-foreground">{t('examDetail.trend')}</span>
           </div>
-          <p className={cn('text-2xl font-bold', analytics.improvementTrend >= 0 ? 'text-green-500' : 'text-red-500')}>
+          <p className={cn('text-2xl font-bold', analytics.improvementTrend >= 0 ? 'text-primary' : 'text-red-500')}>
             {analytics.improvementTrend >= 0 ? '+' : ''}{analytics.improvementTrend}%
           </p>
         </div>
@@ -717,7 +717,7 @@ function AnalyticsTab({ analytics }: { analytics: Analytics | null }) {
                     <span>{topic.topic}</span>
                     <span className={cn(
                       'font-medium',
-                      topic.percentage >= 70 ? 'text-green-500' : topic.percentage >= 50 ? 'text-amber-500' : 'text-red-500'
+                      topic.percentage >= 70 ? 'text-primary' : topic.percentage >= 50 ? 'text-amber-500' : 'text-red-500'
                     )}>
                       {topic.percentage}%
                     </span>
@@ -726,7 +726,7 @@ function AnalyticsTab({ analytics }: { analytics: Analytics | null }) {
                     <div
                       className={cn(
                         'h-full rounded-full transition-all',
-                        topic.percentage >= 70 ? 'bg-green-500' : topic.percentage >= 50 ? 'bg-amber-500' : 'bg-red-500'
+                        topic.percentage >= 70 ? 'bg-primary' : topic.percentage >= 50 ? 'bg-amber-500' : 'bg-red-500'
                       )}
                       style={{ width: `${topic.percentage}%` }}
                     />
@@ -860,7 +860,7 @@ function QuestionsTab({
                           className={cn(
                             'flex items-center gap-2 p-2 rounded-lg text-sm',
                             opt === question.correctAnswer
-                              ? 'bg-green-500/10 border border-green-500/20'
+                              ? 'bg-primary/10 border border-primary/20'
                               : 'bg-muted/50'
                           )}
                         >
@@ -869,7 +869,7 @@ function QuestionsTab({
                           </span>
                           {opt}
                           {opt === question.correctAnswer && (
-                            <CheckCircle className="w-4 h-4 text-green-500 ml-auto" />
+                            <CheckCircle className="w-4 h-4 text-primary ml-auto" />
                           )}
                         </div>
                       ))}
@@ -877,8 +877,8 @@ function QuestionsTab({
                   )}
 
                   {!question.options && (
-                    <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-                      <p className="text-xs font-medium text-green-500 mb-1">{t('examDetail.correctAnswer')}</p>
+                    <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                      <p className="text-xs font-medium text-primary mb-1">{t('examDetail.correctAnswer')}</p>
                       <p className="text-sm">{question.correctAnswer}</p>
                     </div>
                   )}
@@ -987,8 +987,8 @@ function GenerateQuestionsModal({
       >
         <div className="flex items-center justify-between p-5 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-green-500" />
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-primary" />
             </div>
             <div>
               <h2 className="font-semibold">{t('examDetail.generateQuestions')}</h2>
@@ -1010,8 +1010,8 @@ function GenerateQuestionsModal({
                 className={cn(
                   'flex-1 py-2.5 rounded-lg border text-sm font-medium transition-colors',
                   mode === 'standard'
-                    ? 'border-green-500 bg-green-500/10 text-green-500'
-                    : 'border-border hover:border-green-500/50'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-border hover:border-primary/50'
                 )}
               >
                 <Zap className="w-4 h-4 inline mr-2" />
@@ -1043,8 +1043,8 @@ function GenerateQuestionsModal({
                   className={cn(
                     'flex-1 py-2 rounded-lg border text-sm font-medium transition-colors',
                     count === n
-                      ? 'border-green-500 bg-green-500/10 text-green-500'
-                      : 'border-border hover:border-green-500/50'
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-border hover:border-primary/50'
                   )}
                 >
                   {n}
@@ -1071,8 +1071,8 @@ function GenerateQuestionsModal({
                       className={cn(
                         'py-2 rounded-lg border text-sm font-medium transition-colors',
                         difficulty === opt.value
-                          ? 'border-green-500 bg-green-500/10 text-green-500'
-                          : 'border-border hover:border-green-500/50'
+                          ? 'border-primary bg-primary/10 text-primary'
+                          : 'border-border hover:border-primary/50'
                       )}
                     >
                       {opt.label}
@@ -1171,7 +1171,7 @@ function GenerateQuestionsModal({
           <Button
             onClick={handleGenerate}
             disabled={isGenerating || (mode === 'template' && !selectedTemplate)}
-            className={mode === 'template' ? 'bg-purple-500 hover:bg-purple-600' : 'bg-green-500 hover:bg-green-600'}
+            className={mode === 'template' ? 'bg-purple-500 hover:bg-purple-600' : 'bg-primary hover:bg-[#8e5243]'}
           >
             {isGenerating ? (
               <>
@@ -1190,3 +1190,5 @@ function GenerateQuestionsModal({
     </motion.div>
   );
 }
+
+

@@ -137,7 +137,7 @@ export function CreateNotePage() {
             <p className="text-sm text-muted-foreground">{t('createNote.subtitle')}</p>
           </div>
           <Button
-            className="bg-green-500 hover:bg-green-600"
+            className="bg-primary hover:bg-[#8e5243]"
             onClick={handleSave}
             disabled={isLoading}
           >
@@ -167,7 +167,7 @@ export function CreateNotePage() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder={t('createNote.titlePlaceholder')}
-            className="w-full px-4 py-3 text-xl font-semibold bg-transparent border-0 border-b-2 border-border focus:border-green-500 focus:outline-none transition-colors"
+            className="w-full px-4 py-3 text-xl font-semibold bg-transparent border-0 border-b-2 border-border focus:border-primary focus:outline-none transition-colors"
           />
         </div>
 
@@ -249,7 +249,7 @@ export function CreateNotePage() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="flex items-center gap-1 px-2 py-1 text-xs bg-green-500/10 text-green-600 rounded-full"
+                className="flex items-center gap-1 px-2 py-1 text-xs bg-primary/10 text-green-600 rounded-full"
               >
                 {tag}
                 <button
@@ -269,7 +269,7 @@ export function CreateNotePage() {
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
               placeholder={t('createNote.addTagPlaceholder')}
-              className="flex-1 px-3 py-2 text-sm bg-muted/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20"
+              className="flex-1 px-3 py-2 text-sm bg-muted/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             <Button variant="outline" size="sm" onClick={handleAddTag}>
               {t('createNote.addTag')}
@@ -280,3 +280,5 @@ export function CreateNotePage() {
     </DashboardLayout>
   );
 }
+
+

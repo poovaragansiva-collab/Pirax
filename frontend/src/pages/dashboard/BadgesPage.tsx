@@ -234,7 +234,7 @@ export default function BadgesPage() {
 
                   {/* Earned Date */}
                   {isEarned && earnedBadge?.earnedAt && (
-                    <p className="mt-2 text-xs text-green-500">
+                    <p className="mt-2 text-xs text-primary">
                       {t('badgesPage.earned')} {new Date(earnedBadge.earnedAt).toLocaleDateString()}
                     </p>
                   )}
@@ -292,3 +292,5 @@ export default function BadgesPage() {
     </DashboardLayout>
   );
 }
+
+

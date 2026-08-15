@@ -47,7 +47,7 @@ export function ClozeRenderer({ text, onAllRevealed }: ClozeRendererProps) {
                 <motion.span
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="inline-block px-2 py-0.5 mx-0.5 bg-green-500/15 border border-green-500/30 rounded-md text-green-600 dark:text-green-400 font-semibold"
+                  className="inline-block px-2 py-0.5 mx-0.5 bg-primary/15 border border-primary/30 rounded-md text-green-600 dark:text-green-400 font-semibold"
                 >
                   {seg.answer}
                 </motion.span>
@@ -56,7 +56,7 @@ export function ClozeRenderer({ text, onAllRevealed }: ClozeRendererProps) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleReveal(seg.index)}
-                  className="inline-block px-3 py-0.5 mx-0.5 bg-muted border-2 border-dashed border-green-500/40 rounded-md text-muted-foreground hover:border-green-500 hover:bg-green-500/5 transition-colors cursor-pointer min-w-[60px] text-center"
+                  className="inline-block px-3 py-0.5 mx-0.5 bg-muted border-2 border-dashed border-primary/40 rounded-md text-muted-foreground hover:border-primary hover:bg-primary/5 transition-colors cursor-pointer min-w-[60px] text-center"
                 >
                   ?
                 </motion.button>
@@ -84,3 +84,5 @@ export function ClozeRenderer({ text, onAllRevealed }: ClozeRendererProps) {
     </div>
   );
 }
+
+

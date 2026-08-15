@@ -22,7 +22,7 @@ const statusConfig: Record<string, { labelKey: string; color: string }> = {
   planning: { labelKey: 'researchHistory.statusPlanning', color: 'bg-blue-500/10 text-blue-500' },
   researching: { labelKey: 'researchHistory.statusResearching', color: 'bg-blue-500/10 text-blue-500' },
   synthesizing: { labelKey: 'researchHistory.statusSynthesizing', color: 'bg-purple-500/10 text-purple-500' },
-  completed: { labelKey: 'researchHistory.statusCompleted', color: 'bg-green-500/10 text-green-500' },
+  completed: { labelKey: 'researchHistory.statusCompleted', color: 'bg-primary/10 text-primary' },
   failed: { labelKey: 'researchHistory.statusFailed', color: 'bg-red-500/10 text-red-500' },
 };
 
@@ -109,7 +109,7 @@ export function ResearchHistoryPage() {
             </p>
             <Button
               onClick={() => navigate('/dashboard/research')}
-              className="bg-green-500 hover:bg-green-600"
+              className="bg-primary hover:bg-[#8e5243]"
             >
               <Search className="w-4 h-4 mr-2" />
               {t('researchHistory.startResearch')}
@@ -131,11 +131,11 @@ export function ResearchHistoryPage() {
                   onClick={() => handleClick(session)}
                   className="w-full bg-card rounded-2xl border border-border p-5 flex items-start gap-4 hover:border-muted-foreground/30 transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                     {session.status === 'completed' ? (
-                      <FileText className="w-5 h-5 text-green-500" />
+                      <FileText className="w-5 h-5 text-primary" />
                     ) : (
-                      <Search className="w-5 h-5 text-green-500" />
+                      <Search className="w-5 h-5 text-primary" />
                     )}
                   </div>
 
@@ -188,3 +188,5 @@ export function ResearchHistoryPage() {
 }
 
 export default ResearchHistoryPage;
+
+

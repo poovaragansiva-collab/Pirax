@@ -86,7 +86,7 @@ export function SupportPage() {
       title: t('supportPage.categories.studySets'),
       description: t('supportPage.categories.studySetsDesc'),
       href: '/faq',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-green-500 to-primary',
     },
     {
       icon: FileText,
@@ -265,7 +265,7 @@ export function SupportPage() {
                     placeholder={t('supportPage.searchPlaceholder')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-14 h-16 text-lg rounded-2xl border-2 border-border focus:border-emerald-500 shadow-lg"
+                    className="pl-14 h-16 text-lg rounded-2xl border-2 border-border focus:border-primary shadow-lg"
                   />
                   <Button
                     className="absolute right-2 top-1/2 -translate-y-1/2 h-12 px-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 font-semibold"
@@ -347,7 +347,7 @@ export function SupportPage() {
                         {category.description}
                       </p>
                       <div className="flex items-center justify-end">
-                        <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                       </div>
                     </Link>
                   </motion.div>
@@ -399,7 +399,7 @@ export function SupportPage() {
                       to={article.href}
                       className="flex items-center gap-4 bg-card border-2 border-border rounded-xl p-5 hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-md transition-all group"
                     >
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-teal-500 flex items-center justify-center shrink-0">
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -410,7 +410,7 @@ export function SupportPage() {
                           {article.category}
                         </p>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
+                      <ChevronRight className="w-5 h-5 text-muted-foreground shrink-0 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </Link>
                   </motion.div>
                 );
@@ -475,3 +475,5 @@ export function SupportPage() {
     </PublicLayout>
   );
 }
+
+

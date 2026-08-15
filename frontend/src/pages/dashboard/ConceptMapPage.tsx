@@ -28,8 +28,8 @@ export function ConceptMapPage() {
     })();
   }, [id]);
 
-  const diffColor = (d: string) => d === 'easy' ? 'border-green-500/30 bg-green-500/5' : d === 'hard' ? 'border-red-500/30 bg-red-500/5' : 'border-amber-500/30 bg-amber-500/5';
-  const diffDot = (d: string) => d === 'easy' ? 'bg-green-500' : d === 'hard' ? 'bg-red-500' : 'bg-amber-500';
+  const diffColor = (d: string) => d === 'easy' ? 'border-primary/30 bg-primary/5' : d === 'hard' ? 'border-red-500/30 bg-red-500/5' : 'border-amber-500/30 bg-amber-500/5';
+  const diffDot = (d: string) => d === 'easy' ? 'bg-primary' : d === 'hard' ? 'bg-red-500' : 'bg-amber-500';
 
   return (
     <DashboardLayout>
@@ -140,3 +140,5 @@ export function ConceptMapPage() {
 }
 
 export default ConceptMapPage;
+
+

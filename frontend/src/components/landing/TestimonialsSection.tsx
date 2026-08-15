@@ -10,7 +10,7 @@ const avatarGradients = [
   'from-amber-500 to-orange-500',
   'from-rose-500 to-pink-500',
   'from-violet-500 to-purple-500',
-  'from-green-500 to-emerald-500',
+  'from-green-500 to-primary',
   'from-cyan-500 to-teal-500',
 ];
 
@@ -39,8 +39,8 @@ function TestimonialCard({ tKey }: { tKey: string }) {
     .slice(0, 2);
 
   return (
-    <div className="relative bg-card/80 backdrop-blur-sm border border-border hover:border-green-500/20 rounded-2xl p-6 lg:p-8 flex flex-col overflow-hidden group transition-colors duration-300 hover:shadow-md h-full">
-      <Quote className="w-8 h-8 text-green-500/20 mb-4 shrink-0" />
+    <div className="relative bg-card/80 backdrop-blur-sm border border-border hover:border-primary/20 rounded-2xl p-6 lg:p-8 flex flex-col overflow-hidden group transition-colors duration-300 hover:shadow-md h-full">
+      <Quote className="w-8 h-8 text-primary/20 mb-4 shrink-0" />
 
       <p className="text-muted-foreground leading-relaxed flex-1 mb-6">
         "{t(`testimonials.${tKey}.text`)}"
@@ -195,7 +195,7 @@ export function TestimonialsSection() {
             transition={{ duration: 0.6 }}
           >
             <motion.span
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-sm font-medium mb-4"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-green-600 dark:text-green-400 text-sm font-medium mb-4"
               whileHover={{ scale: 1.05 }}
             >
               <BadgeCheck className="w-4 h-4" />
@@ -203,7 +203,7 @@ export function TestimonialsSection() {
             </motion.span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               {t('testimonials.title')}{' '}
-              <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-500 via-primary to-teal-500 bg-clip-text text-transparent">
                 {t('testimonials.titleHighlight')}
               </span>
             </h2>
@@ -242,7 +242,7 @@ export function TestimonialsSection() {
               onClick={() => goTo(i)}
               className={`rounded-full transition-all duration-300 ${
                 i === currentIndex
-                  ? 'w-8 h-2 bg-green-500'
+                  ? 'w-8 h-2 bg-primary'
                   : 'w-2 h-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
               }`}
             />
@@ -252,3 +252,5 @@ export function TestimonialsSection() {
     </section>
   );
 }
+
+

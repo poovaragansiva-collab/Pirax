@@ -224,8 +224,8 @@ export function AnalyticsPage() {
           </div>
           <div className="bg-card border border-border rounded-xl p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-green-500" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <p className="text-xl font-bold">{analytics?.cardsReviewed || 0}</p>
@@ -328,7 +328,7 @@ export function AnalyticsPage() {
             className="bg-card border border-border rounded-xl p-5"
           >
             <div className="flex items-center gap-2 mb-4">
-              <TrendingUp className="w-4 h-4 text-green-500" />
+              <TrendingUp className="w-4 h-4 text-primary" />
               <h3 className="font-medium text-sm">{t('analytics.retentionCurve')}</h3>
             </div>
             {performance?.retentionCurve && performance.retentionCurve.length > 0 ? (
@@ -403,3 +403,5 @@ export function AnalyticsPage() {
     </DashboardLayout>
   );
 }
+
+

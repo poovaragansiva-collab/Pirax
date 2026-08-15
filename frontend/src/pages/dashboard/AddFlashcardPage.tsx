@@ -135,7 +135,7 @@ export function AddFlashcardPage() {
               type="button"
               onClick={handleSave}
               disabled={cardCounts.valid === 0 || isSaving}
-              className="bg-green-500 hover:bg-green-600 min-w-[140px] sm:min-w-[180px]"
+              className="bg-primary hover:bg-[#8e5243] min-w-[140px] sm:min-w-[180px]"
             >
               {isSaving ? (
                 <><Loader2 className="w-4 h-4 mr-2 animate-spin" />{t('common.saving')}</>
@@ -149,3 +149,5 @@ export function AddFlashcardPage() {
     </DashboardLayout>
   );
 }
+
+

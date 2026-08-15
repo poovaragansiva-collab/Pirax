@@ -140,7 +140,7 @@ export function LearningPathDetailPage() {
                 <p className="text-[10px] text-muted-foreground">{t('learningPathDetail.remaining')}</p>
               </div>
               <div className="text-center">
-                <div className="flex items-center justify-center gap-1 text-green-500 mb-1">
+                <div className="flex items-center justify-center gap-1 text-primary mb-1">
                   <Zap className="w-4 h-4" />
                 </div>
                 <p className="text-lg font-bold">{Math.round(totalMinutes / 60)}h</p>
@@ -155,12 +155,12 @@ export function LearningPathDetailPage() {
               initial={{ width: 0 }}
               animate={{ width: `${path.progress}%` }}
               transition={{ duration: 1, ease: 'easeOut' }}
-              className={`h-full rounded-full ${path.progress >= 100 ? 'bg-green-500' : 'bg-amber-500'}`}
+              className={`h-full rounded-full ${path.progress >= 100 ? 'bg-primary' : 'bg-amber-500'}`}
             />
           </div>
 
           {path.progress >= 100 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-3 flex items-center justify-center gap-2 text-green-500">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-3 flex items-center justify-center gap-2 text-primary">
               <Trophy className="w-5 h-5" />
               <span className="text-sm font-semibold">{t('learningPathDetail.pathCompleted')}</span>
             </motion.div>
@@ -205,7 +205,7 @@ export function LearningPathDetailPage() {
                 >
                   {/* Connector line */}
                   {i < path.steps.length - 1 && (
-                    <div className={`absolute left-[23px] top-12 w-0.5 h-[calc(100%-12px)] ${step.isCompleted ? 'bg-green-500' : 'bg-border'}`} />
+                    <div className={`absolute left-[23px] top-12 w-0.5 h-[calc(100%-12px)] ${step.isCompleted ? 'bg-primary' : 'bg-border'}`} />
                   )}
 
                   <div
@@ -217,7 +217,7 @@ export function LearningPathDetailPage() {
                     {/* Step indicator */}
                     <div className={`w-[46px] h-[46px] rounded-xl flex items-center justify-center shrink-0 ${
                       step.isCompleted
-                        ? 'bg-green-500/10 text-green-500'
+                        ? 'bg-primary/10 text-primary'
                         : isNext
                           ? `bg-${color}-500/10 text-${color}-500 ring-2 ring-${color}-500/30`
                           : 'bg-muted text-muted-foreground'
@@ -243,7 +243,7 @@ export function LearningPathDetailPage() {
                           <Clock className="w-3 h-3" /> {step.estimatedMinutes} min
                         </span>
                         {step.isCompleted && step.completedAt && (
-                          <span className="text-xs text-green-500">
+                          <span className="text-xs text-primary">
                             {t('learningPathDetail.completed', { date: new Date(step.completedAt).toLocaleDateString() })}
                           </span>
                         )}
@@ -299,3 +299,5 @@ export function LearningPathDetailPage() {
 }
 
 export default LearningPathDetailPage;
+
+

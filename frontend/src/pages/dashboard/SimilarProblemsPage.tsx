@@ -114,7 +114,7 @@ export function SimilarProblemsPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + idx * 0.05 }}
-                  className="bg-card border border-border rounded-xl p-5 hover:border-green-500/30 transition-all"
+                  className="bg-card border border-border rounded-xl p-5 hover:border-primary/30 transition-all"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
@@ -180,3 +180,5 @@ export function SimilarProblemsPage() {
 }
 
 export default SimilarProblemsPage;
+
+

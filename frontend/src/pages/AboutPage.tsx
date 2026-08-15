@@ -56,7 +56,7 @@ export function AboutPage() {
 
   const features = [
     { icon: BookOpen, label: t('about.features.studySets'), color: 'text-blue-500' },
-    { icon: Brain, label: t('about.features.aiChat'), color: 'text-green-500' },
+    { icon: Brain, label: t('about.features.aiChat'), color: 'text-primary' },
     { icon: Sparkles, label: t('about.features.problemSolver'), color: 'text-orange-500' },
     { icon: Zap, label: t('about.features.spacedRepetition'), color: 'text-purple-500' },
     { icon: Users, label: t('about.features.liveQuiz'), color: 'text-pink-500' },
@@ -234,3 +234,5 @@ export function AboutPage() {
     </PublicLayout>
   );
 }
+
+

@@ -62,9 +62,9 @@ function GeneratingScreen() {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-        className="w-20 h-20 rounded-full bg-green-500/10 border-2 border-green-500/30 border-t-green-500 flex items-center justify-center mx-auto mb-6"
+        className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary/30 border-t-green-500 flex items-center justify-center mx-auto mb-6"
       >
-        <Sparkles className="w-8 h-8 text-green-500" />
+        <Sparkles className="w-8 h-8 text-primary" />
       </motion.div>
       <h2 className="text-xl font-bold mb-2">
         {t('quiz.generating')}{dots}
@@ -77,7 +77,7 @@ function GeneratingScreen() {
           {[0, 1, 2, 3, 4].map((i) => (
             <motion.div
               key={i}
-              className="w-2 h-2 rounded-full bg-green-500"
+              className="w-2 h-2 rounded-full bg-primary"
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{
                 duration: 1.2,
@@ -136,8 +136,8 @@ function QuizConfigScreen({
       className="max-w-lg mx-auto w-full"
     >
       <div className="text-center mb-8">
-        <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-          <FileQuestion className="w-8 h-8 text-green-500" />
+        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <FileQuestion className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-2xl font-bold">{t('quiz.title')}</h2>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -165,7 +165,7 @@ function QuizConfigScreen({
       {/* Question Count */}
       <div className="bg-card border border-border rounded-xl p-5 mb-3">
         <div className="flex items-center gap-2 mb-3">
-          <Hash className="w-4 h-4 text-green-500" />
+          <Hash className="w-4 h-4 text-primary" />
           <h3 className="font-medium text-sm">Number of Questions</h3>
         </div>
         <div className="flex gap-2">
@@ -176,7 +176,7 @@ function QuizConfigScreen({
               className={cn(
                 'flex-1 py-2.5 rounded-lg text-sm font-medium transition-all',
                 questionCount === count
-                  ? 'bg-green-500 text-white shadow-md shadow-green-500/25'
+                  ? 'bg-primary text-white shadow-md shadow-green-500/25'
                   : 'bg-muted hover:bg-muted/80 text-foreground'
               )}
             >
@@ -189,7 +189,7 @@ function QuizConfigScreen({
       {/* Question Types */}
       <div className="bg-card border border-border rounded-xl p-5 mb-3">
         <div className="flex items-center gap-2 mb-3">
-          <ListChecks className="w-4 h-4 text-green-500" />
+          <ListChecks className="w-4 h-4 text-primary" />
           <h3 className="font-medium text-sm">Question Types</h3>
         </div>
         <div className="space-y-2">
@@ -202,7 +202,7 @@ function QuizConfigScreen({
                 className={cn(
                   'w-full flex items-center justify-between px-4 py-3 rounded-lg border-2 transition-all text-left',
                   selected
-                    ? 'border-green-500 bg-green-500/5'
+                    ? 'border-primary bg-primary/5'
                     : 'border-transparent bg-muted/40 hover:bg-muted/60'
                 )}
               >
@@ -211,7 +211,7 @@ function QuizConfigScreen({
                   <p className="text-xs text-muted-foreground">{type.desc}</p>
                 </div>
                 {selected ? (
-                  <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-primary shrink-0" />
                 ) : (
                   <div className="w-5 h-5 rounded-full border-2 border-muted-foreground/30 shrink-0" />
                 )}
@@ -231,7 +231,7 @@ function QuizConfigScreen({
           className="w-full flex items-center justify-between"
         >
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-green-500" />
+            <Clock className="w-4 h-4 text-primary" />
             <div className="text-left">
               <p className="font-medium text-sm">Timer</p>
               <p className="text-xs text-muted-foreground">30 seconds per question</p>
@@ -240,7 +240,7 @@ function QuizConfigScreen({
           <div
             className={cn(
               'w-10 h-6 rounded-full transition-colors flex items-center px-0.5',
-              timerEnabled ? 'bg-green-500 justify-end' : 'bg-muted justify-start'
+              timerEnabled ? 'bg-primary justify-end' : 'bg-muted justify-start'
             )}
           >
             <div className="w-5 h-5 rounded-full bg-white shadow-sm" />
@@ -250,7 +250,7 @@ function QuizConfigScreen({
 
       {/* Start Button */}
       <Button
-        className="w-full bg-green-500 hover:bg-green-600 h-12 text-base shadow-lg shadow-green-500/20"
+        className="w-full bg-primary hover:bg-[#8e5243] h-12 text-base shadow-lg shadow-primary/20"
         disabled={!canStart}
         onClick={() => onStart({ questionCount, questionTypes, timerEnabled })}
       >
@@ -366,7 +366,7 @@ function QuizQuestionScreen({
       {/* Progress bar */}
       <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden mb-6">
         <motion.div
-          className="h-full bg-green-500 rounded-full"
+          className="h-full bg-primary rounded-full"
           initial={false}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
@@ -376,7 +376,7 @@ function QuizQuestionScreen({
       {/* Question Card */}
       <div className="bg-card border border-border rounded-2xl p-6 mb-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-[10px] uppercase tracking-widest text-green-500 font-semibold bg-green-500/10 px-2 py-0.5 rounded">
+          <span className="text-[10px] uppercase tracking-widest text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded">
             {typeLabel}
           </span>
         </div>
@@ -396,17 +396,17 @@ function QuizQuestionScreen({
                 option.toLowerCase().trim() ===
                 question.correctAnswer?.toLowerCase().trim();
 
-              let optionStyle = 'border-border bg-card hover:border-green-500/40 hover:bg-green-500/5';
+              let optionStyle = 'border-border bg-card hover:border-primary/40 hover:bg-primary/5';
               if (showFeedback) {
                 if (isCorrectOption) {
-                  optionStyle = 'border-green-500 bg-green-500/10';
+                  optionStyle = 'border-primary bg-primary/10';
                 } else if (isSelected && !isCorrectOption) {
                   optionStyle = 'border-red-500 bg-red-500/10';
                 } else {
                   optionStyle = 'border-border bg-muted/20 opacity-40';
                 }
               } else if (isSelected) {
-                optionStyle = 'border-green-500 bg-green-500/5 shadow-sm';
+                optionStyle = 'border-primary bg-primary/5 shadow-sm';
               }
 
               const letters = ['A', 'B', 'C', 'D'];
@@ -425,11 +425,11 @@ function QuizQuestionScreen({
                     className={cn(
                       'w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 transition-colors',
                       showFeedback && isCorrectOption
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-primary text-white'
                         : showFeedback && isSelected && !isCorrectOption
                         ? 'bg-red-500 text-white'
                         : isSelected
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-primary text-white'
                         : 'bg-muted text-muted-foreground'
                     )}
                   >
@@ -437,7 +437,7 @@ function QuizQuestionScreen({
                   </span>
                   <span className="flex-1 font-medium text-sm">{option}</span>
                   {showFeedback && isCorrectOption && (
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary shrink-0" />
                   )}
                   {showFeedback && isSelected && !isCorrectOption && (
                     <XCircle className="w-5 h-5 text-red-500 shrink-0" />
@@ -466,14 +466,14 @@ function QuizQuestionScreen({
                 'w-full px-4 py-3.5 rounded-xl border-2 bg-card text-sm font-medium outline-none transition-all',
                 showFeedback
                   ? isCorrect
-                    ? 'border-green-500 bg-green-500/10'
+                    ? 'border-primary bg-primary/10'
                     : 'border-red-500 bg-red-500/10'
-                  : 'border-border focus:border-green-500'
+                  : 'border-border focus:border-primary'
               )}
             />
             {!showFeedback && (
               <Button
-                className="w-full bg-green-500 hover:bg-green-600"
+                className="w-full bg-primary hover:bg-[#8e5243]"
                 disabled={!textAnswer.trim()}
                 onClick={() => handleSubmitAnswer(textAnswer.trim())}
               >
@@ -483,7 +483,7 @@ function QuizQuestionScreen({
             {showFeedback && !isCorrect && (
               <div className="flex items-center gap-2 text-sm">
                 <span className="text-muted-foreground">Correct answer:</span>
-                <span className="font-semibold text-green-500">{question.correctAnswer}</span>
+                <span className="font-semibold text-primary">{question.correctAnswer}</span>
               </div>
             )}
           </div>
@@ -502,13 +502,13 @@ function QuizQuestionScreen({
             className={cn(
               'rounded-xl p-4 border-2',
               isCorrect
-                ? 'bg-green-500/5 border-green-500/20'
+                ? 'bg-primary/5 border-primary/20'
                 : 'bg-red-500/5 border-red-500/20'
             )}
           >
             <div className="flex items-center gap-2 mb-1">
               {isCorrect ? (
-                <CheckCircle className="w-4 h-4 text-green-500" />
+                <CheckCircle className="w-4 h-4 text-primary" />
               ) : (
                 <XCircle className="w-4 h-4 text-red-500" />
               )}
@@ -524,7 +524,7 @@ function QuizQuestionScreen({
           </div>
 
           <Button
-            className="w-full bg-green-500 hover:bg-green-600 h-11"
+            className="w-full bg-primary hover:bg-[#8e5243] h-11"
             onClick={handleNext}
           >
             {index + 1 < total ? (
@@ -581,8 +581,8 @@ function QuizResultsScreen({
     >
       {/* Header */}
       <div className="text-center mb-6">
-        <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-          <Trophy className="w-10 h-10 text-green-500" />
+        <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <Trophy className="w-10 h-10 text-primary" />
         </div>
         <h2 className="text-2xl font-bold">Quiz Complete!</h2>
 
@@ -617,7 +617,7 @@ function QuizResultsScreen({
           className={cn(
             'text-6xl font-bold',
             percentage >= 70
-              ? 'text-green-500'
+              ? 'text-primary'
               : percentage >= 40
               ? 'text-amber-500'
               : 'text-red-500'
@@ -639,7 +639,7 @@ function QuizResultsScreen({
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3 mb-4">
         <div className="bg-card border border-border rounded-xl p-3 text-center">
-          <CheckCircle className="w-5 h-5 text-green-500 mx-auto mb-1" />
+          <CheckCircle className="w-5 h-5 text-primary mx-auto mb-1" />
           <p className="text-lg font-bold">{correct}</p>
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{t('quiz.correct')}</p>
         </div>
@@ -671,11 +671,11 @@ function QuizResultsScreen({
                 <div
                   className={cn(
                     'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5',
-                    result?.isCorrect ? 'bg-green-500/10' : 'bg-red-500/10'
+                    result?.isCorrect ? 'bg-primary/10' : 'bg-red-500/10'
                   )}
                 >
                   {result?.isCorrect ? (
-                    <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                    <CheckCircle className="w-3.5 h-3.5 text-primary" />
                   ) : (
                     <XCircle className="w-3.5 h-3.5 text-red-500" />
                   )}
@@ -684,7 +684,7 @@ function QuizResultsScreen({
                   <p className="text-sm font-medium leading-snug">{q.question}</p>
                   {!result?.isCorrect && (
                     <p className="text-xs text-muted-foreground mt-1">
-                      Answer: <span className="text-green-500 font-medium">{q.correctAnswer}</span>
+                      Answer: <span className="text-primary font-medium">{q.correctAnswer}</span>
                     </p>
                   )}
                 </div>
@@ -700,7 +700,7 @@ function QuizResultsScreen({
           <Link to={`/dashboard/study-sets/${studySetId}`}>{t('common.back')}</Link>
         </Button>
         <Button
-          className="flex-1 bg-green-500 hover:bg-green-600"
+          className="flex-1 bg-primary hover:bg-[#8e5243]"
           onClick={onRetry}
         >
           <RotateCcw className="w-4 h-4 mr-2" />
@@ -837,8 +837,8 @@ export function QuizPage() {
             <span className="text-sm">{t('common.back')}</span>
           </button>
           {phase === 'quiz' && (
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10">
-              <Brain className="w-4 h-4 text-green-500" />
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10">
+              <Brain className="w-4 h-4 text-primary" />
               <span className="text-xs font-semibold text-green-600">Quiz Mode</span>
             </div>
           )}
@@ -887,3 +887,5 @@ export function QuizPage() {
     </DashboardLayout>
   );
 }
+
+

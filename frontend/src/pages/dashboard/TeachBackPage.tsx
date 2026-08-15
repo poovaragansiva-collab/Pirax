@@ -137,7 +137,7 @@ export function TeachBackPage() {
         );
       case 'evaluated':
         return (
-          <span className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-green-500/10 text-green-500">
+          <span className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
             <CheckCircle className="w-3 h-3" /> Score: {score ?? 0}/100
           </span>
         );
@@ -432,3 +432,5 @@ export function TeachBackPage() {
 }
 
 export default TeachBackPage;
+
+

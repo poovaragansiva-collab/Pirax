@@ -37,10 +37,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/studyield', color: 'hover:text-sky-500' },
-  { name: 'GitHub', icon: Github, href: 'https://github.com/studyield', color: 'hover:text-foreground' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/studyield', color: 'hover:text-blue-600' },
-  { name: 'Email', icon: Mail, href: 'mailto:hello@studyield.com', color: 'hover:text-green-500' },
+  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/PIRAX', color: 'hover:text-sky-500' },
+  { name: 'GitHub', icon: Github, href: 'https://github.com/PIRAX', color: 'hover:text-foreground' },
+  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/PIRAX', color: 'hover:text-blue-600' },
+  { name: 'Email', icon: Mail, href: 'mailto:hello@PIRAX.com', color: 'hover:text-primary' },
 ];
 
 export function Footer() {
@@ -67,7 +67,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden">
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5 border-t border-border/50">
+      <div className="bg-gradient-to-br from-green-500/5 via-primary/5 to-teal-500/5 border-t border-border/50">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 py-12 lg:py-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -75,7 +75,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-green-600 dark:text-green-400 text-sm font-medium mb-4">
                 <Sparkles className="w-4 h-4" />
                 {t('footer.newsletter.badge')}
               </div>
@@ -93,14 +93,14 @@ export function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('footer.newsletter.placeholder')}
-                    className="w-full h-11 px-4 pr-12 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all"
+                    className="w-full h-11 px-4 pr-12 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     required
                   />
                   <Mail className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 </div>
                 <Button
                   type="submit"
-                  className="h-11 px-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-lg shadow-green-500/25"
+                  className="h-11 px-6 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-primary text-white shadow-lg shadow-green-500/25"
                   disabled={isSubscribed}
                 >
                   {isSubscribed ? (
@@ -134,8 +134,8 @@ export function Footer() {
             {/* Brand */}
             <div className="col-span-2 md:col-span-3 lg:col-span-2">
               <Link to="/" className="inline-flex items-center gap-2.5 mb-5 group">
-                <img src="/logos/studyield-logo.png" alt="Studyield" className="w-10 h-10 object-contain transition-transform group-hover:scale-110" />
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</span>
+                <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-10 h-10 object-contain transition-transform group-hover:scale-110" />
+                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">PIRAX</span>
               </Link>
               <p className="text-muted-foreground text-sm mb-6 max-w-sm leading-relaxed">
                 {t('footer.brand.description')}
@@ -254,7 +254,7 @@ export function Footer() {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-green-500 text-white shadow-lg shadow-green-500/25 flex items-center justify-center hover:bg-green-600 transition-colors"
+            className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-primary text-white shadow-lg shadow-green-500/25 flex items-center justify-center hover:bg-[#8e5243] transition-colors"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label={t('footer.backToTop')}
@@ -266,3 +266,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

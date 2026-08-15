@@ -26,3 +26,4 @@ export function usePlanGate() {
 
   return { isPro, plan, canAccess };
 }
+

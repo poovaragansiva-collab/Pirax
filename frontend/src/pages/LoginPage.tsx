@@ -191,7 +191,7 @@ export function LoginPage() {
             <div className="flex flex-col items-center space-y-3">
               {/* Logo */}
               <Link to="/" className="group cursor-pointer mb-4">
-                <img src="/logos/studyield-logo.png" alt="Studyield" className="w-20 h-20 object-contain transition-all duration-300 group-hover:scale-110" />
+                <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-20 h-20 object-contain transition-all duration-300 group-hover:scale-110" />
               </Link>
 
               <div className="text-center space-y-2">
@@ -314,7 +314,7 @@ export function LoginPage() {
 
               {successMessage && (
                 <Alert className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-900/30">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <CheckCircle className="h-4 w-4 text-primary" />
                   <AlertDescription className="text-green-700 dark:text-green-400">
                     {successMessage}
                   </AlertDescription>
@@ -363,3 +363,5 @@ export function LoginPage() {
     </div>
   );
 }
+
+

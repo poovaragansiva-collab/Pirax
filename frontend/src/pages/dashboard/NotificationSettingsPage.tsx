@@ -78,7 +78,7 @@ function Toggle({
       aria-checked={checked}
       onClick={() => !disabled && onChange(!checked)}
       className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors ${
-        checked ? 'bg-green-500' : 'bg-muted'
+        checked ? 'bg-primary' : 'bg-muted'
       } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
     >
       <span
@@ -206,7 +206,7 @@ export function NotificationSettingsPage() {
           <Button
             onClick={handleSave}
             disabled={saving}
-            className="w-full bg-green-500 hover:bg-green-600 h-12"
+            className="w-full bg-primary hover:bg-[#8e5243] h-12"
           >
             {saving ? (
               <Spinner size="sm" className="mr-2" />
@@ -222,3 +222,5 @@ export function NotificationSettingsPage() {
 }
 
 export default NotificationSettingsPage;
+
+

@@ -72,7 +72,7 @@ export function SitemapPage() {
     {
       title: t('sitemapPage.sections.learningFeatures'),
       icon: GraduationCap,
-      color: 'from-emerald-500 to-teal-500',
+      color: 'from-primary to-teal-500',
       links: [
         { name: t('sitemapPage.links.studySets'), href: '/features#study-sets', icon: Layers, description: t('sitemapPage.links.studySetsDesc') },
         { name: t('sitemapPage.links.flashcards'), href: '/features#flashcards', icon: CreditCard, description: t('sitemapPage.links.flashcardsDesc') },
@@ -304,3 +304,5 @@ export function SitemapPage() {
     </PublicLayout>
   );
 }
+
+

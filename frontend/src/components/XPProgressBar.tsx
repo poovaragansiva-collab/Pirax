@@ -71,13 +71,13 @@ export function XPProgressBar() {
                 strokeWidth="3"
                 strokeDasharray={`${dailyPct * 0.9425} 94.25`}
                 strokeLinecap="round"
-                className="text-green-500"
+                className="text-primary"
                 initial={{ strokeDasharray: '0 94.25' }}
                 animate={{ strokeDasharray: `${dailyPct * 0.9425} 94.25` }}
                 transition={{ duration: 0.8 }}
               />
             </svg>
-            <Zap className="absolute inset-0 m-auto w-3.5 h-3.5 text-green-500" />
+            <Zap className="absolute inset-0 m-auto w-3.5 h-3.5 text-primary" />
           </div>
           <div className="text-xs">
             <span className="font-medium">{stats.dailyXp}</span>
@@ -94,9 +94,9 @@ export function XPProgressBar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.9 }}
             onAnimationComplete={() => setTimeout(clearRecentXp, 1500)}
-            className="flex items-center gap-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-lg w-fit"
+            className="flex items-center gap-2 px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-lg w-fit"
           >
-            <Zap className="w-4 h-4 text-green-500" />
+            <Zap className="w-4 h-4 text-primary" />
             <span className="text-sm font-semibold text-green-600 dark:text-green-400">
               +{recentXpGain} XP
             </span>
@@ -106,3 +106,5 @@ export function XPProgressBar() {
     </div>
   );
 }
+
+

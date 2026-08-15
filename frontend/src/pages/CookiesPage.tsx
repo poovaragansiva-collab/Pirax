@@ -89,7 +89,7 @@ export function CookiesPage() {
       examples: t('cookiesPage.typesOfCookies.categories.marketing.examples', { returnObjects: true }) as string[],
       retention: t('cookiesPage.typesOfCookies.categories.marketing.retention'),
       icon: Target,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-green-500 to-primary',
     },
   ];
 
@@ -338,7 +338,7 @@ export function CookiesPage() {
                 <section id="third-party" className="scroll-mt-24">
                   <div className="bg-card border-2 border-border rounded-2xl p-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-primary flex items-center justify-center">
                         <Globe className="w-6 h-6 text-white" />
                       </div>
                       <h2 className="text-2xl font-black">{t('cookiesPage.thirdParty.title')}</h2>
@@ -468,7 +468,7 @@ export function CookiesPage() {
                         className="bg-white/10 hover:bg-white/20 text-white border-white/30 font-semibold"
                         asChild
                       >
-                        <a href="mailto:privacy@studyield.com">privacy@studyield.com</a>
+                        <a href="mailto:privacy@PIRAX.com">privacy@PIRAX.com</a>
                       </Button>
                     </div>
                   </div>
@@ -483,3 +483,5 @@ export function CookiesPage() {
     </PublicLayout>
   );
 }
+
+

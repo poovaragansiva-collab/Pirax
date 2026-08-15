@@ -58,11 +58,11 @@ function AnimatedDemo() {
     { bg: 'from-blue-500 to-cyan-500', text: 'text-blue-500', dot: 'bg-blue-500' },
     { bg: 'from-violet-500 to-purple-500', text: 'text-violet-500', dot: 'bg-violet-500' },
     { bg: 'from-amber-500 to-orange-500', text: 'text-amber-500', dot: 'bg-amber-500' },
-    { bg: 'from-green-500 to-emerald-500', text: 'text-green-500', dot: 'bg-green-500' },
+    { bg: 'from-green-500 to-primary', text: 'text-primary', dot: 'bg-primary' },
   ];
 
   const stepLabels = ['hero.demo.stepUpload', 'hero.demo.stepAnalyze', 'hero.demo.stepGenerate', 'hero.demo.stepReady'];
-  const stepDots = ['bg-blue-500', 'bg-violet-500', 'bg-amber-500', 'bg-green-500'];
+  const stepDots = ['bg-blue-500', 'bg-violet-500', 'bg-amber-500', 'bg-primary'];
   const statusKeys = ['hero.demo.statusUploading', 'hero.demo.statusAnalyzing', 'hero.demo.statusGenerating', 'hero.demo.statusComplete'];
 
   useEffect(() => {
@@ -164,13 +164,13 @@ function AnimatedDemo() {
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-500/80" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="w-3 h-3 rounded-full bg-primary/80" />
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                <div className="w-5 h-5 rounded bg-gradient-to-br from-green-500 to-primary flex items-center justify-center">
                   <Sparkles className="w-3 h-3 text-white" />
                 </div>
-                <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</span>
+                <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">PIRAX</span>
               </div>
             </div>
             <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider ${stepColors[currentStep].text}`}>
@@ -461,13 +461,13 @@ function AnimatedDemo() {
                   {[...Array(3)].map((_, i) => (
                     <motion.div
                       key={i}
-                      className="absolute inset-0 rounded-full border-2 border-green-500/50"
+                      className="absolute inset-0 rounded-full border-2 border-primary/50"
                       animate={{ scale: [1, 1.5 + i * 0.2], opacity: [0.4, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
                     />
                   ))}
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-green-500/30"
+                    className="absolute inset-0 rounded-full bg-gradient-to-br from-green-500 to-primary flex items-center justify-center shadow-lg shadow-green-500/30"
                     animate={{ scale: [1, 1.04, 1] }}
                     transition={{ duration: 1.2, repeat: Infinity }}
                   >
@@ -482,7 +482,7 @@ function AnimatedDemo() {
                 </div>
 
                 <motion.h3
-                  className="text-xl font-bold mb-1.5 bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent"
+                  className="text-xl font-bold mb-1.5 bg-gradient-to-r from-green-500 to-primary bg-clip-text text-transparent"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
@@ -505,7 +505,7 @@ function AnimatedDemo() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + index * 0.1, type: 'spring' }}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400"
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-green-600 dark:text-green-400"
                     >
                       <item.icon className="w-3 h-3" />
                       <span className="text-[11px] font-medium">{t(item.key)}</span>
@@ -524,13 +524,13 @@ function AnimatedDemo() {
               {t('hero.demo.stepProgress', { step: currentStep + 1 })} — {t(statusKeys[currentStep])}
             </span>
             <motion.span
-              className="flex items-center gap-1.5 text-green-500 font-medium"
+              className="flex items-center gap-1.5 text-primary font-medium"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary" />
               </span>
               {t('hero.demo.aiProcessing')}
             </motion.span>
@@ -634,7 +634,7 @@ export function HeroSection() {
             >
               <span className="block">{t('hero.titleLine1')}</span>
               <span className="relative">
-                <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-500 via-primary to-teal-500 bg-clip-text text-transparent">
                   {t('hero.titleLine2')}
                 </span>
                 <motion.svg
@@ -734,3 +734,5 @@ export function HeroSection() {
     </section>
   );
 }
+
+

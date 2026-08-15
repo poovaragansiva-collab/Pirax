@@ -164,7 +164,7 @@ export default function ReviewQueuePage() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty?.toLowerCase()) {
       case 'easy':
-        return 'bg-green-500/10 text-green-600 dark:text-green-400';
+        return 'bg-primary/10 text-green-600 dark:text-green-400';
       case 'medium':
         return 'bg-amber-500/10 text-amber-600 dark:text-amber-400';
       case 'hard':
@@ -190,7 +190,7 @@ export default function ReviewQueuePage() {
           {phase === 'question' && (
             <div className="flex items-center gap-4 text-sm">
               <span className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 text-green-500" />
+                <CheckCircle className="w-4 h-4 text-primary" />
                 {stats.correct}
               </span>
               <span className="flex items-center gap-1.5">
@@ -228,8 +228,8 @@ export default function ReviewQueuePage() {
               exit={{ opacity: 0, y: -20 }}
               className="text-center py-16"
             >
-              <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-10 h-10 text-green-500" />
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Brain className="w-10 h-10 text-primary" />
               </div>
               <h2 className="text-2xl font-bold mb-2">{t('reviewQueue.allCaughtUp')}</h2>
               <p className="text-muted-foreground mb-6 max-w-md mx-auto">
@@ -316,7 +316,7 @@ export default function ReviewQueuePage() {
                         className={cn(
                           'w-full p-4 rounded-xl text-left font-medium transition-all border-2',
                           showCorrect
-                            ? 'border-green-500 bg-green-500/10'
+                            ? 'border-primary bg-primary/10'
                             : showIncorrect
                             ? 'border-red-500 bg-red-500/10'
                             : isSelected
@@ -329,7 +329,7 @@ export default function ReviewQueuePage() {
                             className={cn(
                               'w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shrink-0',
                               showCorrect
-                                ? 'bg-green-500 text-white'
+                                ? 'bg-primary text-white'
                                 : showIncorrect
                                 ? 'bg-red-500 text-white'
                                 : isSelected
@@ -340,7 +340,7 @@ export default function ReviewQueuePage() {
                             {String.fromCharCode(65 + index)}
                           </span>
                           <span className="flex-1">{option}</span>
-                          {showCorrect && <CheckCircle className="w-5 h-5 text-green-500" />}
+                          {showCorrect && <CheckCircle className="w-5 h-5 text-primary" />}
                           {showIncorrect && <XCircle className="w-5 h-5 text-red-500" />}
                         </span>
                       </motion.button>
@@ -370,7 +370,7 @@ export default function ReviewQueuePage() {
                     {showAnswer && (
                       <p className="text-sm">
                         <span className="text-muted-foreground">{t('reviewQueue.correctAnswerLabel')}</span>
-                        <span className="font-medium text-green-500">{currentQuestion.correctAnswer}</span>
+                        <span className="font-medium text-primary">{currentQuestion.correctAnswer}</span>
                       </p>
                     )}
                   </div>
@@ -462,9 +462,9 @@ export default function ReviewQueuePage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: 'spring', delay: 0.2 }}
-                className="w-24 h-24 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6"
+                className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
               >
-                <CheckCircle className="w-12 h-12 text-green-500" />
+                <CheckCircle className="w-12 h-12 text-primary" />
               </motion.div>
 
               <h2 className="text-2xl font-bold mb-2">{t('reviewQueue.reviewComplete')}</h2>
@@ -479,9 +479,9 @@ export default function ReviewQueuePage() {
                   <p className="text-2xl font-bold">{stats.total}</p>
                   <p className="text-xs text-muted-foreground">{t('reviewQueue.total')}</p>
                 </div>
-                <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4">
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
                   <div className="flex items-center justify-center gap-1.5 mb-1">
-                    <CheckCircle className="w-4 h-4 text-green-500" />
+                    <CheckCircle className="w-4 h-4 text-primary" />
                   </div>
                   <p className="text-2xl font-bold text-green-600 dark:text-green-400">
                     {stats.correct}
@@ -512,7 +512,7 @@ export default function ReviewQueuePage() {
                 </div>
                 <div className="h-3 bg-muted rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                    className="h-full bg-gradient-to-r from-green-500 to-primary rounded-full"
                     initial={{ width: 0 }}
                     animate={{
                       width: `${stats.total > 0 ? (stats.correct / stats.total) * 100 : 0}%`,
@@ -553,3 +553,5 @@ export default function ReviewQueuePage() {
     </DashboardLayout>
   );
 }
+
+

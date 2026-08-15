@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils';
 
 const features = [
   { nameKey: 'header.features.studySets', descKey: 'header.features.studySetsDesc', icon: BookOpen, color: 'text-blue-500', bg: 'bg-blue-500/10', href: '/dashboard/study-sets' },
-  { nameKey: 'header.features.aiChat', descKey: 'header.features.aiChatDesc', icon: MessageSquare, color: 'text-green-500', bg: 'bg-green-500/10', href: '/dashboard/chat' },
+  { nameKey: 'header.features.aiChat', descKey: 'header.features.aiChatDesc', icon: MessageSquare, color: 'text-primary', bg: 'bg-primary/10', href: '/dashboard/chat' },
   { nameKey: 'header.features.problemSolver', descKey: 'header.features.problemSolverDesc', icon: Sparkles, color: 'text-orange-500', bg: 'bg-orange-500/10', href: '/dashboard/problem-solver' },
   { nameKey: 'header.features.examCloning', descKey: 'header.features.examCloningDesc', icon: GraduationCap, color: 'text-indigo-500', bg: 'bg-indigo-500/10', href: '/dashboard/exam-clone' },
   { nameKey: 'header.features.teachBack', descKey: 'header.features.teachBackDesc', icon: Zap, color: 'text-yellow-500', bg: 'bg-yellow-500/10', href: '/dashboard/teach-back' },
@@ -86,9 +86,9 @@ export function Header() {
         <nav className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <img src="/logos/studyield-logo.png" alt="Studyield" className="w-12 h-12 object-contain transition-transform group-hover:scale-110" />
+            <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-12 h-12 object-contain transition-transform group-hover:scale-110" />
             <span className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-              Studyield
+              PIRAX
             </span>
           </Link>
 
@@ -190,7 +190,7 @@ export function Header() {
                 to="/dashboard"
                 className="flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-muted/60 hover:bg-muted border border-border/50 transition-colors"
               >
-                <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center overflow-hidden">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
                   {user?.avatarUrl ? (
                     <img src={user.avatarUrl} alt={user.name} className="w-8 h-8 rounded-full object-cover" />
                   ) : (
@@ -208,7 +208,7 @@ export function Header() {
                   <Link to="/login">{t('common.signIn')}</Link>
                 </Button>
                 <Button
-                  className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all"
+                  className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-primary text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all"
                   asChild
                 >
                   <Link to="/welcome">
@@ -290,7 +290,7 @@ export function Header() {
                           'flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg transition-colors',
                           'hover:bg-muted',
                           location.pathname === link.href
-                            ? 'text-green-600 dark:text-green-400 bg-green-500/10'
+                            ? 'text-green-600 dark:text-green-400 bg-primary/10'
                             : 'text-foreground'
                         )}
                       >
@@ -340,7 +340,7 @@ export function Header() {
                       to="/dashboard"
                       className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted/60 hover:bg-muted border border-border/50 transition-colors"
                     >
-                      <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center overflow-hidden">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
                         {user?.avatarUrl ? (
                           <img src={user.avatarUrl} alt={user.name} className="w-10 h-10 rounded-full object-cover" />
                         ) : (
@@ -361,7 +361,7 @@ export function Header() {
                         <Link to="/login">{t('common.signIn')}</Link>
                       </Button>
                       <Button
-                        className="w-full h-12 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white shadow-lg shadow-green-500/25"
+                        className="w-full h-12 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-primary text-white shadow-lg shadow-green-500/25"
                         asChild
                       >
                         <Link to="/welcome">
@@ -380,3 +380,5 @@ export function Header() {
     </header>
   );
 }
+
+

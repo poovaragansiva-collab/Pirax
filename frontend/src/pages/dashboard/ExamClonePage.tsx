@@ -55,7 +55,7 @@ interface ExamClone {
 const STATUS_CONFIG = {
   pending: { labelKey: 'examClone.status.pending', color: 'text-amber-500', bg: 'bg-amber-500/10', icon: Clock },
   processing: { labelKey: 'examClone.status.processing', color: 'text-blue-500', bg: 'bg-blue-500/10', icon: Loader2 },
-  completed: { labelKey: 'examClone.status.completed', color: 'text-green-500', bg: 'bg-green-500/10', icon: CheckCircle },
+  completed: { labelKey: 'examClone.status.completed', color: 'text-primary', bg: 'bg-primary/10', icon: CheckCircle },
   failed: { labelKey: 'examClone.status.failed', color: 'text-red-500', bg: 'bg-red-500/10', icon: XCircle },
 };
 
@@ -304,8 +304,8 @@ export default function ExamClonePage() {
             </div>
             <div className="bg-card border border-border rounded-xl p-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-green-500" />
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold">
@@ -777,3 +777,5 @@ function UploadExamModal({
     </motion.div>
   );
 }
+
+

@@ -77,7 +77,7 @@ export function LearningPathsPage() {
 
   const getDifficultyBadge = (d: string) => {
     const colors: Record<string, string> = {
-      beginner: 'bg-green-500/10 text-green-500',
+      beginner: 'bg-primary/10 text-primary',
       intermediate: 'bg-amber-500/10 text-amber-500',
       advanced: 'bg-red-500/10 text-red-500',
     };
@@ -286,3 +286,5 @@ export function LearningPathsPage() {
 }
 
 export default LearningPathsPage;
+
+

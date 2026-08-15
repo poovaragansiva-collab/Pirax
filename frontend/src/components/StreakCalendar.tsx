@@ -85,7 +85,7 @@ export function StreakCalendar({ activeDays }: StreakCalendarProps) {
               key={day}
               className={`relative flex items-center justify-center h-9 rounded-lg text-xs transition-colors ${
                 isActive
-                  ? 'bg-green-500/15 text-green-600 dark:text-green-400 font-semibold'
+                  ? 'bg-primary/15 text-green-600 dark:text-green-400 font-semibold'
                   : 'text-muted-foreground hover:bg-muted/50'
               } ${isToday ? 'ring-2 ring-green-500/40' : ''}`}
             >
@@ -100,3 +100,5 @@ export function StreakCalendar({ activeDays }: StreakCalendarProps) {
     </div>
   );
 }
+
+

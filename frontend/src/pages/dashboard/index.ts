@@ -53,3 +53,5 @@ export { default as AppearanceSettingsPage } from './AppearanceSettingsPage';
 export { default as ChatPage } from './ChatPage';
 export { default as ChatHistoryPage } from './ChatHistoryPage';
 export { default as SubscriptionPage } from './SubscriptionPage';
+export { default as FocusPage } from './FocusPage';
+

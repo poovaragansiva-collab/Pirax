@@ -31,7 +31,7 @@ const SOURCE_OPTIONS_CONFIG: { key: SourceType; labelKey: string; descKey: strin
   { key: 'pdf', labelKey: 'generateNote.sources.pdf', descKey: 'generateNote.sources.pdfDesc', icon: FileText, color: 'bg-red-500/10 text-red-500' },
   { key: 'youtube', labelKey: 'generateNote.sources.youtube', descKey: 'generateNote.sources.youtubeDesc', icon: Youtube, color: 'bg-red-500/10 text-red-500' },
   { key: 'website', labelKey: 'generateNote.sources.website', descKey: 'generateNote.sources.websiteDesc', icon: Globe, color: 'bg-purple-500/10 text-purple-500' },
-  { key: 'audio', labelKey: 'generateNote.sources.audio', descKey: 'generateNote.sources.audioDesc', icon: Mic, color: 'bg-emerald-500/10 text-emerald-500' },
+  { key: 'audio', labelKey: 'generateNote.sources.audio', descKey: 'generateNote.sources.audioDesc', icon: Mic, color: 'bg-primary/10 text-primary' },
   { key: 'handwriting', labelKey: 'generateNote.sources.handwriting', descKey: 'generateNote.sources.handwritingDesc', icon: PenLine, color: 'bg-indigo-500/10 text-indigo-500' },
   { key: 'text', labelKey: 'generateNote.sources.text', descKey: 'generateNote.sources.textDesc', icon: FileText, color: 'bg-slate-500/10 text-slate-500' },
 ];
@@ -231,7 +231,7 @@ export function GenerateNotePage() {
                   <button
                     key={source.key}
                     onClick={() => handleSourceSelect(source.key)}
-                    className="flex flex-col items-center gap-2 p-4 bg-card border border-border rounded-xl hover:border-green-500/50 hover:shadow-md transition-all"
+                    className="flex flex-col items-center gap-2 p-4 bg-card border border-border rounded-xl hover:border-primary/50 hover:shadow-md transition-all"
                   >
                     <div className={`w-12 h-12 rounded-xl ${source.color} flex items-center justify-center`}>
                       <source.icon className="w-6 h-6" />
@@ -267,7 +267,7 @@ export function GenerateNotePage() {
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         placeholder="https://www.youtube.com/watch?v=..."
-                        className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                        className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                       />
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export function GenerateNotePage() {
                         </div>
                       </div>
                       <div className="p-3 flex items-center gap-2 text-xs text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-green-500" />
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
                         {t('generateNote.videoFound')}
                       </div>
                     </div>
@@ -305,11 +305,11 @@ export function GenerateNotePage() {
                       value={url}
                       onChange={(e) => setUrl(e.target.value)}
                       placeholder="https://en.wikipedia.org/wiki/..."
-                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                      className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                     />
                   </div>
                   {isValidUrl && url && (
-                    <p className="text-xs text-green-500 mt-1 flex items-center gap-1">
+                    <p className="text-xs text-primary mt-1 flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" /> {t('generateNote.urlValid')}
                     </p>
                   )}
@@ -325,7 +325,7 @@ export function GenerateNotePage() {
                     onChange={(e) => setText(e.target.value)}
                     placeholder={t('generateNote.pasteContentPlaceholder')}
                     rows={10}
-                    className="w-full p-4 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-y"
+                    className="w-full p-4 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-y"
                   />
                   <p className="text-xs text-muted-foreground mt-1">{t('generateNote.characters', { count: text.length })}</p>
                 </div>
@@ -339,7 +339,7 @@ export function GenerateNotePage() {
                   </label>
                   <div
                     onClick={() => fileRef.current?.click()}
-                    className="border-2 border-dashed border-border rounded-xl p-8 text-center cursor-pointer hover:border-green-500/50 hover:bg-green-500/5 transition-all"
+                    className="border-2 border-dashed border-border rounded-xl p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all"
                   >
                     <input
                       ref={fileRef}
@@ -364,7 +364,7 @@ export function GenerateNotePage() {
                   </div>
                   {file && (
                     <div className="flex items-center gap-2 mt-2 p-2 bg-muted/50 rounded-lg">
-                      <FileText className="w-4 h-4 text-green-500" />
+                      <FileText className="w-4 h-4 text-primary" />
                       <span className="text-sm flex-1 truncate">{file.name}</span>
                       <button onClick={() => setFile(null)} className="p-1 hover:bg-muted rounded">
                         <X className="w-4 h-4" />
@@ -382,7 +382,7 @@ export function GenerateNotePage() {
                   (sourceType === 'text' && text.length < 50) ||
                   ((sourceType === 'pdf' || sourceType === 'audio' || sourceType === 'handwriting') && !file)
                 }
-                className="w-full bg-green-500 hover:bg-green-600"
+                className="w-full bg-primary hover:bg-[#8e5243]"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
                 {t('generateNote.extractButton')}
@@ -399,8 +399,8 @@ export function GenerateNotePage() {
               exit={{ opacity: 0 }}
               className="text-center py-12"
             >
-              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
-                <Loader2 className="w-8 h-8 text-green-500 animate-spin" />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Loader2 className="w-8 h-8 text-primary animate-spin" />
               </div>
               <h3 className="text-lg font-semibold mb-2">{t('generateNote.processingTitle')}</h3>
               <p className="text-sm text-muted-foreground mb-6">{t('generateNote.processingWait')}</p>
@@ -409,9 +409,9 @@ export function GenerateNotePage() {
                 {processingSteps.map((stepText, i) => (
                   <div key={stepText} className="flex items-center gap-3">
                     {i < processingStep ? (
-                      <CheckCircle2 className="w-5 h-5 text-green-500" />
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
                     ) : i === processingStep ? (
-                      <Loader2 className="w-5 h-5 text-green-500 animate-spin" />
+                      <Loader2 className="w-5 h-5 text-primary animate-spin" />
                     ) : (
                       <div className="w-5 h-5 rounded-full border-2 border-muted" />
                     )}
@@ -433,8 +433,8 @@ export function GenerateNotePage() {
               exit={{ opacity: 0, y: -10 }}
               className="space-y-4"
             >
-              <div className="flex items-center gap-2 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-                <Check className="w-5 h-5 text-green-500" />
+              <div className="flex items-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                <Check className="w-5 h-5 text-primary" />
                 <span className="text-sm font-medium text-green-600">{t('generateNote.extractSuccess')}</span>
               </div>
 
@@ -445,7 +445,7 @@ export function GenerateNotePage() {
                   type="text"
                   value={generatedTitle}
                   onChange={(e) => setGeneratedTitle(e.target.value)}
-                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20"
+                  className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
               </div>
 
@@ -468,7 +468,7 @@ export function GenerateNotePage() {
                     {generatedTags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs bg-green-500/10 text-green-600 rounded-full flex items-center gap-1"
+                        className="px-2 py-1 text-xs bg-primary/10 text-green-600 rounded-full flex items-center gap-1"
                       >
                         {tag}
                         <button
@@ -505,7 +505,7 @@ export function GenerateNotePage() {
                   {t('generateNote.startOver')}
                 </Button>
                 <Button
-                  className="flex-1 bg-green-500 hover:bg-green-600"
+                  className="flex-1 bg-primary hover:bg-[#8e5243]"
                   onClick={handleSaveNote}
                   disabled={isProcessing}
                 >
@@ -524,3 +524,5 @@ export function GenerateNotePage() {
     </DashboardLayout>
   );
 }
+
+

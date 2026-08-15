@@ -24,12 +24,12 @@ import { cn } from '@/lib/utils';
 import { blogService, type BlogPost } from '@/services/blog';
 
 const CATEGORY_META: Record<string, { label: string; icon: React.ElementType; color: string }> = {
-  all: { label: 'All Posts', icon: BookOpen, color: 'from-green-500 to-emerald-500' },
+  all: { label: 'All Posts', icon: BookOpen, color: 'from-green-500 to-primary' },
   'study-tips': { label: 'Study Tips', icon: Lightbulb, color: 'from-amber-500 to-orange-500' },
   'ai-features': { label: 'AI Features', icon: Brain, color: 'from-violet-500 to-purple-500' },
   features: { label: 'Features', icon: Sparkles, color: 'from-blue-500 to-cyan-500' },
   productivity: { label: 'Productivity', icon: Rocket, color: 'from-pink-500 to-rose-500' },
-  'getting-started': { label: 'Getting Started', icon: BookOpen, color: 'from-teal-500 to-emerald-500' },
+  'getting-started': { label: 'Getting Started', icon: BookOpen, color: 'from-teal-500 to-primary' },
 };
 
 function formatDate(dateString: string) {
@@ -290,7 +290,7 @@ export function BlogPage() {
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
                 Tips, guides, and deep dives on study techniques, AI-powered learning,
-                and getting the most out of Studyield.
+                and getting the most out of PIRAX.
               </p>
 
               {/* Search Bar */}
@@ -309,7 +309,7 @@ export function BlogPage() {
                     setSearchQuery(e.target.value);
                     setPage(1);
                   }}
-                  className="pl-14 h-14 text-lg rounded-xl border-2 border-border focus:border-green-500"
+                  className="pl-14 h-14 text-lg rounded-xl border-2 border-border focus:border-primary"
                 />
               </motion.div>
             </motion.div>
@@ -336,7 +336,7 @@ export function BlogPage() {
                     className={cn(
                       'inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all',
                       isActive
-                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
+                        ? 'bg-gradient-to-r from-green-500 to-primary text-white shadow-lg'
                         : 'bg-card border-2 border-border hover:border-green-300 dark:hover:border-green-700'
                     )}
                   >
@@ -355,7 +355,7 @@ export function BlogPage() {
             <div className="max-w-6xl mx-auto">
               {loading ? (
                 <div className="flex items-center justify-center py-32">
-                  <Loader2 className="w-8 h-8 animate-spin text-green-500" />
+                  <Loader2 className="w-8 h-8 animate-spin text-primary" />
                 </div>
               ) : posts.length === 0 ? (
                 <div className="text-center py-20">
@@ -468,3 +468,5 @@ export function BlogPage() {
     </PublicLayout>
   );
 }
+
+

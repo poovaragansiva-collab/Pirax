@@ -205,7 +205,7 @@ export function ResearchProgressPage() {
             <p className="text-sm text-muted-foreground mb-1">{t('researchProgress.researchQuestion')}</p>
             <p className="text-sm font-medium line-clamp-3">{session.query}</p>
             <div className="flex items-center gap-2 mt-2">
-              <span className="px-2 py-0.5 bg-green-500/10 text-green-500 rounded-full text-xs font-medium capitalize">
+              <span className="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-medium capitalize">
                 {session.depth}
               </span>
             </div>
@@ -225,7 +225,7 @@ export function ResearchProgressPage() {
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-green-500 rounded-full"
+              className="h-full bg-primary rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${percentage}%` }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -251,9 +251,9 @@ export function ResearchProgressPage() {
                   transition={{ delay: 0.15 + idx * 0.1 }}
                   className={`bg-card rounded-2xl border p-5 transition-all duration-300 ${
                     status === 'active'
-                      ? 'border-green-500/50 shadow-lg shadow-green-500/5'
+                      ? 'border-primary/50 shadow-lg shadow-green-500/5'
                       : status === 'completed'
-                        ? 'border-green-500/30 bg-green-500/5'
+                        ? 'border-primary/30 bg-primary/5'
                         : 'border-border opacity-50'
                   }`}
                 >
@@ -261,16 +261,16 @@ export function ResearchProgressPage() {
                     <div
                       className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
                         status === 'active'
-                          ? 'bg-green-500/10'
+                          ? 'bg-primary/10'
                           : status === 'completed'
-                            ? 'bg-green-500/10'
+                            ? 'bg-primary/10'
                             : 'bg-muted/50'
                       }`}
                     >
                       {status === 'active' ? (
-                        <Loader2 className="w-5 h-5 text-green-500 animate-spin" />
+                        <Loader2 className="w-5 h-5 text-primary animate-spin" />
                       ) : status === 'completed' ? (
-                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <CheckCircle className="w-5 h-5 text-primary" />
                       ) : (
                         <Circle className="w-5 h-5 text-muted-foreground" />
                       )}
@@ -288,7 +288,7 @@ export function ResearchProgressPage() {
                     </div>
 
                     {status === 'active' && (
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                     )}
                   </div>
                 </motion.div>
@@ -311,10 +311,10 @@ export function ResearchProgressPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="mt-6 text-center"
             >
-              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3">
-                <CheckCircle className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
-              <p className="font-semibold text-green-500">{t('researchProgress.researchComplete')}</p>
+              <p className="font-semibold text-primary">{t('researchProgress.researchComplete')}</p>
               <p className="text-sm text-muted-foreground">{t('researchProgress.redirectingToReport')}</p>
             </motion.div>
           )}
@@ -334,7 +334,7 @@ export function ResearchProgressPage() {
               </p>
               <button
                 onClick={() => navigate('/dashboard/research')}
-                className="text-sm text-green-500 font-medium hover:underline"
+                className="text-sm text-primary font-medium hover:underline"
               >
                 {t('researchProgress.startNewResearch')}
               </button>
@@ -355,3 +355,5 @@ export function ResearchProgressPage() {
 }
 
 export default ResearchProgressPage;
+
+

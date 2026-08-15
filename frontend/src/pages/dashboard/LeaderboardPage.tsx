@@ -144,8 +144,8 @@ export default function LeaderboardPage() {
                   <div className="flex items-center gap-1 text-sm">
                     {userRank.rank <= 10 ? (
                       <>
-                        <ChevronUp className="w-4 h-4 text-green-500" />
-                        <span className="text-green-500">{t('leaderboardPage.top10')}</span>
+                        <ChevronUp className="w-4 h-4 text-primary" />
+                        <span className="text-primary">{t('leaderboardPage.top10')}</span>
                       </>
                     ) : (
                       <>
@@ -282,3 +282,5 @@ export default function LeaderboardPage() {
     </DashboardLayout>
   );
 }
+
+

@@ -167,11 +167,11 @@ export function FAQSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               {t('faq.title')}{' '}
               <span className="relative">
-                <span className="bg-gradient-to-r from-primary via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-primary to-teal-500 bg-clip-text text-transparent">
                   {t('faq.titleHighlight')}
                 </span>
                 <motion.div
-                  className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-primary via-emerald-500 to-teal-500 rounded-full"
+                  className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary to-teal-500 rounded-full"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -289,3 +289,5 @@ export function FAQSection() {
     </section>
   );
 }
+
+

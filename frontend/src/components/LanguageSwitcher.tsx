@@ -42,7 +42,7 @@ export function LanguageSwitcher() {
                 onClick={() => changeLanguage(lang)}
                 className={`w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${
                   i18n.language === lang
-                    ? 'bg-green-500/10 text-green-600 font-medium'
+                    ? 'bg-primary/10 text-green-600 font-medium'
                     : 'hover:bg-muted'
                 }`}
               >
@@ -55,3 +55,5 @@ export function LanguageSwitcher() {
     </div>
   );
 }
+
+

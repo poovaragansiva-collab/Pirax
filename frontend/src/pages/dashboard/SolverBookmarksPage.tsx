@@ -58,14 +58,14 @@ export function SolverBookmarksPage() {
           <div className="space-y-3">
             {filtered.map((b, i) => (
               <motion.div key={b.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }}
-                className="bg-card rounded-xl border p-4 hover:border-green-500/30 transition-colors cursor-pointer"
+                className="bg-card rounded-xl border p-4 hover:border-primary/30 transition-colors cursor-pointer"
                 onClick={() => navigate(`/dashboard/problem-solver/solution/${b.sessionId}`)}>
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium truncate">{b.problem}</p>
                     <div className="flex items-center gap-2 mt-1">
                       {b.subject && <span className="text-xs px-2 py-0.5 bg-muted rounded">{b.subject}</span>}
-                      {b.finalAnswer && <span className="text-xs text-green-500 font-medium">= {b.finalAnswer}</span>}
+                      {b.finalAnswer && <span className="text-xs text-primary font-medium">= {b.finalAnswer}</span>}
                     </div>
                     {b.notes && <p className="text-xs text-muted-foreground mt-1 italic">{b.notes}</p>}
                   </div>
@@ -81,3 +81,5 @@ export function SolverBookmarksPage() {
 }
 
 export default SolverBookmarksPage;
+
+

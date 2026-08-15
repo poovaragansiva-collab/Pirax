@@ -133,3 +133,4 @@ export const chatService = {
     await api.delete(ENDPOINTS.chat.delete(id));
   },
 };
+

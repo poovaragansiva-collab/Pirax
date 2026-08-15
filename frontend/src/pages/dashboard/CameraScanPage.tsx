@@ -237,3 +237,5 @@ export function CameraScanPage() {
 }
 
 export default CameraScanPage;
+
+

@@ -40,8 +40,8 @@ function LobbyPhase() {
   return (
     <div className="max-w-md mx-auto text-center space-y-6">
       <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
-        <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-          <Gamepad2 className="w-8 h-8 text-green-500" />
+        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <Gamepad2 className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-2xl font-bold mb-2">{t('liveQuiz.title')}</h2>
         <p className="text-sm text-muted-foreground">{t('liveQuiz.shareCode')}</p>
@@ -56,11 +56,11 @@ function LobbyPhase() {
       >
         <p className="text-xs text-muted-foreground mb-2">{t('liveQuiz.roomCode')}</p>
         <div className="flex items-center justify-center gap-3">
-          <span className="text-4xl font-mono font-bold tracking-[0.3em] text-green-500">
+          <span className="text-4xl font-mono font-bold tracking-[0.3em] text-primary">
             {roomCode}
           </span>
           <button onClick={copyCode} className="p-2 rounded-lg hover:bg-muted transition-colors">
-            {copied ? <Check className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5 text-muted-foreground" />}
+            {copied ? <Check className="w-5 h-5 text-primary" /> : <Copy className="w-5 h-5 text-muted-foreground" />}
           </button>
         </div>
       </motion.div>
@@ -79,7 +79,7 @@ function LobbyPhase() {
         <div className="space-y-2">
           {players.map((player) => (
             <div key={player.id} className="flex items-center gap-3 p-2 rounded-lg bg-muted/30">
-              <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center text-sm font-bold text-green-500">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
                 {player.name.charAt(0).toUpperCase()}
               </div>
               <span className="text-sm font-medium flex-1">{player.name}</span>
@@ -106,7 +106,7 @@ function LobbyPhase() {
         </Button>
         {isHost && (
           <Button
-            className="flex-1 bg-green-500 hover:bg-green-600"
+            className="flex-1 bg-primary hover:bg-[#8e5243]"
             onClick={startGame}
             disabled={players.length < 1}
           >
@@ -131,7 +131,7 @@ function CountdownPhase() {
       className="flex flex-col items-center justify-center py-20"
     >
       <motion.div
-        className="w-32 h-32 rounded-full bg-green-500/10 border-4 border-green-500 flex items-center justify-center mb-6"
+        className="w-32 h-32 rounded-full bg-primary/10 border-4 border-primary flex items-center justify-center mb-6"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
       >
@@ -139,7 +139,7 @@ function CountdownPhase() {
           key={countdownValue}
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="text-5xl font-bold text-green-500"
+          className="text-5xl font-bold text-primary"
         >
           {countdownValue > 0 ? countdownValue : ''}
         </motion.span>
@@ -158,7 +158,7 @@ function QuestionPhase() {
   if (!currentQuestion) return null;
 
   const timePercent = currentQuestion.timeLimit > 0 ? (timeLeft / currentQuestion.timeLimit) * 100 : 0;
-  const colors = ['bg-red-500', 'bg-blue-500', 'bg-amber-500', 'bg-green-500'];
+  const colors = ['bg-red-500', 'bg-blue-500', 'bg-amber-500', 'bg-primary'];
 
   return (
     <div className="max-w-xl mx-auto space-y-6">
@@ -193,7 +193,7 @@ function QuestionPhase() {
         <motion.div
           className={cn(
             'h-full rounded-full transition-colors',
-            timeLeft <= 5 ? 'bg-red-500' : timeLeft <= 10 ? 'bg-amber-500' : 'bg-green-500'
+            timeLeft <= 5 ? 'bg-red-500' : timeLeft <= 10 ? 'bg-amber-500' : 'bg-primary'
           )}
           animate={{ width: `${timePercent}%` }}
           transition={{ duration: 0.3 }}
@@ -228,7 +228,7 @@ function QuestionPhase() {
               className={cn(
                 'p-4 rounded-xl text-left font-medium transition-all border-2 min-h-[80px]',
                 isSelected
-                  ? 'border-green-500 bg-green-500/10 text-green-600 dark:text-green-400'
+                  ? 'border-primary bg-primary/10 text-green-600 dark:text-green-400'
                   : isDisabled
                   ? 'border-border opacity-50 cursor-not-allowed'
                   : 'border-transparent hover:border-white/20',
@@ -255,9 +255,9 @@ function QuestionPhase() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-center gap-2 p-3 bg-green-500/10 border border-green-500/20 rounded-xl"
+          className="flex items-center justify-center gap-2 p-3 bg-primary/10 border border-primary/20 rounded-xl"
         >
-          <Check className="w-4 h-4 text-green-500" />
+          <Check className="w-4 h-4 text-primary" />
           <span className="text-sm text-green-600 dark:text-green-400 font-medium">
             {t('liveQuiz.answerLocked')}
           </span>
@@ -286,10 +286,10 @@ function ResultPhase() {
       >
         <div className={cn(
           'w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4',
-          myAnswerCorrect ? 'bg-green-500/10' : 'bg-red-500/10'
+          myAnswerCorrect ? 'bg-primary/10' : 'bg-red-500/10'
         )}>
           {myAnswerCorrect ? (
-            <CheckCircle className="w-10 h-10 text-green-500" />
+            <CheckCircle className="w-10 h-10 text-primary" />
           ) : (
             <XCircle className="w-10 h-10 text-red-500" />
           )}
@@ -303,7 +303,7 @@ function ResultPhase() {
       </motion.div>
 
       {/* Correct answer */}
-      <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4">
+      <div className="bg-primary/10 border border-primary/30 rounded-xl p-4">
         <p className="text-xs text-muted-foreground mb-1">{t('liveQuiz.correctAnswer')}</p>
         <p className="font-semibold text-green-600 dark:text-green-400">{questionResult.correctAnswer}</p>
       </div>
@@ -317,7 +317,7 @@ function ResultPhase() {
               key={pa.playerId}
               className={cn(
                 'flex items-center gap-3 p-2 rounded-lg',
-                pa.correct ? 'bg-green-500/10' : 'bg-red-500/10'
+                pa.correct ? 'bg-primary/10' : 'bg-red-500/10'
               )}
             >
               <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-bold">
@@ -329,11 +329,11 @@ function ResultPhase() {
               </div>
               <div className="flex items-center gap-2">
                 {pa.correct ? (
-                  <CheckCircle className="w-4 h-4 text-green-500" />
+                  <CheckCircle className="w-4 h-4 text-primary" />
                 ) : (
                   <XCircle className="w-4 h-4 text-red-500" />
                 )}
-                <span className="text-sm font-bold text-green-500">+{pa.pointsEarned}</span>
+                <span className="text-sm font-bold text-primary">+{pa.pointsEarned}</span>
               </div>
             </div>
           ))}
@@ -355,7 +355,7 @@ function ResultPhase() {
                 {i + 1}
               </span>
               <span className="flex-1 truncate">{player.name}</span>
-              <span className="font-bold text-green-500">{player.score}</span>
+              <span className="font-bold text-primary">{player.score}</span>
             </div>
           ))}
         </div>
@@ -476,7 +476,7 @@ function FinishedPhase() {
                   </p>
                 )}
               </div>
-              <span className="font-bold text-green-500">{t('liveQuiz.pts', { score: player.score })}</span>
+              <span className="font-bold text-primary">{t('liveQuiz.pts', { score: player.score })}</span>
             </motion.div>
           );
         })}
@@ -492,7 +492,7 @@ function FinishedPhase() {
           {t('liveQuiz.backToDashboard')}
         </Button>
         <Button
-          className="flex-1 bg-green-500 hover:bg-green-600"
+          className="flex-1 bg-primary hover:bg-[#8e5243]"
           onClick={leaveRoom}
         >
           {t('liveQuiz.playAgain')}
@@ -559,8 +559,8 @@ function JoinOrCreate() {
   return (
     <div className="max-w-md mx-auto text-center space-y-6">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-        <div className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-          <Gamepad2 className="w-8 h-8 text-green-500" />
+        <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <Gamepad2 className="w-8 h-8 text-primary" />
         </div>
         <h2 className="text-2xl font-bold mb-2">{t('liveQuiz.title')}</h2>
         <p className="text-sm text-muted-foreground">
@@ -578,7 +578,7 @@ function JoinOrCreate() {
       {mode === 'choose' && hasStudySet ? (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-3">
           <Button
-            className="w-full bg-green-500 hover:bg-green-600 h-14 text-base"
+            className="w-full bg-primary hover:bg-[#8e5243] h-14 text-base"
             onClick={handleCreate}
             disabled={isConnecting || isCreating}
           >
@@ -610,7 +610,7 @@ function JoinOrCreate() {
               placeholder="ABCDEF"
               maxLength={6}
               autoFocus
-              className="w-full text-center text-2xl font-mono tracking-[0.5em] px-4 py-3 bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+              className="w-full text-center text-2xl font-mono tracking-[0.5em] px-4 py-3 bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </div>
           <div className="flex gap-3">
@@ -620,7 +620,7 @@ function JoinOrCreate() {
               </Button>
             )}
             <Button
-              className={cn('bg-green-500 hover:bg-green-600', hasStudySet ? 'flex-1' : 'w-full')}
+              className={cn('bg-primary hover:bg-[#8e5243]', hasStudySet ? 'flex-1' : 'w-full')}
               onClick={handleJoin}
               disabled={joinCode.length !== 6 || isJoining || isConnecting}
             >
@@ -674,3 +674,5 @@ export function LiveQuizPage() {
     </DashboardLayout>
   );
 }
+
+

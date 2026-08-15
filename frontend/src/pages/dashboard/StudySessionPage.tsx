@@ -33,8 +33,8 @@ const qualityRatings = [
   { quality: 1 as const, labelKey: 'studySession.again', descKey: 'studySession.againDesc', icon: XCircle, color: 'bg-red-500' },
   { quality: 2 as const, labelKey: 'studySession.hard', descKey: 'studySession.hardDesc', icon: ThumbsDown, color: 'bg-orange-500' },
   { quality: 3 as const, labelKey: 'studySession.good', descKey: 'studySession.goodDesc', icon: ThumbsUp, color: 'bg-amber-500' },
-  { quality: 4 as const, labelKey: 'studySession.easy', descKey: 'studySession.easyDesc', icon: CheckCircle, color: 'bg-green-500' },
-  { quality: 5 as const, labelKey: 'studySession.perfect', descKey: 'studySession.perfectDesc', icon: Sparkles, color: 'bg-emerald-500' },
+  { quality: 4 as const, labelKey: 'studySession.easy', descKey: 'studySession.easyDesc', icon: CheckCircle, color: 'bg-primary' },
+  { quality: 5 as const, labelKey: 'studySession.perfect', descKey: 'studySession.perfectDesc', icon: Sparkles, color: 'bg-primary' },
 ];
 
 function FlipCard({
@@ -80,12 +80,12 @@ function FlipCard({
         {/* Back */}
         <div
           className={cn(
-            'absolute inset-0 w-full h-full rounded-2xl border-2 border-green-500/50 bg-card p-6 flex flex-col items-center justify-center backface-hidden',
+            'absolute inset-0 w-full h-full rounded-2xl border-2 border-primary/50 bg-card p-6 flex flex-col items-center justify-center backface-hidden',
             isFlipped && 'shadow-lg'
           )}
           style={{ transform: 'rotateY(180deg)' }}
         >
-          <span className="text-xs uppercase tracking-wider text-green-500 mb-2">
+          <span className="text-xs uppercase tracking-wider text-primary mb-2">
             {t('studySession.answer')}
           </span>
           <p className="text-lg md:text-xl font-medium text-center line-clamp-3">{back}</p>
@@ -118,8 +118,8 @@ function SessionComplete({
       animate={{ opacity: 1, scale: 1 }}
       className="text-center max-w-md mx-auto"
     >
-      <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
-        <Trophy className="w-10 h-10 text-green-500" />
+      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+        <Trophy className="w-10 h-10 text-primary" />
       </div>
       <h2 className="text-2xl font-bold mb-2">{t('studySession.sessionComplete')}</h2>
       <p className="text-muted-foreground mb-4">{t('studySession.greatJobReviewing')}</p>
@@ -129,9 +129,9 @@ function SessionComplete({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full mb-6"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
         >
-          <Zap className="w-5 h-5 text-green-500" />
+          <Zap className="w-5 h-5 text-primary" />
           <span className="font-bold text-green-600 dark:text-green-400">{t('studySession.xpEarned', { xp: xpEarned })}</span>
         </motion.div>
       )}
@@ -145,8 +145,8 @@ function SessionComplete({
           <p className="text-xs text-muted-foreground">{t('studySession.reviewed')}</p>
         </div>
         <div className="bg-card border border-border rounded-xl p-4">
-          <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mx-auto mb-2">
-            <CheckCircle className="w-5 h-5 text-green-500" />
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <CheckCircle className="w-5 h-5 text-primary" />
           </div>
           <p className="text-2xl font-bold">{stats.correct}</p>
           <p className="text-xs text-muted-foreground">{t('studySession.correct')}</p>
@@ -162,7 +162,7 @@ function SessionComplete({
 
       <div className="bg-card border border-border rounded-xl p-6 mb-8">
         <div className="flex items-center justify-center gap-2 mb-2">
-          <Target className="w-5 h-5 text-green-500" />
+          <Target className="w-5 h-5 text-primary" />
           <span className="text-sm font-medium">{t('studySession.accuracy')}</span>
         </div>
         <p className="text-4xl font-bold">{accuracy}%</p>
@@ -172,7 +172,7 @@ function SessionComplete({
         <Button variant="outline" className="flex-1" asChild>
           <Link to={`/dashboard/study-sets/${studySetId}`}>{t('studySession.backToSet')}</Link>
         </Button>
-        <Button className="flex-1 bg-green-500 hover:bg-green-600" onClick={onRestart}>
+        <Button className="flex-1 bg-primary hover:bg-[#8e5243]" onClick={onRestart}>
           <RotateCcw className="w-4 h-4 mr-2" />
           {t('studySession.studyAgain')}
         </Button>
@@ -289,7 +289,7 @@ export function StudySessionPage() {
               </span>
               <div className="w-24 h-2 bg-muted rounded-full overflow-hidden">
                 <motion.div
-                  className="h-full bg-green-500"
+                  className="h-full bg-primary"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.3 }}
@@ -402,9 +402,9 @@ export function StudySessionPage() {
                           className={cn(
                             'w-1.5 h-1.5 rounded-full transition-all',
                             actualIdx === currentStudyIndex
-                              ? 'w-4 bg-green-500'
+                              ? 'w-4 bg-primary'
                               : actualIdx < currentStudyIndex
-                              ? 'bg-green-500/40'
+                              ? 'bg-primary/40'
                               : 'bg-muted-foreground/30'
                           )}
                         />
@@ -438,8 +438,8 @@ export function StudySessionPage() {
                         1: 'bg-red-500',
                         2: 'bg-orange-500',
                         3: 'bg-amber-500',
-                        4: 'bg-green-500',
-                        5: 'bg-emerald-500',
+                        4: 'bg-primary',
+                        5: 'bg-primary',
                       };
                       const canRate = isFlipped || clozeRevealed;
                       return (
@@ -470,3 +470,5 @@ export function StudySessionPage() {
     </DashboardLayout>
   );
 }
+
+

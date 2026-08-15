@@ -117,7 +117,7 @@ export function ImageOcclusionEditor({ imageUrl, regions, onRegionsChange, onIma
     return (
       <div
         onClick={() => fileRef.current?.click()}
-        className="border-2 border-dashed border-border rounded-xl p-12 text-center cursor-pointer hover:border-green-500/30 hover:bg-green-500/5 transition-all"
+        className="border-2 border-dashed border-border rounded-xl p-12 text-center cursor-pointer hover:border-primary/30 hover:bg-primary/5 transition-all"
       >
         <input
           ref={fileRef}
@@ -148,7 +148,7 @@ export function ImageOcclusionEditor({ imageUrl, regions, onRegionsChange, onIma
           type="button"
           onClick={() => setTool('draw')}
           className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-            tool === 'draw' ? 'bg-green-500/10 text-green-600 border border-green-500/30' : 'bg-muted text-muted-foreground hover:text-foreground'
+            tool === 'draw' ? 'bg-primary/10 text-green-600 border border-primary/30' : 'bg-muted text-muted-foreground hover:text-foreground'
           }`}
         >
           <Square className="w-3.5 h-3.5" />
@@ -158,7 +158,7 @@ export function ImageOcclusionEditor({ imageUrl, regions, onRegionsChange, onIma
           type="button"
           onClick={() => setTool('select')}
           className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-            tool === 'select' ? 'bg-green-500/10 text-green-600 border border-green-500/30' : 'bg-muted text-muted-foreground hover:text-foreground'
+            tool === 'select' ? 'bg-primary/10 text-green-600 border border-primary/30' : 'bg-muted text-muted-foreground hover:text-foreground'
           }`}
         >
           <MousePointer2 className="w-3.5 h-3.5" />
@@ -268,7 +268,7 @@ export function ImageOcclusionEditor({ imageUrl, regions, onRegionsChange, onIma
               value={editLabel}
               onChange={(e) => { setEditLabel(e.target.value); updateLabel(selectedId, e.target.value); }}
               placeholder={t('imageOcclusion.labelPlaceholder')}
-              className="flex-1 px-3 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+              className="flex-1 px-3 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
             />
           </motion.div>
         )}
@@ -281,3 +281,5 @@ export function ImageOcclusionEditor({ imageUrl, regions, onRegionsChange, onIma
     </div>
   );
 }
+
+

@@ -35,3 +35,4 @@ export const notesService = {
     return response.data;
   },
 };
+

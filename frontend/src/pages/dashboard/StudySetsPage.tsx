@@ -29,7 +29,7 @@ function StudySetCard({ studySet, onDelete }: { studySet: StudySet; onDelete: (i
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-card border border-border rounded-xl p-4 hover:border-green-500/50 transition-colors group h-[140px] flex flex-col"
+      className="bg-card border border-border rounded-xl p-4 hover:border-primary/50 transition-colors group h-[140px] flex flex-col"
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
@@ -40,14 +40,14 @@ function StudySetCard({ studySet, onDelete }: { studySet: StudySet; onDelete: (i
               className="w-12 h-12 rounded-lg object-cover"
             />
           ) : (
-            <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center">
-              <Library className="w-6 h-6 text-green-500" />
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Library className="w-6 h-6 text-primary" />
             </div>
           )}
           <div>
             <Link
               to={`/dashboard/study-sets/${studySet.id}`}
-              className="font-semibold hover:text-green-500 transition-colors"
+              className="font-semibold hover:text-primary transition-colors"
             >
               {studySet.title}
             </Link>
@@ -200,7 +200,7 @@ export function StudySetsPage() {
               {t('studySets.description')}
             </p>
           </div>
-          <Button className="bg-green-500 hover:bg-green-600" asChild>
+          <Button className="bg-primary hover:bg-[#8e5243]" asChild>
             <Link to="/dashboard/study-sets/create">
               <Plus className="w-4 h-4 mr-2" />
               {t('studySets.create')}
@@ -216,7 +216,7 @@ export function StudySetsPage() {
             placeholder={t('common.search') + '...'}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+            className="w-full pl-10 pr-4 py-2.5 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
           />
         </div>
 
@@ -237,14 +237,14 @@ export function StudySetsPage() {
         {/* Empty state */}
         {!isLoading && studySets.length === 0 && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-              <Library className="w-8 h-8 text-green-500" />
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <Library className="w-8 h-8 text-primary" />
             </div>
             <h3 className="text-lg font-semibold mb-2">{t('studySets.noSets')}</h3>
             <p className="text-muted-foreground mb-4">
               {t('studySets.createFirst')}
             </p>
-            <Button className="bg-green-500 hover:bg-green-600" asChild>
+            <Button className="bg-primary hover:bg-[#8e5243]" asChild>
               <Link to="/dashboard/study-sets/create">
                 <Plus className="w-4 h-4 mr-2" />
                 {t('studySets.create')}
@@ -287,3 +287,5 @@ export function StudySetsPage() {
     </DashboardLayout>
   );
 }
+
+

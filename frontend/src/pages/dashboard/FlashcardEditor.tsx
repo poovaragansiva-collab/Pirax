@@ -284,7 +284,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                 onClick={() => setActiveTab(tab.key)}
                 className={`flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 px-5 py-3 text-sm font-medium border-b-2 transition-colors ${
                   activeTab === tab.key
-                    ? 'border-green-500 text-green-600 dark:text-green-400 bg-green-500/5'
+                    ? 'border-primary text-green-600 dark:text-green-400 bg-primary/5'
                     : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'
                 }`}
               >
@@ -301,9 +301,9 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="flex items-start gap-3 p-4 bg-green-500/5 border border-green-500/10 rounded-lg"
+                className="flex items-start gap-3 p-4 bg-primary/5 border border-primary/10 rounded-lg"
               >
-                <Lightbulb className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                <Lightbulb className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">
                   <p className="font-medium text-foreground mb-1">{t('flashcardEditor.tipsTitle')}</p>
                   <ul className="space-y-0.5 list-disc list-inside text-xs">
@@ -334,7 +334,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                     onChange={(e) => setAiContent(e.target.value)}
                     placeholder={t('flashcardEditor.pastePlaceholder')}
                     rows={6}
-                    className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-y"
+                    className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-y"
                   />
                   <p className="text-xs text-muted-foreground mt-1">
                     {aiContent.length < 50 ? t('flashcardEditor.charsNeeded', { count: 50 - aiContent.length }) : t('flashcardEditor.chars', { count: aiContent.length })}
@@ -350,7 +350,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                           key={n}
                           type="button"
                           onClick={() => setAiCount(n)}
-                          className={`px-2.5 py-1 text-xs rounded-md border transition-colors ${aiCount === n ? 'border-green-500 bg-green-500/10 text-green-600 dark:text-green-400' : 'border-border hover:border-green-500/50'}`}
+                          className={`px-2.5 py-1 text-xs rounded-md border transition-colors ${aiCount === n ? 'border-primary bg-primary/10 text-green-600 dark:text-green-400' : 'border-border hover:border-primary/50'}`}
                         >
                           {n}
                         </button>
@@ -359,7 +359,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                   </div>
                   <div>
                     <label className="block text-xs font-medium mb-1.5">{t('flashcardEditor.cardType')}</label>
-                    <select value={aiCardType} onChange={(e) => setAiCardType(e.target.value as typeof aiCardType)} className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20">
+                    <select value={aiCardType} onChange={(e) => setAiCardType(e.target.value as typeof aiCardType)} className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
                       <option value="qa">{t('flashcardEditor.qa')}</option>
                       <option value="fill_blank">{t('flashcardEditor.fillBlank')}</option>
                       <option value="true_false">{t('flashcardEditor.trueFalse')}</option>
@@ -367,7 +367,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                   </div>
                   <div>
                     <label className="block text-xs font-medium mb-1.5">{t('flashcardEditor.difficulty')}</label>
-                    <select value={aiDifficulty} onChange={(e) => setAiDifficulty(e.target.value as typeof aiDifficulty)} className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20">
+                    <select value={aiDifficulty} onChange={(e) => setAiDifficulty(e.target.value as typeof aiDifficulty)} className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20">
                       <option value="easy">{t('flashcardEditor.easy')}</option>
                       <option value="medium">{t('flashcardEditor.medium')}</option>
                       <option value="hard">{t('flashcardEditor.hard')}</option>
@@ -379,7 +379,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                   <div className="text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg p-3">{genError}</div>
                 )}
 
-                <Button type="button" onClick={handleAIGenerate} disabled={aiContent.trim().length < 50 || isGenerating} className="w-full bg-green-500 hover:bg-green-600">
+                <Button type="button" onClick={handleAIGenerate} disabled={aiContent.trim().length < 50 || isGenerating} className="w-full bg-primary hover:bg-[#8e5243]">
                   {isGenerating ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" />{t('flashcardEditor.generatingCards', { count: aiCount })}</>) : (<><Sparkles className="w-4 h-4 mr-2" />{t('flashcardEditor.generateCards', { count: aiCount })}</>)}
                 </Button>
               </motion.div>
@@ -447,7 +447,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                     transition={{ duration: 0.2 }}
                     layout
                   >
-                    <div className={`p-4 bg-card border rounded-xl transition-all ${card.selected ? 'border-green-500/50 bg-green-500/5' : 'border-border hover:border-green-500/20'}`}>
+                    <div className={`p-4 bg-card border rounded-xl transition-all ${card.selected ? 'border-primary/50 bg-primary/5' : 'border-border hover:border-primary/20'}`}>
                       {/* Card header */}
                       <div className="flex items-center gap-2 mb-3">
                         <button
@@ -455,7 +455,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                           onClick={() => toggleSelect(card.id)}
                           className="p-0.5 text-muted-foreground hover:text-foreground transition-colors"
                         >
-                          {card.selected ? <CheckSquare className="w-4 h-4 text-green-500" /> : <Square className="w-4 h-4" />}
+                          {card.selected ? <CheckSquare className="w-4 h-4 text-primary" /> : <Square className="w-4 h-4" />}
                         </button>
                         <span className="text-xs text-muted-foreground font-mono font-medium">{idx + 1}</span>
                         {card.source !== 'manual' && (
@@ -524,7 +524,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                             onClick={() => setCards((prev) => prev.map((c) => c.id === card.id ? { ...c, type: tp.key } : c))}
                             className={`flex items-center gap-1 px-2 py-1 text-[10px] font-medium rounded-md transition-colors ${
                               card.type === tp.key
-                                ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/30'
+                                ? 'bg-primary/10 text-green-600 dark:text-green-400 border border-primary/30'
                                 : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                             }`}
                           >
@@ -565,7 +565,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                               }}
                               placeholder={t('flashcardEditor.termPlaceholder')}
                               rows={2}
-                              className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-none overflow-hidden"
+                              className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none overflow-hidden"
                               style={{ minHeight: '60px' }}
                               onInput={(e) => { const target = e.target as HTMLTextAreaElement; target.style.height = 'auto'; target.style.height = Math.max(60, target.scrollHeight) + 'px'; }}
                             />
@@ -583,7 +583,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                               }}
                               placeholder={t('flashcardEditor.definitionPlaceholder')}
                               rows={2}
-                              className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-none overflow-hidden"
+                              className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none overflow-hidden"
                               style={{ minHeight: '60px' }}
                               onInput={(e) => { const target = e.target as HTMLTextAreaElement; target.style.height = 'auto'; target.style.height = Math.max(60, target.scrollHeight) + 'px'; }}
                             />
@@ -612,7 +612,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
                       >
                         <p className="text-sm mb-2.5">{assistSuggestion}</p>
                         <div className="flex gap-2">
-                          <button type="button" onClick={() => acceptSuggestion(card.id, assistSuggestion)} className="text-xs px-3 py-1.5 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center gap-1">
+                          <button type="button" onClick={() => acceptSuggestion(card.id, assistSuggestion)} className="text-xs px-3 py-1.5 bg-primary text-white rounded-lg hover:bg-[#8e5243] transition-colors flex items-center gap-1">
                             <Check className="w-3 h-3" />{t('flashcardEditor.accept')}
                           </button>
                           <button type="button" onClick={() => { setAssistCardId(null); setAssistSuggestion(null); }} className="text-xs px-3 py-1.5 bg-muted text-muted-foreground rounded-lg hover:bg-muted/80 transition-colors">
@@ -631,7 +631,7 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
           <button
             type="button"
             onClick={addEmptyCard}
-            className="w-full flex items-center justify-center gap-2 py-4 border-2 border-dashed border-border rounded-xl text-sm font-medium text-muted-foreground hover:text-green-500 hover:border-green-500/30 hover:bg-green-500/5 transition-all"
+            className="w-full flex items-center justify-center gap-2 py-4 border-2 border-dashed border-border rounded-xl text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all"
           >
             <Plus className="w-4 h-4" />{t('flashcardEditor.addCard')}
           </button>
@@ -665,3 +665,5 @@ export const FlashcardEditor = forwardRef<FlashcardEditorRef, FlashcardEditorPro
     );
   }
 );
+
+

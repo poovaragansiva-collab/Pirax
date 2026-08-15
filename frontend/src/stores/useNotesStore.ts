@@ -134,3 +134,4 @@ export const useNotesStore = create<NotesState>((set) => ({
 
   clearNotes: () => set({ notes: [], currentNote: null }),
 }));
+

@@ -23,3 +23,5 @@ export function QueryProvider({ children }: { children: ReactNode }) {
 }
 
 export { queryClient };
+
+

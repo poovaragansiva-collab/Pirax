@@ -135,7 +135,7 @@ export function FAQPage() {
       id: 'flashcards',
       title: t('faqPage.categories.flashcards'),
       icon: BookOpen,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-green-500 to-primary',
       faqs: [
         {
           question: t('faqPage.flashcards.q1'),
@@ -417,7 +417,7 @@ export function FAQPage() {
                     to="/support"
                     className="block bg-card border-2 border-border rounded-2xl p-6 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-lg transition-all text-center group"
                   >
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-teal-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                       <BookOpen className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="font-bold mb-2">{t('faqPage.quickLinks.helpCenter')}</h3>
@@ -476,3 +476,5 @@ export function FAQPage() {
     </PublicLayout>
   );
 }
+
+

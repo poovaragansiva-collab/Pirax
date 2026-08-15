@@ -11,8 +11,8 @@ function getIntensity(count: number, max: number): string {
   const ratio = count / Math.max(max, 1);
   if (ratio <= 0.25) return 'bg-green-200 dark:bg-green-900';
   if (ratio <= 0.5) return 'bg-green-400 dark:bg-green-700';
-  if (ratio <= 0.75) return 'bg-green-500 dark:bg-green-600';
-  return 'bg-green-600 dark:bg-green-500';
+  if (ratio <= 0.75) return 'bg-primary dark:bg-[#8e5243]';
+  return 'bg-[#8e5243] dark:bg-primary';
 }
 
 export function StudyHeatmap({ data, weeks = 52 }: StudyHeatmapProps) {
@@ -111,8 +111,8 @@ export function StudyHeatmap({ data, weeks = 52 }: StudyHeatmapProps) {
         <div className="w-[12px] h-[12px] rounded-[2px] bg-muted" />
         <div className="w-[12px] h-[12px] rounded-[2px] bg-green-200 dark:bg-green-900" />
         <div className="w-[12px] h-[12px] rounded-[2px] bg-green-400 dark:bg-green-700" />
-        <div className="w-[12px] h-[12px] rounded-[2px] bg-green-500 dark:bg-green-600" />
-        <div className="w-[12px] h-[12px] rounded-[2px] bg-green-600 dark:bg-green-500" />
+        <div className="w-[12px] h-[12px] rounded-[2px] bg-primary dark:bg-[#8e5243]" />
+        <div className="w-[12px] h-[12px] rounded-[2px] bg-[#8e5243] dark:bg-primary" />
         <span>{t('studyHeatmap.more')}</span>
       </div>
 
@@ -129,3 +129,5 @@ export function StudyHeatmap({ data, weeks = 52 }: StudyHeatmapProps) {
     </div>
   );
 }
+
+

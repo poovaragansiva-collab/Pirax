@@ -471,7 +471,7 @@ export function SolutionPage() {
                     <span
                       className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                         session.isCorrect
-                          ? 'bg-green-500/10 text-green-500'
+                          ? 'bg-primary/10 text-primary'
                           : 'bg-red-500/10 text-red-500'
                       }`}
                     >
@@ -525,10 +525,10 @@ export function SolutionPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="bg-green-500/5 border border-green-500/20 rounded-2xl p-5 mb-6"
+            className="bg-primary/5 border border-primary/20 rounded-2xl p-5 mb-6"
           >
             <div className="flex items-center gap-2 mb-2">
-              <ShieldCheck className="w-5 h-5 text-green-500" />
+              <ShieldCheck className="w-5 h-5 text-primary" />
               <span className="font-semibold text-sm">{t('solution.finalAnswer')}</span>
             </div>
             <div className="text-lg font-medium">
@@ -574,7 +574,7 @@ export function SolutionPage() {
               size="sm"
               onClick={() => navigate(`/dashboard/problem-solver/formula-cards/${id}`)}
             >
-              <FlipVertical className="w-4 h-4 mr-1.5 text-green-500" />
+              <FlipVertical className="w-4 h-4 mr-1.5 text-primary" />
               {t('solution.formulaCards')}
             </Button>
             <Button
@@ -702,8 +702,8 @@ export function SolutionPage() {
                     onClick={() => toggleStep(idx)}
                     className="w-full flex items-center gap-3 p-4 hover:bg-muted/30 transition-colors text-left"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-bold text-green-500">
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold text-primary">
                         {idx + 1}
                       </span>
                     </div>
@@ -727,7 +727,7 @@ export function SolutionPage() {
                         >
                           {copiedStep === idx ? (
                             <>
-                              <Check className="w-3 h-3 text-green-500" />
+                              <Check className="w-3 h-3 text-primary" />
                               {t('solution.copied')}
                             </>
                           ) : (
@@ -745,9 +745,9 @@ export function SolutionPage() {
 
               {/* Verification summary */}
               {verificationOutput && (
-                <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4 mt-4">
+                <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mt-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <ShieldCheck className="w-4 h-4 text-green-500" />
+                    <ShieldCheck className="w-4 h-4 text-primary" />
                     <span className="text-sm font-semibold">{t('solution.verification')}</span>
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -765,7 +765,7 @@ export function SolutionPage() {
                 >
                   {copiedStep === -1 ? (
                     <>
-                      <Check className="w-4 h-4 mr-1 text-green-500" />
+                      <Check className="w-4 h-4 mr-1 text-primary" />
                       {t('solution.copiedFull')}
                     </>
                   ) : (
@@ -801,7 +801,7 @@ export function SolutionPage() {
                           className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
                         >
                           {copiedStep === 100 + idx ? (
-                            <Check className="w-3 h-3 text-green-500" />
+                            <Check className="w-3 h-3 text-primary" />
                           ) : (
                             <Copy className="w-3 h-3" />
                           )}
@@ -810,7 +810,7 @@ export function SolutionPage() {
                         <button
                           onClick={() => runCode(block.code)}
                           disabled={isRunning}
-                          className="flex items-center gap-1 text-xs text-green-500 hover:text-green-600 font-medium"
+                          className="flex items-center gap-1 text-xs text-primary hover:text-green-600 font-medium"
                         >
                           <Play className="w-3 h-3" />
                           {t('solution.run')}
@@ -951,8 +951,8 @@ export function SolutionPage() {
                   </div>
 
                   <div className="flex items-start gap-3 p-3 bg-muted/30 rounded-lg">
-                    <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
-                      <ShieldCheck className="w-4 h-4 text-green-500" />
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-4 h-4 text-primary" />
                     </div>
                     <div>
                       <p className="text-sm font-medium">{t('solution.aiVerifierAgent')}</p>
@@ -960,9 +960,9 @@ export function SolutionPage() {
                         {t('solution.aiVerifierAgentDesc')}
                       </p>
                       <div className="flex items-center gap-1 mt-1">
-                        <div className="h-1.5 w-20 bg-green-500/20 rounded-full overflow-hidden">
+                        <div className="h-1.5 w-20 bg-primary/20 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-green-500 rounded-full"
+                            className="h-full bg-primary rounded-full"
                             style={{
                               width: `${(extractMetadata(session.verificationResult).confidence ?? 0.9) * 100}%`,
                             }}
@@ -994,3 +994,5 @@ export function SolutionPage() {
 }
 
 export default SolutionPage;
+
+

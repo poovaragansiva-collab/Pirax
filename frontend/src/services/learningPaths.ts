@@ -63,3 +63,4 @@ export const learningPathsService = {
     await api.delete(ENDPOINTS.learningPaths.delete(id));
   },
 };
+

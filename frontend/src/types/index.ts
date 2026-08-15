@@ -408,3 +408,4 @@ export interface UpdateNoteRequest {
   isPinned?: boolean;
   color?: string;
 }
+

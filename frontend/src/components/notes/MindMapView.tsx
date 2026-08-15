@@ -519,16 +519,16 @@ function MindMapNode({
     const base = 'rounded-xl border-2 flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 shadow-sm hover:shadow-md';
 
     if (isSelected) {
-      return `${base} border-green-500 bg-green-500/10 ring-2 ring-green-500/30`;
+      return `${base} border-primary bg-primary/10 ring-2 ring-green-500/30`;
     }
 
     switch (node.type) {
       case 'root':
-        return `${base} border-green-500 bg-green-500 text-white font-bold`;
+        return `${base} border-primary bg-primary text-white font-bold`;
       case 'tag':
         return `${base} border-current bg-current/10`;
       case 'note':
-        return `${base} border-border bg-card hover:border-green-500/50`;
+        return `${base} border-border bg-card hover:border-primary/50`;
       case 'heading':
         return `${base} border-border/50 bg-muted/50`;
       case 'concept':
@@ -775,7 +775,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
           <Brain className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
           <h3 className="text-xl font-semibold mb-2">{t('mindMap.noNotesTitle')}</h3>
           <p className="text-muted-foreground mb-6">{t('mindMap.noNotesDescription')}</p>
-          <button onClick={onClose} className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          <button onClick={onClose} className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-[#8e5243]">
             {t('mindMap.close')}
           </button>
         </div>
@@ -794,7 +794,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
       <div className="h-14 bg-card border-b border-border flex items-center justify-between px-4 shrink-0">
         <div className="flex items-center gap-4">
           <h2 className="font-semibold flex items-center gap-2">
-            <Brain className="w-5 h-5 text-green-500" />
+            <Brain className="w-5 h-5 text-primary" />
             {t('mindMap.title')}
           </h2>
 
@@ -803,7 +803,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
             <button
               onClick={() => setMapMode('single')}
               className={cn('px-2 py-1 rounded text-xs font-medium flex items-center gap-1',
-                mapMode === 'single' ? 'bg-green-500 text-white shadow-sm' : 'hover:bg-card/50'
+                mapMode === 'single' ? 'bg-primary text-white shadow-sm' : 'hover:bg-card/50'
               )}
               title={t('mindMap.single')}
             >
@@ -813,7 +813,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
             <button
               onClick={() => setMapMode('all')}
               className={cn('px-2 py-1 rounded text-xs font-medium flex items-center gap-1',
-                mapMode === 'all' ? 'bg-green-500 text-white shadow-sm' : 'hover:bg-card/50'
+                mapMode === 'all' ? 'bg-primary text-white shadow-sm' : 'hover:bg-card/50'
               )}
               title={t('mindMap.all')}
             >
@@ -845,7 +845,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
                       }}
                       className={cn(
                         'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted',
-                        note.id === selectedNoteId && 'bg-green-500/10 text-green-600'
+                        note.id === selectedNoteId && 'bg-primary/10 text-green-600'
                       )}
                     >
                       <FileText className="w-3.5 h-3.5 shrink-0" />
@@ -871,7 +871,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={t('mindMap.searchNodes')}
-              className="pl-8 pr-3 py-1.5 w-48 text-sm bg-muted rounded-lg border-0 outline-none focus:ring-2 focus:ring-green-500/20"
+              className="pl-8 pr-3 py-1.5 w-48 text-sm bg-muted rounded-lg border-0 outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
 
@@ -1093,7 +1093,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
               {selectedNodeData.noteId && (
                 <button
                   onClick={() => onNoteClick(selectedNodeData.noteId!)}
-                  className="w-full py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2 bg-primary hover:bg-[#8e5243] text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   <Play className="w-4 h-4" />
                   {t('mindMap.openNote')}
@@ -1111,7 +1111,7 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
         </p>
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded bg-green-500" />
+            <div className="w-3 h-3 rounded bg-primary" />
             <span className="text-[10px] text-muted-foreground">
               {mapMode === 'single' ? t('mindMap.noteTitle') : t('mindMap.studySet')}
             </span>
@@ -1150,3 +1150,5 @@ export function MindMapView({ notes, onNoteClick, onClose }: MindMapViewProps) {
     </motion.div>
   );
 }
+
+

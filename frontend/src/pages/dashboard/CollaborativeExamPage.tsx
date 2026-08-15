@@ -482,7 +482,7 @@ export default function CollaborativeExamPage() {
                     className="p-2 rounded-lg hover:bg-muted transition-colors"
                   >
                     {copied ? (
-                      <Check className="w-5 h-5 text-green-500" />
+                      <Check className="w-5 h-5 text-primary" />
                     ) : (
                       <Copy className="w-5 h-5 text-muted-foreground" />
                     )}
@@ -609,7 +609,7 @@ export default function CollaborativeExamPage() {
                     const isCorrect = option === currentQuestion.correctAnswer;
                     const showCorrectAnswer = showResult && isCorrect;
                     const showWrongAnswer = showResult && isSelected && !isCorrect;
-                    const colors = ['bg-red-500', 'bg-blue-500', 'bg-amber-500', 'bg-green-500'];
+                    const colors = ['bg-red-500', 'bg-blue-500', 'bg-amber-500', 'bg-primary'];
 
                     return (
                       <motion.button
@@ -624,7 +624,7 @@ export default function CollaborativeExamPage() {
                         className={cn(
                           'p-4 rounded-xl text-left font-medium transition-all border-2 min-h-[80px]',
                           showCorrectAnswer
-                            ? 'border-green-500 bg-green-500/10'
+                            ? 'border-primary bg-primary/10'
                             : showWrongAnswer
                             ? 'border-red-500 bg-red-500/10'
                             : isSelected
@@ -638,7 +638,7 @@ export default function CollaborativeExamPage() {
                             className={cn(
                               'w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold text-white shrink-0',
                               showCorrectAnswer
-                                ? 'bg-green-500'
+                                ? 'bg-primary'
                                 : showWrongAnswer
                                 ? 'bg-red-500'
                                 : colors[i % colors.length]
@@ -668,15 +668,15 @@ export default function CollaborativeExamPage() {
                         className={cn(
                           'p-6 rounded-xl font-bold text-lg transition-all border-2',
                           showResult && currentQuestion.correctAnswer?.toLowerCase() === 'true'
-                            ? 'border-green-500 bg-green-500/20'
+                            ? 'border-primary bg-primary/20'
                             : showResult && textAnswer === 'True'
                             ? 'border-red-500 bg-red-500/20'
                             : textAnswer === 'True'
-                            ? 'border-green-500 bg-green-500/10'
-                            : 'border-border hover:border-green-500/50 hover:bg-green-500/5'
+                            ? 'border-primary bg-primary/10'
+                            : 'border-border hover:border-primary/50 hover:bg-primary/5'
                         )}
                       >
-                        <CheckCircle className="w-8 h-8 mx-auto mb-2 text-green-500" />
+                        <CheckCircle className="w-8 h-8 mx-auto mb-2 text-primary" />
                         True
                       </motion.button>
                       <motion.button
@@ -687,7 +687,7 @@ export default function CollaborativeExamPage() {
                         className={cn(
                           'p-6 rounded-xl font-bold text-lg transition-all border-2',
                           showResult && currentQuestion.correctAnswer?.toLowerCase() === 'false'
-                            ? 'border-green-500 bg-green-500/20'
+                            ? 'border-primary bg-primary/20'
                             : showResult && textAnswer === 'False'
                             ? 'border-red-500 bg-red-500/20'
                             : textAnswer === 'False'
@@ -714,7 +714,7 @@ export default function CollaborativeExamPage() {
                         className={cn(
                           'w-full px-4 py-3 bg-background border-2 rounded-xl text-lg focus:outline-none transition-colors',
                           showResult && lastAnswerCorrect
-                            ? 'border-green-500 bg-green-500/10'
+                            ? 'border-primary bg-primary/10'
                             : showResult
                             ? 'border-red-500 bg-red-500/10'
                             : 'border-border focus:border-purple-500'
@@ -728,7 +728,7 @@ export default function CollaborativeExamPage() {
                       {showResult && (
                         <p className="text-sm">
                           <span className="text-muted-foreground">{t('collaborativeExam.correctAnswerIs')} </span>
-                          <span className="font-medium text-green-500">{currentQuestion.correctAnswer}</span>
+                          <span className="font-medium text-primary">{currentQuestion.correctAnswer}</span>
                         </p>
                       )}
                     </div>
@@ -759,13 +759,13 @@ export default function CollaborativeExamPage() {
                   className={cn(
                     'flex items-center justify-center gap-3 p-4 rounded-xl',
                     lastAnswerCorrect
-                      ? 'bg-green-500/10 border border-green-500/30'
+                      ? 'bg-primary/10 border border-primary/30'
                       : 'bg-red-500/10 border border-red-500/30'
                   )}
                 >
                   {lastAnswerCorrect ? (
                     <>
-                      <CheckCircle className="w-6 h-6 text-green-500" />
+                      <CheckCircle className="w-6 h-6 text-primary" />
                       <span className="text-lg font-bold text-green-600 dark:text-green-400">
                         {t('collaborativeExam.correct')}
                       </span>
@@ -1038,3 +1038,5 @@ export default function CollaborativeExamPage() {
     </DashboardLayout>
   );
 }
+
+

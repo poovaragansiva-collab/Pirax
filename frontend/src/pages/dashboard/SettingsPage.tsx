@@ -92,7 +92,7 @@ export function SettingsPage() {
           className="bg-card rounded-2xl border border-border p-5 mb-6 flex items-center gap-4"
         >
           <div className="relative w-14 h-14 shrink-0">
-            <div className={`w-14 h-14 rounded-full ${levelInfo ? `bg-gradient-to-br ${levelInfo.gradient}` : 'bg-green-500/10'} flex items-center justify-center overflow-hidden ring-2 ring-background`}>
+            <div className={`w-14 h-14 rounded-full ${levelInfo ? `bg-gradient-to-br ${levelInfo.gradient}` : 'bg-primary/10'} flex items-center justify-center overflow-hidden ring-2 ring-background`}>
               {user?.avatarUrl ? (
                 <img src={user.avatarUrl} alt={user.name} className="w-14 h-14 rounded-full object-cover" />
               ) : (
@@ -113,7 +113,7 @@ export function SettingsPage() {
             <div className="flex items-center gap-2 mt-1">
               <button
                 onClick={(e) => { e.stopPropagation(); navigate('/dashboard/subscription'); }}
-                className="inline-block px-2 py-0.5 bg-green-500/10 text-green-500 rounded-full text-xs font-medium capitalize hover:bg-green-500/20 transition-colors"
+                className="inline-block px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-medium capitalize hover:bg-primary/20 transition-colors"
               >
                 {user?.plan} Plan{user?.plan === 'free' ? ' — Upgrade' : ''}
               </button>
@@ -181,7 +181,7 @@ export function SettingsPage() {
           transition={{ delay: 0.35 }}
           className="text-center text-xs text-muted-foreground mt-6"
         >
-          Studyield v1.0.0
+          PIRAX v1.0.0
         </motion.p>
       </div>
     </DashboardLayout>
@@ -189,3 +189,5 @@ export function SettingsPage() {
 }
 
 export default SettingsPage;
+
+

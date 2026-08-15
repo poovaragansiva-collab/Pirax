@@ -28,7 +28,7 @@ import type { NotificationType, NotificationPreferences } from '@/types';
 
 const typeConfig: Record<NotificationType, { icon: typeof Info; color: string; bg: string; labelKey: string }> = {
   info: { icon: Info, color: 'text-blue-500', bg: 'bg-blue-500/10', labelKey: 'notifications.types.info' },
-  success: { icon: Trophy, color: 'text-green-500', bg: 'bg-green-500/10', labelKey: 'notifications.types.success' },
+  success: { icon: Trophy, color: 'text-primary', bg: 'bg-primary/10', labelKey: 'notifications.types.success' },
   warning: { icon: AlertTriangle, color: 'text-amber-500', bg: 'bg-amber-500/10', labelKey: 'notifications.types.warning' },
   reminder: { icon: Clock, color: 'text-purple-500', bg: 'bg-purple-500/10', labelKey: 'notifications.types.reminder' },
 };
@@ -63,8 +63,8 @@ function PreferenceToggle({ icon: Icon, label, description, checked, onChange }:
       className="w-full flex items-center justify-between p-4 rounded-xl border border-border hover:bg-muted/30 transition-colors"
     >
       <div className="flex items-center gap-3">
-        <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center', checked ? 'bg-green-500/10' : 'bg-muted')}>
-          <Icon className={cn('w-5 h-5', checked ? 'text-green-500' : 'text-muted-foreground')} />
+        <div className={cn('w-10 h-10 rounded-lg flex items-center justify-center', checked ? 'bg-primary/10' : 'bg-muted')}>
+          <Icon className={cn('w-5 h-5', checked ? 'text-primary' : 'text-muted-foreground')} />
         </div>
         <div className="text-left">
           <p className="text-sm font-medium">{label}</p>
@@ -74,7 +74,7 @@ function PreferenceToggle({ icon: Icon, label, description, checked, onChange }:
       <div
         className={cn(
           'w-11 h-6 rounded-full transition-colors flex items-center px-0.5',
-          checked ? 'bg-green-500 justify-end' : 'bg-muted justify-start'
+          checked ? 'bg-primary justify-end' : 'bg-muted justify-start'
         )}
       >
         <motion.div
@@ -174,7 +174,7 @@ export function NotificationsPage() {
             {total > 0 && (
               <span className={cn(
                 'px-1.5 py-0.5 text-xs rounded-full',
-                tab === 'all' ? 'bg-green-500/10 text-green-600' : 'bg-muted-foreground/10'
+                tab === 'all' ? 'bg-primary/10 text-green-600' : 'bg-muted-foreground/10'
               )}>
                 {total}
               </span>
@@ -191,7 +191,7 @@ export function NotificationsPage() {
             {unreadCount > 0 && (
               <span className={cn(
                 'px-1.5 py-0.5 text-xs rounded-full',
-                tab === 'unread' ? 'bg-green-500/10 text-green-600' : 'bg-muted-foreground/10'
+                tab === 'unread' ? 'bg-primary/10 text-green-600' : 'bg-muted-foreground/10'
               )}>
                 {unreadCount}
               </span>
@@ -284,7 +284,7 @@ export function NotificationsPage() {
             >
               {isLoading && notifications.length === 0 ? (
                 <div className="flex items-center justify-center py-20">
-                  <div className="w-8 h-8 border-2 border-green-500 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                 </div>
               ) : filteredNotifications.length === 0 ? (
                 <div className="text-center py-20 bg-card border border-border rounded-xl">
@@ -312,7 +312,7 @@ export function NotificationsPage() {
                         transition={{ delay: index * 0.03 }}
                         className={cn(
                           'relative group',
-                          !notification.isRead && 'bg-green-500/5'
+                          !notification.isRead && 'bg-primary/5'
                         )}
                       >
                         <button
@@ -337,7 +337,7 @@ export function NotificationsPage() {
                                       {notification.title}
                                     </p>
                                     {!notification.isRead && (
-                                      <span className="w-2 h-2 rounded-full bg-green-500" />
+                                      <span className="w-2 h-2 rounded-full bg-primary" />
                                     )}
                                   </div>
                                   <p className="text-sm text-muted-foreground mt-0.5">
@@ -373,7 +373,7 @@ export function NotificationsPage() {
                               className="p-1.5 rounded-lg hover:bg-muted transition-colors"
                               title={t('notifications.markAllAsRead')}
                             >
-                              <Check className="w-4 h-4 text-green-500" />
+                              <Check className="w-4 h-4 text-primary" />
                             </button>
                           )}
                           <button
@@ -399,3 +399,5 @@ export function NotificationsPage() {
     </DashboardLayout>
   );
 }
+
+

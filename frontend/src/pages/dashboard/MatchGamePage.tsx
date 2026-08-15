@@ -64,8 +64,8 @@ function MatchGameComplete({
       animate={{ opacity: 1, scale: 1 }}
       className="text-center max-w-md mx-auto"
     >
-      <div className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
-        <Trophy className="w-10 h-10 text-green-500" />
+      <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+        <Trophy className="w-10 h-10 text-primary" />
       </div>
       <h2 className="text-2xl font-bold mb-2">{t('matchGame.gameComplete')}</h2>
       <p className="text-muted-foreground mb-6">
@@ -97,8 +97,8 @@ function MatchGameComplete({
           <p className="text-xs text-muted-foreground">{t('matchGame.time')}</p>
         </div>
         <div className="bg-card border border-border rounded-xl p-4">
-          <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mx-auto mb-2">
-            <MousePointerClick className="w-5 h-5 text-green-500" />
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <MousePointerClick className="w-5 h-5 text-primary" />
           </div>
           <p className="text-2xl font-bold">{moves}</p>
           <p className="text-xs text-muted-foreground">{t('matchGame.moves')}</p>
@@ -110,7 +110,7 @@ function MatchGameComplete({
           <Link to={`/dashboard/study-sets/${studySetId}`}>{t('matchGame.backToSet')}</Link>
         </Button>
         <Button
-          className="flex-1 bg-green-500 hover:bg-green-600"
+          className="flex-1 bg-primary hover:bg-[#8e5243]"
           onClick={onRetry}
         >
           <RotateCcw className="w-4 h-4 mr-2" />
@@ -277,8 +277,8 @@ export function MatchGamePage() {
     return (
       <DashboardLayout>
         <div className="text-center py-12">
-          <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
-            <Gamepad2 className="w-8 h-8 text-green-500" />
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <Gamepad2 className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-xl font-bold mb-2">{t('matchGame.notEnoughFlashcards')}</h2>
           <p className="text-muted-foreground mb-4">
@@ -369,12 +369,12 @@ export function MatchGamePage() {
                         className={cn(
                           'w-full text-left px-4 py-3.5 rounded-xl border-2 transition-all text-sm font-medium',
                           isMatched
-                            ? 'border-green-500/50 bg-green-500/10 text-green-600 dark:text-green-400 line-through cursor-default'
+                            ? 'border-primary/50 bg-primary/10 text-green-600 dark:text-green-400 line-through cursor-default'
                             : isWrong
                             ? 'border-red-500 bg-red-500/10 text-red-600'
                             : isSelected
-                            ? 'border-green-500 bg-green-500/5 shadow-md'
-                            : 'border-border bg-card hover:border-green-500/50'
+                            ? 'border-primary bg-primary/5 shadow-md'
+                            : 'border-border bg-card hover:border-primary/50'
                         )}
                       >
                         {card.text}
@@ -411,12 +411,12 @@ export function MatchGamePage() {
                         className={cn(
                           'w-full text-left px-4 py-3.5 rounded-xl border-2 transition-all text-sm font-medium',
                           isMatched
-                            ? 'border-green-500/50 bg-green-500/10 text-green-600 dark:text-green-400 line-through cursor-default'
+                            ? 'border-primary/50 bg-primary/10 text-green-600 dark:text-green-400 line-through cursor-default'
                             : isWrong
                             ? 'border-red-500 bg-red-500/10 text-red-600'
                             : isSelected
-                            ? 'border-green-500 bg-green-500/5 shadow-md'
-                            : 'border-border bg-card hover:border-green-500/50'
+                            ? 'border-primary bg-primary/5 shadow-md'
+                            : 'border-border bg-card hover:border-primary/50'
                         )}
                       >
                         {card.text}
@@ -432,3 +432,5 @@ export function MatchGamePage() {
     </DashboardLayout>
   );
 }
+
+

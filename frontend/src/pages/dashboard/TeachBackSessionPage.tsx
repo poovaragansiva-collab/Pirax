@@ -563,7 +563,7 @@ export function TeachBackSessionPage() {
                           <motion.span
                             initial={{ opacity: 0, scale: 0 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="ml-auto flex items-center gap-1 text-xs px-2 py-0.5 bg-green-500/10 text-green-500 rounded-full"
+                            className="ml-auto flex items-center gap-1 text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full"
                           >
                             <CheckCircle className="w-3 h-3" /> {t('teachBackSession.convinced')}
                           </motion.span>
@@ -704,14 +704,14 @@ export function TeachBackSessionPage() {
 
             {/* Strengths */}
             {eval_.strengths.length > 0 && (
-              <div className="bg-green-500/5 border border-green-500/20 rounded-xl p-4">
-                <p className="text-sm font-medium text-green-500 mb-2 flex items-center gap-1.5">
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
+                <p className="text-sm font-medium text-primary mb-2 flex items-center gap-1.5">
                   <Trophy className="w-4 h-4" /> {t('teachBackSession.strengths')}
                 </p>
                 <ul className="space-y-1">
                   {eval_.strengths.map((s, i) => (
                     <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                      <CheckCircle className="w-3 h-3 text-green-500 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-3 h-3 text-primary shrink-0 mt-0.5" />
                       {s}
                     </li>
                   ))}
@@ -787,3 +787,5 @@ export function TeachBackSessionPage() {
 }
 
 export default TeachBackSessionPage;
+
+

@@ -162,7 +162,7 @@ export function ProfileEditPage() {
               <div className={`w-24 h-24 rounded-full ${levelInfo ? `ring-3 ring-offset-2 ring-offset-background` : ''} flex items-center justify-center overflow-hidden`}
                 style={levelInfo ? { '--tw-ring-color': 'currentColor' } as React.CSSProperties : undefined}
               >
-                <div className="w-24 h-24 rounded-full bg-green-500/10 flex items-center justify-center overflow-hidden">
+                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
                   {avatarUrl ? (
                     <img src={avatarUrl} alt={name} className="w-24 h-24 rounded-full object-cover" />
                   ) : (
@@ -187,7 +187,7 @@ export function ProfileEditPage() {
               <button
                 onClick={() => fileInputRef.current?.click()}
                 disabled={uploading}
-                className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-colors disabled:opacity-50"
+                className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shadow-lg hover:bg-[#8e5243] transition-colors disabled:opacity-50"
               >
                 <Camera className="w-4 h-4" />
               </button>
@@ -216,7 +216,7 @@ export function ProfileEditPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder={t('profileEditPage.namePlaceholder')}
-            className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+            className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
           />
         </motion.div>
 
@@ -251,7 +251,7 @@ export function ProfileEditPage() {
                 onClick={() => setEducationLevel(educationLevel === id ? '' : id)}
                 className={`px-3 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                   educationLevel === id
-                    ? 'border-green-500/50 bg-green-500/5 text-green-600 dark:text-green-400'
+                    ? 'border-primary/50 bg-primary/5 text-green-600 dark:text-green-400'
                     : 'border-border text-muted-foreground hover:border-muted-foreground/30'
                 }`}
               >
@@ -278,7 +278,7 @@ export function ProfileEditPage() {
                   onClick={() => toggleSubject(subject)}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
                     selected
-                      ? 'border-green-500/50 bg-green-500/10 text-green-600 dark:text-green-400'
+                      ? 'border-primary/50 bg-primary/10 text-green-600 dark:text-green-400'
                       : 'border-border text-muted-foreground hover:border-muted-foreground/30'
                   }`}
                 >
@@ -297,7 +297,7 @@ export function ProfileEditPage() {
                 .map((s) => (
                   <span
                     key={s}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium border border-green-500/50 bg-green-500/10 text-green-600 dark:text-green-400 flex items-center gap-1"
+                    className="px-3 py-1.5 rounded-full text-xs font-medium border border-primary/50 bg-primary/10 text-green-600 dark:text-green-400 flex items-center gap-1"
                   >
                     {s}
                     <button onClick={() => toggleSubject(s)}>
@@ -314,7 +314,7 @@ export function ProfileEditPage() {
               onChange={(e) => setCustomSubject(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && addCustomSubject()}
               placeholder={t('profileEditPage.addCustomSubject')}
-              className="flex-1 px-3 py-2 bg-muted/50 border border-border rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-green-500/20"
+              className="flex-1 px-3 py-2 bg-muted/50 border border-border rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             <Button size="sm" variant="outline" onClick={addCustomSubject} disabled={!customSubject.trim()}>
               {t('profileEditPage.add')}
@@ -331,7 +331,7 @@ export function ProfileEditPage() {
           <Button
             onClick={handleSave}
             disabled={saving || !name.trim()}
-            className="w-full bg-green-500 hover:bg-green-600 h-12"
+            className="w-full bg-primary hover:bg-[#8e5243] h-12"
           >
             {saving ? (
               <Spinner size="sm" className="mr-2" />
@@ -347,3 +347,5 @@ export function ProfileEditPage() {
 }
 
 export default ProfileEditPage;
+
+

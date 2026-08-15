@@ -394,7 +394,7 @@ export function NoteDetailPage() {
                 handleTTSPlay();
               }
             }}
-            className={cn(isTTSPlaying && 'border-green-500 text-green-600')}
+            className={cn(isTTSPlaying && 'border-primary text-green-600')}
           >
             {isTTSPlaying ? (
               <>
@@ -465,7 +465,7 @@ export function NoteDetailPage() {
             {currentNote.tags.map((tag) => (
               <span
                 key={tag}
-                className="flex items-center gap-1 px-2 py-1 text-xs bg-green-500/10 text-green-600 rounded-full"
+                className="flex items-center gap-1 px-2 py-1 text-xs bg-primary/10 text-green-600 rounded-full"
               >
                 <Tag className="w-3 h-3" />
                 {tag}
@@ -511,7 +511,7 @@ export function NoteDetailPage() {
             </Link>
           </Button>
           <Button
-            className="flex-1 bg-green-500 hover:bg-green-600"
+            className="flex-1 bg-primary hover:bg-[#8e5243]"
             onClick={() => navigate(`/dashboard/study-sets/${studySetId}/notes/create`)}
           >
             {t('noteDetail.createAnother')}
@@ -531,7 +531,7 @@ export function NoteDetailPage() {
             {/* Progress bar */}
             <div className="h-1 bg-muted rounded-full mb-3 overflow-hidden">
               <motion.div
-                className="h-full bg-green-500 rounded-full"
+                className="h-full bg-primary rounded-full"
                 style={{ width: `${ttsProgress}%` }}
                 transition={{ duration: 0.1 }}
               />
@@ -570,14 +570,14 @@ export function NoteDetailPage() {
                 {isTTSPlaying ? (
                   <button
                     onClick={handleTTSPause}
-                    className="w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary hover:bg-[#8e5243] flex items-center justify-center text-white transition-colors"
                   >
                     <Pause className="w-5 h-5" />
                   </button>
                 ) : (
                   <button
                     onClick={handleTTSPlay}
-                    className="w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary hover:bg-[#8e5243] flex items-center justify-center text-white transition-colors"
                   >
                     <Play className="w-5 h-5 ml-0.5" />
                   </button>
@@ -649,7 +649,7 @@ export function NoteDetailPage() {
                     variant="outline"
                     size="sm"
                     onClick={handleCopyLink}
-                    className={cn(copied && 'bg-green-500/10 border-green-500 text-green-600')}
+                    className={cn(copied && 'bg-primary/10 border-primary text-green-600')}
                   >
                     {copied ? (
                       <>
@@ -773,3 +773,5 @@ export function NoteDetailPage() {
     </DashboardLayout>
   );
 }
+
+

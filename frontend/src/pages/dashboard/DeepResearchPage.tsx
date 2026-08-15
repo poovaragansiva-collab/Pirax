@@ -116,7 +116,7 @@ export function DeepResearchPage() {
     planning: 'bg-blue-500/10 text-blue-500',
     researching: 'bg-blue-500/10 text-blue-500',
     synthesizing: 'bg-purple-500/10 text-purple-500',
-    completed: 'bg-green-500/10 text-green-500',
+    completed: 'bg-primary/10 text-primary',
     failed: 'bg-red-500/10 text-red-500',
   };
 
@@ -156,7 +156,7 @@ export function DeepResearchPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t('deepResearch.placeholder')}
-            className="w-full h-28 px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+            className="w-full h-28 px-4 py-3 bg-muted/50 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
           />
           <div className="mt-3 flex flex-wrap gap-2">
             <span className="text-xs text-muted-foreground">{t('deepResearch.try')}</span>
@@ -196,7 +196,7 @@ export function DeepResearchPage() {
                   onClick={() => toggleSource(src.key)}
                   className={`flex flex-col items-center gap-2 p-4 rounded-xl border transition-all ${
                     active
-                      ? 'border-green-500/50 bg-green-500/5 text-green-600'
+                      ? 'border-primary/50 bg-primary/5 text-green-600'
                       : 'border-border hover:border-muted-foreground/30 text-muted-foreground'
                   }`}
                 >
@@ -253,7 +253,7 @@ export function DeepResearchPage() {
                 onClick={() => setOutputFormat(fmt.value)}
                 className={`flex-1 flex items-center gap-2 p-3 rounded-xl border transition-all ${
                   outputFormat === fmt.value
-                    ? 'border-green-500/50 bg-green-500/5 text-green-600'
+                    ? 'border-primary/50 bg-primary/5 text-green-600'
                     : 'border-border hover:border-muted-foreground/30 text-muted-foreground'
                 }`}
               >
@@ -273,7 +273,7 @@ export function DeepResearchPage() {
           <Button
             onClick={handleSubmit}
             disabled={!query.trim() || loading}
-            className="w-full bg-green-500 hover:bg-green-600 h-12 text-base"
+            className="w-full bg-primary hover:bg-[#8e5243] h-12 text-base"
           >
             {loading ? (
               <Spinner size="sm" className="mr-2" />
@@ -296,7 +296,7 @@ export function DeepResearchPage() {
               <h2 className="text-lg font-semibold">{t('deepResearch.recentResearch')}</h2>
               <button
                 onClick={() => navigate('/dashboard/research/history')}
-                className="text-sm text-green-500 font-medium hover:underline flex items-center gap-1"
+                className="text-sm text-primary font-medium hover:underline flex items-center gap-1"
               >
                 {t('deepResearch.viewAll')} <ArrowRight className="w-3 h-3" />
               </button>
@@ -314,8 +314,8 @@ export function DeepResearchPage() {
                   }
                   className="w-full bg-card rounded-xl border border-border p-4 flex items-center gap-4 hover:border-muted-foreground/30 transition-colors text-left"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
-                    <Search className="w-5 h-5 text-green-500" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Search className="w-5 h-5 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium truncate">{session.query}</p>
@@ -350,3 +350,5 @@ export function DeepResearchPage() {
 }
 
 export default DeepResearchPage;
+
+

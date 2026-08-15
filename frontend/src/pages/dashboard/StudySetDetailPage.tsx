@@ -69,7 +69,7 @@ const STATUS_COLORS: Record<string, string> = {
   New: 'bg-blue-500/10 text-blue-600',
   Learning: 'bg-amber-500/10 text-amber-600',
   Review: 'bg-purple-500/10 text-purple-600',
-  Mastered: 'bg-green-500/10 text-green-600',
+  Mastered: 'bg-primary/10 text-green-600',
 };
 
 const CHART_STATUS_COLORS: Record<string, string> = {
@@ -146,10 +146,10 @@ function FlashcardPreviewModal({
               <p className="text-xs text-muted-foreground mt-4 opacity-60">Tap to flip</p>
             </div>
             <div
-              className="absolute inset-0 w-full h-full rounded-xl border-2 border-green-500/50 bg-green-500/5 p-6 flex flex-col items-center justify-center backface-hidden"
+              className="absolute inset-0 w-full h-full rounded-xl border-2 border-primary/50 bg-primary/5 p-6 flex flex-col items-center justify-center backface-hidden"
               style={{ transform: 'rotateY(180deg)' }}
             >
-              <span className="text-xs uppercase tracking-wider text-green-500 mb-3">Answer</span>
+              <span className="text-xs uppercase tracking-wider text-primary mb-3">Answer</span>
               <p className="text-lg font-medium text-center">{flashcard.back}</p>
               {flashcard.notes && (
                 <p className="text-xs text-muted-foreground mt-3 text-center">{flashcard.notes}</p>
@@ -208,7 +208,7 @@ function FlashcardItem({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-card border border-border rounded-lg p-4 hover:border-green-500/50 transition-colors group cursor-pointer"
+      className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-colors group cursor-pointer"
       onClick={onPreview}
     >
       <div className="flex items-start justify-between gap-4">
@@ -344,8 +344,8 @@ function AnalyticsTab({ flashcards }: { flashcards: Flashcard[] }) {
   if (flashcards.length === 0) {
     return (
       <div className="text-center py-12 bg-card border border-border rounded-xl">
-        <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3">
-          <BarChart3 className="w-6 h-6 text-green-500" />
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <BarChart3 className="w-6 h-6 text-primary" />
         </div>
         <h3 className="font-semibold mb-1">No analytics yet</h3>
         <p className="text-sm text-muted-foreground">
@@ -367,8 +367,8 @@ function AnalyticsTab({ flashcards }: { flashcards: Flashcard[] }) {
           <p className="text-xs text-muted-foreground">Total Reviewed</p>
         </div>
         <div className="bg-card border border-border rounded-xl p-4 text-center">
-          <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center mx-auto mb-2">
-            <Target className="w-4 h-4 text-green-500" />
+          <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <Target className="w-4 h-4 text-primary" />
           </div>
           <p className="text-xl font-bold">{stats.masteryPct}%</p>
           <p className="text-xs text-muted-foreground">Mastery</p>
@@ -529,7 +529,7 @@ function AttemptReviewModal({
             <div
               className={cn(
                 'w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold text-white',
-                percentage >= 70 ? 'bg-green-500' : percentage >= 40 ? 'bg-amber-500' : 'bg-red-500'
+                percentage >= 70 ? 'bg-primary' : percentage >= 40 ? 'bg-amber-500' : 'bg-red-500'
               )}
             >
               {percentage}%
@@ -537,7 +537,7 @@ function AttemptReviewModal({
             <div className="flex-1">
               <div className="flex gap-4 text-sm">
                 <span className="flex items-center gap-1">
-                  <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                  <CheckCircle className="w-3.5 h-3.5 text-primary" />
                   {correct} correct
                 </span>
                 <span className="flex items-center gap-1">
@@ -566,11 +566,11 @@ function AttemptReviewModal({
                   <div
                     className={cn(
                       'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5',
-                      answer.isCorrect ? 'bg-green-500/10' : 'bg-red-500/10'
+                      answer.isCorrect ? 'bg-primary/10' : 'bg-red-500/10'
                     )}
                   >
                     {answer.isCorrect ? (
-                      <CheckCircle className="w-3.5 h-3.5 text-green-500" />
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
                     ) : (
                       <XCircle className="w-3.5 h-3.5 text-red-500" />
                     )}
@@ -583,7 +583,7 @@ function AttemptReviewModal({
                         <span
                           className={cn(
                             'font-medium',
-                            answer.isCorrect ? 'text-green-500' : 'text-red-500'
+                            answer.isCorrect ? 'text-primary' : 'text-red-500'
                           )}
                         >
                           {answer.userAnswer || '(no answer)'}
@@ -592,7 +592,7 @@ function AttemptReviewModal({
                       {!answer.isCorrect && (
                         <p className="text-xs">
                           <span className="text-muted-foreground">Correct: </span>
-                          <span className="font-medium text-green-500">{question.correctAnswer}</span>
+                          <span className="font-medium text-primary">{question.correctAnswer}</span>
                         </p>
                       )}
                       {question.explanation && (
@@ -699,14 +699,14 @@ function QuizHistoryTab({ studySetId }: { studySetId: string }) {
   if (quizzes.length === 0) {
     return (
       <div className="text-center py-12 bg-card border border-border rounded-xl">
-        <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3">
-          <History className="w-6 h-6 text-green-500" />
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+          <History className="w-6 h-6 text-primary" />
         </div>
         <h3 className="font-semibold mb-1">No quiz history yet</h3>
         <p className="text-sm text-muted-foreground mb-4">
           Take a quiz to see your results here
         </p>
-        <Button className="bg-green-500 hover:bg-green-600" asChild>
+        <Button className="bg-primary hover:bg-[#8e5243]" asChild>
           <Link to={`/dashboard/study-sets/${studySetId}/quiz`}>
             <FileQuestion className="w-4 h-4 mr-2" />
             Take a Quiz
@@ -721,7 +721,7 @@ function QuizHistoryTab({ studySetId }: { studySetId: string }) {
       {/* Summary */}
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-card border border-border rounded-xl p-4 text-center">
-          <FileQuestion className="w-5 h-5 text-green-500 mx-auto mb-1" />
+          <FileQuestion className="w-5 h-5 text-primary mx-auto mb-1" />
           <p className="text-xl font-bold">{quizzes.length}</p>
           <p className="text-xs text-muted-foreground">Quizzes</p>
         </div>
@@ -755,8 +755,8 @@ function QuizHistoryTab({ studySetId }: { studySetId: string }) {
                 className="w-full flex items-center justify-between px-4 py-3.5 hover:bg-muted/30 transition-colors text-left"
               >
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0">
-                    <FileQuestion className="w-4 h-4 text-green-500" />
+                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <FileQuestion className="w-4 h-4 text-primary" />
                   </div>
                   <div className="min-w-0">
                     <p className="font-medium text-sm truncate">{quiz.title}</p>
@@ -772,7 +772,7 @@ function QuizHistoryTab({ studySetId }: { studySetId: string }) {
                       className={cn(
                         'text-xs font-bold px-2 py-0.5 rounded-full',
                         topScore >= 70
-                          ? 'bg-green-500/10 text-green-600'
+                          ? 'bg-primary/10 text-green-600'
                           : topScore >= 40
                           ? 'bg-amber-500/10 text-amber-600'
                           : 'bg-red-500/10 text-red-600'
@@ -821,7 +821,7 @@ function QuizHistoryTab({ studySetId }: { studySetId: string }) {
                                   <div
                                     className={cn(
                                       'w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white',
-                                      score >= 70 ? 'bg-green-500' : score >= 40 ? 'bg-amber-500' : 'bg-red-500'
+                                      score >= 70 ? 'bg-primary' : score >= 40 ? 'bg-amber-500' : 'bg-red-500'
                                     )}
                                   >
                                     {score}%
@@ -1151,8 +1151,8 @@ export function StudySetDetailPage() {
                     className="w-16 h-16 rounded-xl object-cover"
                   />
                 ) : (
-                  <div className="w-16 h-16 rounded-xl bg-green-500/10 flex items-center justify-center">
-                    <Library className="w-8 h-8 text-green-500" />
+                  <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Library className="w-8 h-8 text-primary" />
                   </div>
                 )}
                 <div>
@@ -1197,7 +1197,7 @@ export function StudySetDetailPage() {
                 {currentStudySet.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-0.5 text-xs rounded-full bg-green-500/10 text-green-600 dark:text-green-400"
+                    className="px-2.5 py-0.5 text-xs rounded-full bg-primary/10 text-green-600 dark:text-green-400"
                   >
                     {tag}
                   </span>
@@ -1211,8 +1211,8 @@ export function StudySetDetailPage() {
         <div className="grid sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-card border border-border rounded-xl p-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-green-500" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{flashcards.length}</p>
@@ -1247,19 +1247,19 @@ export function StudySetDetailPage() {
         {/* Action Buttons */}
         {flashcards.length > 0 && (
           <div className="flex flex-wrap gap-3 mb-6">
-            <Button className="bg-green-500 hover:bg-green-600" asChild>
+            <Button className="bg-primary hover:bg-[#8e5243]" asChild>
               <Link to={`/dashboard/study-sets/${id}/study`}>
                 <Play className="w-4 h-4 mr-2" />
                 {t('studySets.studySession')} ({dueCards.length > 0 ? `${dueCards.length} due` : 'All cards'})
               </Link>
             </Button>
-            <Button variant="outline" className="border-green-500/30 text-green-600 hover:bg-green-500/10" asChild>
+            <Button variant="outline" className="border-primary/30 text-green-600 hover:bg-primary/10" asChild>
               <Link to={`/dashboard/study-sets/${id}/quiz`}>
                 <FileQuestion className="w-4 h-4 mr-2" />
                 Quiz Mode
               </Link>
             </Button>
-            <Button variant="outline" className="border-green-500/30 text-green-600 hover:bg-green-500/10" asChild>
+            <Button variant="outline" className="border-primary/30 text-green-600 hover:bg-primary/10" asChild>
               <Link to={`/dashboard/study-sets/${id}/match`}>
                 <Gamepad2 className="w-4 h-4 mr-2" />
                 {t('studySets.matchGame')}
@@ -1277,10 +1277,10 @@ export function StudySetDetailPage() {
         {/* Exam Countdown Banner */}
         {countdown && currentStudySet.examDate && (() => {
           const totalDays = countdown.days;
-          const colorClass = totalDays > 14 ? 'from-green-500/10 to-emerald-500/10 border-green-500/20' : totalDays > 7 ? 'from-amber-500/10 to-yellow-500/10 border-amber-500/20' : 'from-red-500/10 to-orange-500/10 border-red-500/20';
+          const colorClass = totalDays > 14 ? 'from-primary/10 to-primary/10 border-primary/20' : totalDays > 7 ? 'from-amber-500/10 to-yellow-500/10 border-amber-500/20' : 'from-red-500/10 to-orange-500/10 border-red-500/20';
           const textColor = totalDays > 14 ? 'text-green-600 dark:text-green-400' : totalDays > 7 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400';
-          const bgColor = totalDays > 14 ? 'bg-green-500/20' : totalDays > 7 ? 'bg-amber-500/20' : 'bg-red-500/20';
-          const unitBoxBg = totalDays > 14 ? 'bg-green-500/10' : totalDays > 7 ? 'bg-amber-500/10' : 'bg-red-500/10';
+          const bgColor = totalDays > 14 ? 'bg-primary/20' : totalDays > 7 ? 'bg-amber-500/20' : 'bg-red-500/20';
+          const unitBoxBg = totalDays > 14 ? 'bg-primary/10' : totalDays > 7 ? 'bg-amber-500/10' : 'bg-red-500/10';
           return (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -1338,7 +1338,7 @@ export function StudySetDetailPage() {
               {activeTab === tab.key && (
                 <motion.div
                   layoutId="tab-indicator"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-green-500"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                 />
               )}
             </button>
@@ -1375,7 +1375,7 @@ export function StudySetDetailPage() {
                       placeholder="Search flashcards..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-card text-sm outline-none focus:border-green-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-card text-sm outline-none focus:border-primary transition-colors"
                     />
                   </div>
 
@@ -1389,7 +1389,7 @@ export function StudySetDetailPage() {
                           className={cn(
                             'px-3 py-1.5 rounded-full text-xs font-medium transition-all',
                             filterStatus === chip
-                              ? 'bg-green-500 text-white'
+                              ? 'bg-primary text-white'
                               : 'bg-muted text-muted-foreground hover:text-foreground'
                           )}
                         >
@@ -1418,7 +1418,7 @@ export function StudySetDetailPage() {
                                 onClick={() => { setSortOption(opt); setShowSortDropdown(false); }}
                                 className={cn(
                                   'w-full text-left px-3 py-2 text-xs hover:bg-muted transition-colors',
-                                  sortOption === opt && 'text-green-500 font-medium'
+                                  sortOption === opt && 'text-primary font-medium'
                                 )}
                               >
                                 {sortLabels[opt]}
@@ -1439,14 +1439,14 @@ export function StudySetDetailPage() {
                 </div>
               ) : flashcards.length === 0 ? (
                 <div className="text-center py-12 bg-card border border-border rounded-xl">
-                  <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3">
-                    <BookOpen className="w-6 h-6 text-green-500" />
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <BookOpen className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-1">{t('flashcards.noCardsDue')}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
                     Add your first flashcard to start studying
                   </p>
-                  <Button className="bg-green-500 hover:bg-green-600" asChild>
+                  <Button className="bg-primary hover:bg-[#8e5243]" asChild>
                     <Link to={`/dashboard/study-sets/${id}/flashcards/add`}>
                       <Plus className="w-4 h-4 mr-2" />
                       {t('studySets.addFlashcard')}
@@ -1516,7 +1516,7 @@ export function StudySetDetailPage() {
                   </Button>
                   <Button
                     size="sm"
-                    className="bg-green-500 hover:bg-green-600"
+                    className="bg-primary hover:bg-[#8e5243]"
                     onClick={() => navigate(`/dashboard/study-sets/${id}/notes/create`)}
                   >
                     <Plus className="w-4 h-4 mr-1" />
@@ -1536,7 +1536,7 @@ export function StudySetDetailPage() {
                       placeholder="Search notes..."
                       value={noteSearchQuery}
                       onChange={(e) => setNoteSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-card text-sm outline-none focus:border-green-500 transition-colors"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-border bg-card text-sm outline-none focus:border-primary transition-colors"
                     />
                   </div>
 
@@ -1549,7 +1549,7 @@ export function StudySetDetailPage() {
                         className={cn(
                           'px-3 py-1.5 rounded-full text-xs font-medium transition-all',
                           noteTagFilter === null
-                            ? 'bg-green-500 text-white'
+                            ? 'bg-primary text-white'
                             : 'bg-muted text-muted-foreground hover:text-foreground'
                         )}
                       >
@@ -1563,7 +1563,7 @@ export function StudySetDetailPage() {
                           className={cn(
                             'flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-medium transition-all',
                             noteTagFilter === tag
-                              ? 'bg-green-500 text-white'
+                              ? 'bg-primary text-white'
                               : 'bg-muted text-muted-foreground hover:text-foreground'
                           )}
                         >
@@ -1582,7 +1582,7 @@ export function StudySetDetailPage() {
                     <select
                       value={noteSortOption}
                       onChange={(e) => setNoteSortOption(e.target.value as 'newest' | 'oldest' | 'title')}
-                      className="px-3 py-1.5 rounded-lg border border-border bg-card text-xs outline-none focus:border-green-500"
+                      className="px-3 py-1.5 rounded-lg border border-border bg-card text-xs outline-none focus:border-primary"
                     >
                       <option value="newest">Newest</option>
                       <option value="oldest">Oldest</option>
@@ -1616,7 +1616,7 @@ export function StudySetDetailPage() {
                     </Button>
                     <Button
                       size="sm"
-                      className="bg-green-500 hover:bg-green-600"
+                      className="bg-primary hover:bg-[#8e5243]"
                       onClick={() => navigate(`/dashboard/study-sets/${id}/notes/create`)}
                     >
                       <Plus className="w-4 h-4 mr-2" />
@@ -1642,7 +1642,7 @@ export function StudySetDetailPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className={cn(
-                        'bg-card border border-border rounded-xl p-4 hover:border-green-500/30 transition-colors cursor-pointer group',
+                        'bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-colors cursor-pointer group',
                         note.isPinned && 'border-amber-500/30 bg-amber-500/5'
                       )}
                       onClick={() => navigate(`/dashboard/study-sets/${id}/notes/${note.id}`)}
@@ -1685,7 +1685,7 @@ export function StudySetDetailPage() {
                                   e.stopPropagation();
                                   setNoteTagFilter(tag);
                                 }}
-                                className="text-[10px] px-1.5 py-0.5 rounded-full bg-green-500/10 text-green-600 hover:bg-green-500/20 cursor-pointer"
+                                className="text-[10px] px-1.5 py-0.5 rounded-full bg-primary/10 text-green-600 hover:bg-primary/20 cursor-pointer"
                               >
                                 #{tag}
                               </span>
@@ -1820,3 +1820,5 @@ export function StudySetDetailPage() {
     </DashboardLayout>
   );
 }
+
+

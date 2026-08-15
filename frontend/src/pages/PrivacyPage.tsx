@@ -161,7 +161,7 @@ export function PrivacyPage() {
                           onClick={() => scrollToSection(item.id)}
                           className={`flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-xl text-sm transition-all duration-200 ${
                             activeSection === item.id
-                              ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold'
+                              ? 'bg-gradient-to-r from-green-500 to-primary text-white font-semibold'
                               : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                           }`}
                         >
@@ -185,7 +185,7 @@ export function PrivacyPage() {
                 <section id="introduction" className="scroll-mt-24">
                   <div className="bg-card border-2 border-border rounded-2xl p-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-primary flex items-center justify-center">
                         <Shield className="w-6 h-6 text-white" />
                       </div>
                       <h2 className="text-2xl font-black">{t('privacyPage.introduction.title')}</h2>
@@ -219,7 +219,7 @@ export function PrivacyPage() {
                         <ul className="grid md:grid-cols-2 gap-3">
                           {(t('privacyPage.informationCollected.personalItems', { returnObjects: true }) as string[]).map((item) => (
                             <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                              <div className="w-2 h-2 rounded-full bg-green-500" />
+                              <div className="w-2 h-2 rounded-full bg-primary" />
                               {item}
                             </li>
                           ))}
@@ -376,7 +376,7 @@ export function PrivacyPage() {
 
                 {/* Contact */}
                 <section id="contact" className="scroll-mt-24">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-8 text-white">
+                  <div className="bg-gradient-to-r from-green-500 to-primary rounded-2xl p-8 text-white">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
                         <Mail className="w-6 h-6 text-white" />
@@ -403,7 +403,7 @@ export function PrivacyPage() {
                         className="bg-white/10 hover:bg-white/20 text-white border-white/30 font-semibold"
                         asChild
                       >
-                        <a href="mailto:privacy@studyield.com">privacy@studyield.com</a>
+                        <a href="mailto:privacy@PIRAX.com">privacy@PIRAX.com</a>
                       </Button>
                     </div>
                   </div>
@@ -418,3 +418,5 @@ export function PrivacyPage() {
     </PublicLayout>
   );
 }
+
+

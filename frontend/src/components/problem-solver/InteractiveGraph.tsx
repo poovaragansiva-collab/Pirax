@@ -100,7 +100,7 @@ export function InteractiveGraph({ sessionId }: InteractiveGraphProps) {
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden">
       <div className="px-4 py-3 border-b border-border flex items-center gap-2">
-        <LineChart className="w-4 h-4 text-green-500" />
+        <LineChart className="w-4 h-4 text-primary" />
         <span className="text-sm font-medium">Interactive Graph</span>
         {graphData.functions.length > 0 && (
           <span className="text-xs text-muted-foreground ml-auto">
@@ -127,3 +127,5 @@ export function InteractiveGraph({ sessionId }: InteractiveGraphProps) {
     </div>
   );
 }
+
+

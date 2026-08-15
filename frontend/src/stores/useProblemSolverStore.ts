@@ -234,3 +234,4 @@ export const useProblemSolverStore = create<ProblemSolverState>((set, get) => ({
 
   clearError: () => set({ error: null }),
 }));
+

@@ -61,12 +61,12 @@ const steps = [
     number: '04',
     titleKey: 'howItWorks.steps.master.title',
     descriptionKey: 'howItWorks.steps.master.description',
-    gradient: 'from-green-500 to-emerald-500',
+    gradient: 'from-green-500 to-primary',
     color: 'green',
-    iconBg: 'bg-green-500/10',
-    lightColor: 'text-green-500',
-    bgLight: 'bg-green-500/10',
-    borderColor: 'border-green-500/30',
+    iconBg: 'bg-primary/10',
+    lightColor: 'text-primary',
+    bgLight: 'bg-primary/10',
+    borderColor: 'border-primary/30',
   },
 ];
 
@@ -326,7 +326,7 @@ function MasterDemo({ isActive, isCompleted }: { isActive: boolean; isCompleted:
           >
             <Star
               className={`w-4 h-4 ${
-                stars >= star ? 'text-green-500 fill-green-500' : 'text-muted-foreground'
+                stars >= star ? 'text-primary fill-green-500' : 'text-muted-foreground'
               }`}
             />
           </motion.div>
@@ -339,7 +339,7 @@ function MasterDemo({ isActive, isCompleted }: { isActive: boolean; isCompleted:
             initial={{ scale: 0, y: 10 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0, y: 10 }}
-            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-xs text-green-500 font-medium"
+            className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-xs text-primary font-medium"
           >
             <Award className="w-3 h-3" />
             {t('howItWorks.demo.mastered')}
@@ -423,7 +423,7 @@ function StepCard({
             <div className="absolute inset-0 border-t-[2px] border-dashed border-border/25 dark:border-border/15" />
             {/* Animated solid fill */}
             <motion.div
-              className="absolute inset-y-0 left-0 right-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full origin-left"
+              className="absolute inset-y-0 left-0 right-0 bg-gradient-to-r from-green-500 to-primary rounded-full origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: isCompleted ? 1 : 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -491,13 +491,13 @@ function StepCard({
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center transition-colors duration-300 ${
                   isActive
-                    ? step.color === 'blue' ? 'bg-blue-500/10' : step.color === 'amber' ? 'bg-amber-500/10' : step.color === 'rose' ? 'bg-rose-500/10' : 'bg-green-500/10'
+                    ? step.color === 'blue' ? 'bg-blue-500/10' : step.color === 'amber' ? 'bg-amber-500/10' : step.color === 'rose' ? 'bg-rose-500/10' : 'bg-primary/10'
                     : 'bg-muted'
                 }`}
               >
                 <step.icon className={`w-7 h-7 transition-colors duration-300 ${
                   isActive
-                    ? step.color === 'blue' ? 'text-blue-500' : step.color === 'amber' ? 'text-amber-500' : step.color === 'rose' ? 'text-rose-500' : 'text-green-500'
+                    ? step.color === 'blue' ? 'text-blue-500' : step.color === 'amber' ? 'text-amber-500' : step.color === 'rose' ? 'text-rose-500' : 'text-primary'
                     : 'text-muted-foreground'
                 }`} />
               </div>
@@ -505,7 +505,7 @@ function StepCard({
               {/* Completed checkmark */}
               {isCompleted && (
                 <motion.div
-                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center bg-green-500"
+                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', stiffness: 300 }}
@@ -519,9 +519,9 @@ function StepCard({
             <span
               className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
                 isActive
-                  ? step.color === 'blue' ? 'bg-blue-500 text-white' : step.color === 'amber' ? 'bg-amber-500 text-white' : step.color === 'rose' ? 'bg-rose-500 text-white' : 'bg-green-500 text-white'
+                  ? step.color === 'blue' ? 'bg-blue-500 text-white' : step.color === 'amber' ? 'bg-amber-500 text-white' : step.color === 'rose' ? 'bg-rose-500 text-white' : 'bg-primary text-white'
                   : isCompleted
-                  ? 'bg-green-500 text-white'
+                  ? 'bg-primary text-white'
                   : 'bg-muted text-muted-foreground'
               }`}
             >
@@ -549,7 +549,7 @@ function StepCard({
           <div
             className={`mt-4 p-3 rounded-xl border transition-all duration-300 ${
               isActive
-                ? step.color === 'blue' ? 'bg-blue-50 dark:bg-blue-500/10 border-blue-200 dark:border-blue-500/20' : step.color === 'amber' ? 'bg-amber-50 dark:bg-amber-500/10 border-amber-200 dark:border-amber-500/20' : step.color === 'rose' ? 'bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-500/20' : 'bg-green-50 dark:bg-green-500/10 border-green-200 dark:border-green-500/20'
+                ? step.color === 'blue' ? 'bg-blue-50 dark:bg-blue-500/10 border-blue-200 dark:border-blue-500/20' : step.color === 'amber' ? 'bg-amber-50 dark:bg-amber-500/10 border-amber-200 dark:border-amber-500/20' : step.color === 'rose' ? 'bg-rose-50 dark:bg-rose-500/10 border-rose-200 dark:border-rose-500/20' : 'bg-green-50 dark:bg-primary/10 border-green-200 dark:border-primary/20'
                 : 'bg-muted/50 border-border/50'
             }`}
           >
@@ -608,7 +608,7 @@ export function HowItWorksSection() {
     { bg: 'bg-blue-500', text: 'text-blue-500', border: 'border-blue-500' },
     { bg: 'bg-amber-500', text: 'text-amber-500', border: 'border-amber-500' },
     { bg: 'bg-rose-500', text: 'text-rose-500', border: 'border-rose-500' },
-    { bg: 'bg-green-500', text: 'text-green-500', border: 'border-green-500' },
+    { bg: 'bg-primary', text: 'text-primary', border: 'border-primary' },
   ];
 
   return (
@@ -671,7 +671,7 @@ export function HowItWorksSection() {
             transition={{ duration: 0.6 }}
           >
             <motion.span
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium mb-4"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-green-600 dark:text-green-400 text-sm font-medium mb-4"
               whileHover={{ scale: 1.05 }}
             >
               <Layers className="w-4 h-4" />
@@ -680,7 +680,7 @@ export function HowItWorksSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               {t('howItWorks.title')}{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-500 via-primary to-teal-500 bg-clip-text text-transparent">
                   {t('howItWorks.titleHighlight')}
                 </span>
                 <motion.svg
@@ -750,7 +750,7 @@ export function HowItWorksSection() {
                       isActive
                         ? `${colors.bg} text-white border-transparent shadow-lg`
                         : isCompleted
-                        ? `bg-green-500/10 text-green-500 border-green-500/30`
+                        ? `bg-primary/10 text-primary border-primary/30`
                         : 'bg-muted/50 text-muted-foreground border-border/50'
                     }`}
                     animate={isActive ? { scale: [1, 1.05, 1] } : {}}
@@ -770,7 +770,7 @@ export function HowItWorksSection() {
                   {index < stepLabelKeys.length - 1 && (
                     <motion.div
                       className={`w-8 h-0.5 rounded-full transition-all duration-500 ${
-                        isCompleted ? 'bg-green-500' : 'bg-border'
+                        isCompleted ? 'bg-primary' : 'bg-border'
                       }`}
                     />
                   )}
@@ -795,3 +795,5 @@ export function HowItWorksSection() {
     </section>
   );
 }
+
+

@@ -46,7 +46,7 @@ function CitationBadge({
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-green-500/20 text-green-600 dark:text-green-400 text-[10px] font-bold hover:bg-green-500/30 transition-colors cursor-pointer align-super ml-0.5"
+      className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/20 text-green-600 dark:text-green-400 text-[10px] font-bold hover:bg-primary/30 transition-colors cursor-pointer align-super ml-0.5"
       title={sourceLabel}
     >
       {index + 1}
@@ -81,7 +81,7 @@ function CitationPanel({
     >
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
+          <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
             <span className="text-xs font-bold text-green-600 dark:text-green-400">{index + 1}</span>
           </div>
           <span className="text-sm font-medium">{t('chat.source', { index: index + 1 })}</span>
@@ -93,7 +93,7 @@ function CitationPanel({
         </div>
         <div className="flex items-center gap-1">
           <Button variant="ghost" size="sm" className="h-7 w-7 p-0" onClick={handleCopy}>
-            {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
           </Button>
           <Button variant="ghost" size="sm" className="h-7 w-7 p-0" onClick={onClose}>
             <X className="w-3.5 h-3.5" />
@@ -164,7 +164,7 @@ function MessageBubble({
       className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       {!isUser && (
-        <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
           <Bot className="w-4 h-4 text-green-600 dark:text-green-400" />
         </div>
       )}
@@ -172,13 +172,13 @@ function MessageBubble({
         <div
           className={`rounded-2xl px-4 py-3 text-sm leading-relaxed ${
             isUser
-              ? 'bg-green-600 text-white rounded-br-md'
+              ? 'bg-[#8e5243] text-white rounded-br-md'
               : 'bg-muted rounded-bl-md'
           }`}
         >
           {renderContent()}
           {message.isStreaming && (
-            <span className="inline-block w-1.5 h-4 bg-green-500 rounded-full animate-pulse ml-1 align-text-bottom" />
+            <span className="inline-block w-1.5 h-4 bg-primary rounded-full animate-pulse ml-1 align-text-bottom" />
           )}
         </div>
         {!isUser && !message.isStreaming && (
@@ -191,7 +191,7 @@ function MessageBubble({
         )}
       </div>
       {isUser && (
-        <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0 mt-1">
+        <div className="w-8 h-8 rounded-full bg-[#8e5243] flex items-center justify-center flex-shrink-0 mt-1">
           <User className="w-4 h-4 text-white" />
         </div>
       )}
@@ -447,7 +447,7 @@ export function ChatPage() {
                 <Button
                   onClick={handleNewConversation}
                   size="sm"
-                  className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                  className="flex-1 bg-[#8e5243] hover:bg-green-700 text-white"
                 >
                   <Plus className="w-4 h-4 mr-1.5" />
                   {t('chat.newChat')}
@@ -480,7 +480,7 @@ export function ChatPage() {
                       onClick={() => handleSelectConversation(conv)}
                       className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors group flex items-center gap-2 ${
                         currentConversation?.id === conv.id
-                          ? 'bg-green-500/10 text-green-600 dark:text-green-400'
+                          ? 'bg-primary/10 text-green-600 dark:text-green-400'
                           : 'hover:bg-muted text-foreground'
                       }`}
                     >
@@ -513,7 +513,7 @@ export function ChatPage() {
               <ChevronDown className={`w-4 h-4 transition-transform ${showSidebar ? 'rotate-90' : '-rotate-90'}`} />
             </Button>
             <div className="flex items-center gap-2 min-w-0">
-              <Sparkles className="w-4 h-4 text-green-500 flex-shrink-0" />
+              <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
               <span className="text-sm font-medium truncate">
                 {currentConversation?.title || t('chat.newConversation')}
               </span>
@@ -532,9 +532,9 @@ export function ChatPage() {
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  className="w-16 h-16 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6"
+                  className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6"
                 >
-                  <Bot className="w-8 h-8 text-green-500" />
+                  <Bot className="w-8 h-8 text-primary" />
                 </motion.div>
                 <h2 className="text-xl font-semibold mb-2">{t('chat.studyBuddy')}</h2>
                 <p className="text-sm text-muted-foreground mb-8">
@@ -550,10 +550,10 @@ export function ChatPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * i }}
                       onClick={() => handleSend(t(key))}
-                      className="text-left px-4 py-3 rounded-xl border border-border hover:border-green-500/50 hover:bg-green-500/5 transition-all text-sm group"
+                      className="text-left px-4 py-3 rounded-xl border border-border hover:border-primary/50 hover:bg-primary/5 transition-all text-sm group"
                     >
                       <div className="flex flex-row items-center gap-2">
-                        <BookOpen className="w-4 h-4 text-green-500 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                        <BookOpen className="w-4 h-4 text-primary flex-shrink-0 group-hover:scale-110 transition-transform" />
                         <span className="text-muted-foreground group-hover:text-foreground transition-colors text-left">
                           {t(key)}
                         </span>
@@ -642,7 +642,7 @@ export function ChatPage() {
                       key={i}
                       className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-muted text-sm border border-border"
                     >
-                      <FileText className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                      <FileText className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                       <span className="truncate max-w-[150px]">{file.name}</span>
                       <button
                         onClick={() => handleRemoveFile(i)}
@@ -683,7 +683,7 @@ export function ChatPage() {
                     placeholder={t('chat.placeholder')}
                     rows={1}
                     disabled={isSending}
-                    className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 disabled:opacity-50 min-h-[44px] max-h-[120px]"
+                    className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-primary disabled:opacity-50 min-h-[44px] max-h-[120px]"
                     style={{
                       height: 'auto',
                       minHeight: '44px',
@@ -709,7 +709,7 @@ export function ChatPage() {
                     onClick={() => handleSend()}
                     size="sm"
                     disabled={!input.trim()}
-                    className="h-[44px] w-[44px] p-0 rounded-xl bg-green-600 hover:bg-green-700 text-white disabled:opacity-30 flex-shrink-0"
+                    className="h-[44px] w-[44px] p-0 rounded-xl bg-[#8e5243] hover:bg-green-700 text-white disabled:opacity-30 flex-shrink-0"
                   >
                     <Send className="w-4 h-4" />
                   </Button>
@@ -727,3 +727,5 @@ export function ChatPage() {
 }
 
 export default ChatPage;
+
+

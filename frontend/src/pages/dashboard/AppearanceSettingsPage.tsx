@@ -101,12 +101,12 @@ export function AppearanceSettingsPage() {
                   onClick={() => setTheme(opt.value)}
                   className={`relative flex flex-col items-center gap-3 p-5 rounded-2xl border-2 transition-all ${
                     active
-                      ? 'border-green-500 bg-green-500/5'
+                      ? 'border-primary bg-primary/5'
                       : 'border-border hover:border-muted-foreground/30'
                   }`}
                 >
                   {active && (
-                    <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
+                    <div className="absolute top-2 right-2 w-5 h-5 rounded-full bg-primary flex items-center justify-center">
                       <Check className="w-3 h-3 text-white" />
                     </div>
                   )}
@@ -114,7 +114,7 @@ export function AppearanceSettingsPage() {
                   {/* Preview box */}
                   <div className={`w-16 h-10 rounded-lg border-2 ${opt.preview}`} />
 
-                  <opt.icon className={`w-5 h-5 ${active ? 'text-green-500' : 'text-muted-foreground'}`} />
+                  <opt.icon className={`w-5 h-5 ${active ? 'text-primary' : 'text-muted-foreground'}`} />
                   <div className="text-center">
                     <p className={`text-sm font-medium ${active ? 'text-green-600' : ''}`}>{t(opt.labelKey)}</p>
                     <p className="text-[10px] text-muted-foreground">{t(opt.descKey)}</p>
@@ -140,3 +140,5 @@ export function AppearanceSettingsPage() {
 }
 
 export default AppearanceSettingsPage;
+
+

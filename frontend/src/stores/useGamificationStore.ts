@@ -86,3 +86,4 @@ export const useGamificationStore = create<GamificationState>((set, get) => ({
 
   clearRecentXp: () => set({ recentXpGain: null }),
 }));
+

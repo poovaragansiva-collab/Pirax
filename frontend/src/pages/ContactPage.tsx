@@ -33,8 +33,8 @@ export function ContactPage() {
       icon: Mail,
       title: t('contact.methods.emailSupport'),
       description: t('contact.methods.emailSupportDesc'),
-      contact: 'support@studyield.com',
-      action: 'mailto:support@studyield.com',
+      contact: 'support@PIRAX.com',
+      action: 'mailto:support@PIRAX.com',
       color: 'from-blue-500 to-cyan-500',
       responseTime: t('contact.methods.responseWithin24'),
     },
@@ -44,7 +44,7 @@ export function ContactPage() {
       description: t('contact.methods.contactFormDesc'),
       contact: t('contact.methods.fillOutForm'),
       action: '#contact-form',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-green-500 to-primary',
       responseTime: t('contact.methods.responseWithin48'),
     },
     {
@@ -175,7 +175,7 @@ export function ContactPage() {
                       animate={{ opacity: 1, scale: 1 }}
                       className="text-center py-12"
                     >
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-6">
+                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-primary flex items-center justify-center mx-auto mb-6">
                         <CheckCircle2 className="w-10 h-10 text-white" />
                       </div>
                       <h3 className="text-2xl font-black mb-3">{t('contact.form.sent')}</h3>
@@ -339,3 +339,5 @@ export function ContactPage() {
     </PublicLayout>
   );
 }
+
+

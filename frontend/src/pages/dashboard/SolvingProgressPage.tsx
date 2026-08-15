@@ -57,8 +57,8 @@ const AGENTS: Agent[] = [
     descKey: 'solvingProgress.agents.verifierDesc',
     icon: ShieldCheck,
     color: 'green',
-    bgClass: 'bg-green-500/10',
-    textClass: 'text-green-500',
+    bgClass: 'bg-primary/10',
+    textClass: 'text-primary',
   },
 ];
 
@@ -178,7 +178,7 @@ export function SolvingProgressPage() {
                     status === 'active'
                       ? `border-${agent.color}-500/50 shadow-lg shadow-${agent.color}-500/5`
                       : status === 'completed'
-                        ? 'border-green-500/30 bg-green-500/5'
+                        ? 'border-primary/30 bg-primary/5'
                         : 'border-border opacity-50'
                   }`}
                 >
@@ -189,14 +189,14 @@ export function SolvingProgressPage() {
                         status === 'active'
                           ? agent.bgClass
                           : status === 'completed'
-                            ? 'bg-green-500/10'
+                            ? 'bg-primary/10'
                             : 'bg-muted/50'
                       )}
                     >
                       {status === 'active' ? (
                         <Loader2 className={cn('w-5 h-5 animate-spin', agent.textClass)} />
                       ) : status === 'completed' ? (
-                        <CheckCircle className="w-5 h-5 text-green-500" />
+                        <CheckCircle className="w-5 h-5 text-primary" />
                       ) : (
                         <Circle className="w-5 h-5 text-muted-foreground" />
                       )}
@@ -214,7 +214,7 @@ export function SolvingProgressPage() {
                     </div>
 
                     {status === 'completed' && Boolean(stageResults[agent.key]) && (
-                      <span className="px-2 py-0.5 bg-green-500/10 text-green-500 rounded-full text-xs font-medium">
+                      <span className="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-medium">
                         {Math.floor(((stageResults[agent.key] as { confidence?: number })?.confidence ?? 0.9) * 100)}%
                       </span>
                     )}
@@ -256,10 +256,10 @@ export function SolvingProgressPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="mt-6 text-center"
             >
-              <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-3">
-                <CheckCircle className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
-              <p className="font-semibold text-green-500">{t('solvingProgress.solutionReady')}</p>
+              <p className="font-semibold text-primary">{t('solvingProgress.solutionReady')}</p>
               <p className="text-sm text-muted-foreground">{t('solvingProgress.redirecting')}</p>
             </motion.div>
           )}
@@ -279,7 +279,7 @@ export function SolvingProgressPage() {
               </p>
               <button
                 onClick={() => navigate('/dashboard/problem-solver')}
-                className="text-sm text-green-500 font-medium hover:underline"
+                className="text-sm text-primary font-medium hover:underline"
               >
                 {t('solvingProgress.tryAnother')}
               </button>
@@ -301,3 +301,5 @@ export function SolvingProgressPage() {
 }
 
 export default SolvingProgressPage;
+
+

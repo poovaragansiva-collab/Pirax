@@ -80,6 +80,7 @@ import {
   ChatPage,
   ChatHistoryPage,
   SubscriptionPage,
+  FocusPage,
 } from '@/pages/dashboard';
 import { PublicLayout } from '@/layouts/PublicLayout';
 import { Button } from '@/components/ui/button';
@@ -642,6 +643,14 @@ function App() {
         }
       />
       <Route
+        path="/dashboard/focus"
+        element={
+          <ProtectedRoute>
+            <FocusPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/dashboard/subscription"
         element={
           <ProtectedRoute>
@@ -698,3 +707,5 @@ function App() {
 }
 
 export default App;
+
+

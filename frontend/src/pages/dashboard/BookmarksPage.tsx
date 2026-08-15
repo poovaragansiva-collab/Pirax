@@ -71,7 +71,7 @@ export default function BookmarksPage() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty?.toLowerCase()) {
       case 'easy':
-        return 'bg-green-500/10 text-green-600';
+        return 'bg-primary/10 text-green-600';
       case 'medium':
         return 'bg-amber-500/10 text-amber-600';
       case 'hard':
@@ -252,7 +252,7 @@ export default function BookmarksPage() {
                                           className={cn(
                                             'px-3 py-2 rounded-lg text-sm',
                                             opt === q.correctAnswer
-                                              ? 'bg-green-500/10 border border-green-500/30 text-green-600'
+                                              ? 'bg-primary/10 border border-primary/30 text-green-600'
                                               : 'bg-muted'
                                           )}
                                         >
@@ -272,7 +272,7 @@ export default function BookmarksPage() {
                                     <p className="text-sm font-medium text-muted-foreground mb-1">
                                       {t('bookmarksPage.correctAnswer')}
                                     </p>
-                                    <p className="px-3 py-2 bg-green-500/10 border border-green-500/30 rounded-lg text-green-600">
+                                    <p className="px-3 py-2 bg-primary/10 border border-primary/30 rounded-lg text-green-600">
                                       {q.correctAnswer}
                                     </p>
                                   </div>
@@ -301,3 +301,5 @@ export default function BookmarksPage() {
     </DashboardLayout>
   );
 }
+
+

@@ -510,7 +510,7 @@ export default function PracticeExamPage() {
               <div className="flex items-center gap-2">
                 <span className={cn(
                   'px-2 py-0.5 rounded text-xs font-medium',
-                  currentQuestion.difficulty === 'easy' && 'bg-green-500/10 text-green-500',
+                  currentQuestion.difficulty === 'easy' && 'bg-primary/10 text-primary',
                   currentQuestion.difficulty === 'medium' && 'bg-amber-500/10 text-amber-500',
                   currentQuestion.difficulty === 'hard' && 'bg-red-500/10 text-red-500'
                 )}>
@@ -611,7 +611,7 @@ export default function PracticeExamPage() {
                       'w-8 h-8 rounded-lg text-xs font-medium transition-colors',
                       i === currentIndex && 'ring-2 ring-purple-500',
                       answer?.flagged && 'bg-amber-500/20 text-amber-500',
-                      answer?.answer && !answer.flagged && 'bg-green-500/20 text-green-500',
+                      answer?.answer && !answer.flagged && 'bg-primary/20 text-primary',
                       !answer?.answer && !answer?.flagged && 'bg-muted'
                     )}
                   >
@@ -728,12 +728,12 @@ export default function PracticeExamPage() {
             {/* Score */}
             <div className={cn(
               'w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6',
-              results.score >= 80 ? 'bg-green-500/10' : results.score >= 60 ? 'bg-amber-500/10' : 'bg-red-500/10'
+              results.score >= 80 ? 'bg-primary/10' : results.score >= 60 ? 'bg-amber-500/10' : 'bg-red-500/10'
             )}>
               <div>
                 <p className={cn(
                   'text-4xl font-bold',
-                  results.score >= 80 ? 'text-green-500' : results.score >= 60 ? 'text-amber-500' : 'text-red-500'
+                  results.score >= 80 ? 'text-primary' : results.score >= 60 ? 'text-amber-500' : 'text-red-500'
                 )}>
                   {results.score}%
                 </p>
@@ -750,8 +750,8 @@ export default function PracticeExamPage() {
 
             {/* Stats */}
             <div className="grid grid-cols-4 gap-4 mb-8">
-              <div className="p-4 bg-green-500/10 rounded-xl">
-                <p className="text-2xl font-bold text-green-500">{results.correct}</p>
+              <div className="p-4 bg-primary/10 rounded-xl">
+                <p className="text-2xl font-bold text-primary">{results.correct}</p>
                 <p className="text-xs text-muted-foreground">{t('practiceExam.correct')}</p>
               </div>
               <div className="p-4 bg-red-500/10 rounded-xl">
@@ -818,13 +818,13 @@ export default function PracticeExamPage() {
                 transition={{ delay: index * 0.05 }}
                 className={cn(
                   'bg-card border rounded-xl p-6',
-                  isCorrect ? 'border-green-500/30' : 'border-red-500/30'
+                  isCorrect ? 'border-primary/30' : 'border-red-500/30'
                 )}
               >
                 <div className="flex items-start gap-4 mb-4">
                   <span className={cn(
                     'w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0',
-                    isCorrect ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
+                    isCorrect ? 'bg-primary/10 text-primary' : 'bg-red-500/10 text-red-500'
                   )}>
                     {isCorrect ? <CheckCircle className="w-5 h-5" /> : <X className="w-5 h-5" />}
                   </span>
@@ -842,7 +842,7 @@ export default function PracticeExamPage() {
                         key={i}
                         className={cn(
                           'flex items-center gap-2 p-3 rounded-lg text-sm',
-                          opt === question.correctAnswer && 'bg-green-500/10 border border-green-500/20',
+                          opt === question.correctAnswer && 'bg-primary/10 border border-primary/20',
                           opt === userAnswer?.answer && opt !== question.correctAnswer && 'bg-red-500/10 border border-red-500/20',
                           opt !== question.correctAnswer && opt !== userAnswer?.answer && 'bg-muted/50'
                         )}
@@ -852,7 +852,7 @@ export default function PracticeExamPage() {
                         </span>
                         {opt}
                         {opt === question.correctAnswer && (
-                          <CheckCircle className="w-4 h-4 text-green-500 ml-auto" />
+                          <CheckCircle className="w-4 h-4 text-primary ml-auto" />
                         )}
                         {opt === userAnswer?.answer && opt !== question.correctAnswer && (
                           <X className="w-4 h-4 text-red-500 ml-auto" />
@@ -879,3 +879,5 @@ export default function PracticeExamPage() {
 
   return null;
 }
+
+

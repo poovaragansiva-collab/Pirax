@@ -15,7 +15,7 @@ type TimerMode = 'focus' | 'shortBreak' | 'longBreak';
 
 const TIMER_CONFIG = {
   focus: { duration: 25 * 60, labelKey: 'pomodoroTimer.focusTime', color: 'text-purple-500', bg: 'bg-purple-500' },
-  shortBreak: { duration: 5 * 60, labelKey: 'pomodoroTimer.shortBreak', color: 'text-green-500', bg: 'bg-green-500' },
+  shortBreak: { duration: 5 * 60, labelKey: 'pomodoroTimer.shortBreak', color: 'text-primary', bg: 'bg-primary' },
   longBreak: { duration: 15 * 60, labelKey: 'pomodoroTimer.longBreak', color: 'text-blue-500', bg: 'bg-blue-500' },
 };
 
@@ -267,3 +267,5 @@ export function PomodoroTimer({ onSessionComplete, className, compact = false }:
     </div>
   );
 }
+
+

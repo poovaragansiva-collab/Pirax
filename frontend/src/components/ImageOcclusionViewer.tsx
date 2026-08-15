@@ -106,7 +106,7 @@ export function ImageOcclusionViewer({ imageUrl, regions, onAllRevealed }: Image
                 key={r.id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="px-2.5 py-1 text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400 rounded-full border border-green-500/20"
+                className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-green-600 dark:text-green-400 rounded-full border border-primary/20"
               >
                 {r.label}
               </motion.span>
@@ -132,3 +132,5 @@ export function ImageOcclusionViewer({ imageUrl, regions, onAllRevealed }: Image
     </div>
   );
 }
+
+

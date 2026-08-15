@@ -109,7 +109,7 @@ export function ChatHistoryPage() {
           <div className="flex-1" />
           <Button
             onClick={() => navigate('/dashboard/chat')}
-            className="bg-green-600 hover:bg-green-700 text-white"
+            className="bg-[#8e5243] hover:bg-green-700 text-white"
           >
             <Plus className="w-4 h-4 mr-1.5" />
             {t('chatHistoryPage.newChat')}
@@ -152,7 +152,7 @@ export function ChatHistoryPage() {
             {!searchQuery && (
               <Button
                 onClick={() => navigate('/dashboard/chat')}
-                className="bg-green-600 hover:bg-green-700 text-white"
+                className="bg-[#8e5243] hover:bg-green-700 text-white"
               >
                 <Plus className="w-4 h-4 mr-1.5" />
                 {t('chatHistoryPage.startConversation')}
@@ -174,9 +174,9 @@ export function ChatHistoryPage() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
                       onClick={() => handleOpen(conv)}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border hover:border-green-500/30 hover:bg-green-500/5 transition-all cursor-pointer group"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-all cursor-pointer group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <MessageSquare className="w-5 h-5 text-green-600 dark:text-green-400" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -227,3 +227,5 @@ export function ChatHistoryPage() {
 }
 
 export default ChatHistoryPage;
+
+

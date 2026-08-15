@@ -19,7 +19,7 @@ import type { NotificationType } from '@/types';
 
 const typeConfig: Record<NotificationType, { icon: typeof Info; color: string; bg: string }> = {
   info: { icon: Info, color: 'text-blue-500', bg: 'bg-blue-500/10' },
-  success: { icon: Trophy, color: 'text-green-500', bg: 'bg-green-500/10' },
+  success: { icon: Trophy, color: 'text-primary', bg: 'bg-primary/10' },
   warning: { icon: AlertTriangle, color: 'text-amber-500', bg: 'bg-amber-500/10' },
   reminder: { icon: Clock, color: 'text-purple-500', bg: 'bg-purple-500/10' },
 };
@@ -156,7 +156,7 @@ export function NotificationBell() {
             <div className="max-h-[400px] overflow-y-auto">
               {isLoading && notifications.length === 0 ? (
                 <div className="flex items-center justify-center py-8">
-                  <div className="w-6 h-6 border-2 border-green-500 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
                 </div>
               ) : notifications.length === 0 ? (
                 <div className="text-center py-12 px-4">
@@ -181,7 +181,7 @@ export function NotificationBell() {
                         animate={{ opacity: 1 }}
                         className={cn(
                           'relative group',
-                          !notification.isRead && 'bg-green-500/5'
+                          !notification.isRead && 'bg-primary/5'
                         )}
                       >
                         <button
@@ -204,7 +204,7 @@ export function NotificationBell() {
                                   {notification.title}
                                 </p>
                                 {!notification.isRead && (
-                                  <span className="w-2 h-2 rounded-full bg-green-500 shrink-0 mt-1.5" />
+                                  <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5" />
                                 )}
                               </div>
                               <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
@@ -228,7 +228,7 @@ export function NotificationBell() {
                               className="p-1 rounded hover:bg-muted transition-colors"
                               title={t('notifications.markAllAsRead')}
                             >
-                              <Check className="w-3.5 h-3.5 text-green-500" />
+                              <Check className="w-3.5 h-3.5 text-primary" />
                             </button>
                           )}
                           <button
@@ -255,7 +255,7 @@ export function NotificationBell() {
                 <Link
                   to="/dashboard/notifications"
                   onClick={() => setOpen(false)}
-                  className="text-xs font-medium text-green-600 hover:text-green-500 transition-colors"
+                  className="text-xs font-medium text-green-600 hover:text-primary transition-colors"
                 >
                   {t('notifications.viewAll')}
                 </Link>
@@ -267,3 +267,5 @@ export function NotificationBell() {
     </div>
   );
 }
+
+

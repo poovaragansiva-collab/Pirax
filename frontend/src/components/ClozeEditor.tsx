@@ -39,7 +39,7 @@ export function ClozeEditor({ value, onChange, placeholder }: ClozeEditorProps) 
         <button
           type="button"
           onClick={insertBlank}
-          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-500/20 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-primary/10 text-green-600 dark:text-green-400 rounded-lg hover:bg-primary/20 transition-colors"
         >
           <Brackets className="w-3.5 h-3.5" />
           {t('clozeEditor.insertBlank')}
@@ -56,7 +56,7 @@ export function ClozeEditor({ value, onChange, placeholder }: ClozeEditorProps) 
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder || t('clozeEditor.placeholder')}
         rows={4}
-        className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-y font-mono"
+        className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-y font-mono"
         style={{ minHeight: '80px' }}
         onInput={(e) => {
           const t = e.target as HTMLTextAreaElement;
@@ -81,7 +81,7 @@ export function ClozeEditor({ value, onChange, placeholder }: ClozeEditorProps) 
                 return (
                   <span
                     key={i}
-                    className="inline-block px-2 py-0.5 mx-0.5 bg-green-500/10 border border-green-500/30 rounded text-green-600 dark:text-green-400 font-medium"
+                    className="inline-block px-2 py-0.5 mx-0.5 bg-primary/10 border border-primary/30 rounded text-green-600 dark:text-green-400 font-medium"
                   >
                     {part.slice(2, -2)}
                   </span>
@@ -95,3 +95,5 @@ export function ClozeEditor({ value, onChange, placeholder }: ClozeEditorProps) 
     </div>
   );
 }
+
+

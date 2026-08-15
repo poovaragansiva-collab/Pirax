@@ -24,25 +24,34 @@ import {
   Route,
   Search,
   Crown,
-  CreditCard,
+  Brain,
 } from 'lucide-react';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
-const sidebarItems = [
-  { labelKey: 'nav.dashboard', icon: LayoutDashboard, href: '/dashboard' },
-  { labelKey: 'nav.studySets', icon: Library, href: '/dashboard/study-sets' },
-  { labelKey: 'nav.aiChat', icon: MessageSquare, href: '/dashboard/chat' },
-  { labelKey: 'nav.problemSolver', icon: Lightbulb, href: '/dashboard/problem-solver' },
-  { labelKey: 'nav.examClone', icon: FileText, href: '/dashboard/exam-clone' },
-  { labelKey: 'nav.teachBack', icon: GraduationCap, href: '/dashboard/teach-back' },
-  { labelKey: 'nav.learningPaths', icon: Route, href: '/dashboard/learning-paths' },
-  { labelKey: 'nav.deepResearch', icon: Search, href: '/dashboard/research' },
-  { labelKey: 'nav.analytics', icon: BarChart3, href: '/dashboard/analytics' },
-  { labelKey: 'nav.notifications', icon: Bell, href: '/dashboard/notifications' },
-  { labelKey: 'nav.subscription', icon: Crown, href: '/dashboard/subscription' },
+const sidebarGroups = [
+  {
+    title: 'Workspace',
+    items: [
+      { label: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
+      { label: 'Learn', icon: Route, href: '/dashboard/learning-paths' },
+      { label: 'AI Hub', icon: MessageSquare, href: '/dashboard/chat' },
+      { label: 'Notes', icon: Library, href: '/dashboard/study-sets' },
+      { label: 'Practice', icon: FileText, href: '/dashboard/exam-clone' },
+      { label: 'Mistakes', icon: Lightbulb, href: '/dashboard/exam-clone/review-queue' },
+      { label: 'Focus', icon: Brain, href: '/dashboard/focus' },
+      { label: 'Analytics', icon: BarChart3, href: '/dashboard/analytics' },
+    ]
+  },
+  {
+    title: 'System',
+    items: [
+      { label: 'Settings', icon: Settings, href: '/dashboard/settings' },
+      { label: 'Billing', icon: Crown, href: '/dashboard/subscription' },
+    ]
+  }
 ];
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
@@ -78,8 +87,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         {/* Logo */}
         <div className="h-16 flex-shrink-0 flex items-center justify-between px-4 border-b border-border">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logos/studyield-logo.png" alt="Studyield" className="w-8 h-8 object-contain" />
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</span>
+            <div className="w-8 h-8 rounded-lg bg-[#A76352] flex items-center justify-center text-white font-bold text-lg">P</div>
+            <span className="text-xl font-bold tracking-wider text-[#221D17] dark:text-[#C6B19B]">PIRAX</span>
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -92,42 +101,49 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         {/* Scrollable area: nav + bottom items */}
         <div className="flex-1 flex flex-col overflow-y-auto">
           {/* Navigation */}
-          <nav className="flex-1 p-4 space-y-1">
-            {sidebarItems.map((item) => {
-              const isActive = location.pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  onClick={() => setSidebarOpen(false)}
-                  className={cn(
-                    'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
-                    isActive
-                      ? 'bg-green-500/10 text-green-600 dark:text-green-400'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  )}
-                >
-                  <item.icon className="w-5 h-5" />
-                  {t(item.labelKey)}
-                </Link>
-              );
-            })}
+          <nav className="flex-1 p-4 space-y-4">
+            {sidebarGroups.map((group) => (
+              <div key={group.title} className="space-y-1">
+                <h3 className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  {group.title}
+                </h3>
+                {group.items.map((item) => {
+                  const isActive = location.pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setSidebarOpen(false)}
+                      className={cn(
+                        'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                        isActive
+                          ? 'bg-[#A76352]/10 text-[#A76352] dark:bg-[#C6B19B]/10 dark:text-[#C6B19B]'
+                          : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                      )}
+                    >
+                      <item.icon className="w-4 h-4" />
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
           </nav>
 
           {/* Bottom section */}
           <div className="flex-shrink-0 p-4 pt-0 space-y-3">
             {/* Pro upgrade banner */}
             {user?.plan === 'free' && (
-              <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20">
+              <div className="p-4 rounded-xl bg-gradient-to-br from-[#A76352]/10 to-[#C6B19B]/10 border border-[#A76352]/20">
                 <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-4 h-4 text-green-500" />
-                  <span className="text-sm font-medium">{t('common.upgradeToPro')}</span>
+                  <Sparkles className="w-4 h-4 text-[#A76352]" />
+                  <span className="text-sm font-medium">Upgrade to Pro</span>
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">
-                  {t('dashboard.upgradeBanner.unlockDescription')}
+                  Unlock advanced AI study features and unlimited workspaces.
                 </p>
-                <Button size="sm" className="w-full bg-green-500 hover:bg-green-600" asChild>
-                  <Link to="/dashboard/subscription">{t('common.upgrade')}</Link>
+                <Button size="sm" className="w-full bg-[#A76352] hover:bg-[#8e5243] text-white" asChild>
+                  <Link to="/dashboard/subscription">Upgrade</Link>
                 </Button>
               </div>
             )}
@@ -172,7 +188,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
                 className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-muted transition-colors"
               >
-                <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                   {user?.avatarUrl ? (
                     <img
                       src={user.avatarUrl}
@@ -210,7 +226,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                       >
                         <CreditCard className="w-4 h-4" />
                         {t('common.subscription')}
-                        <span className="ml-auto px-1.5 py-0.5 bg-green-500/10 text-green-500 rounded text-[10px] font-medium capitalize">
+                        <span className="ml-auto px-1.5 py-0.5 bg-primary/10 text-primary rounded text-[10px] font-medium capitalize">
                           {user?.plan}
                         </span>
                       </Link>
@@ -244,3 +260,5 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
     </div>
   );
 }
+
+

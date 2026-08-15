@@ -134,7 +134,7 @@ export function CreateStudySetPage() {
               value={formData.title}
               onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
               placeholder={t('createStudySet.titlePlaceholder')}
-              className="w-full text-xl font-semibold px-0 py-2 bg-transparent border-0 border-b-2 border-border focus:outline-none focus:border-green-500 placeholder:text-muted-foreground/50 transition-colors"
+              className="w-full text-xl font-semibold px-0 py-2 bg-transparent border-0 border-b-2 border-border focus:outline-none focus:border-primary placeholder:text-muted-foreground/50 transition-colors"
               required
               autoFocus
             />
@@ -146,7 +146,7 @@ export function CreateStudySetPage() {
               onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
               placeholder={t('createStudySet.descriptionPlaceholder')}
               rows={2}
-              className="w-full px-0 py-1.5 text-sm bg-transparent border-0 border-b border-border/50 focus:outline-none focus:border-green-500/50 resize-none placeholder:text-muted-foreground/40 transition-colors"
+              className="w-full px-0 py-1.5 text-sm bg-transparent border-0 border-b border-border/50 focus:outline-none focus:border-primary/50 resize-none placeholder:text-muted-foreground/40 transition-colors"
             />
           </div>
 
@@ -178,7 +178,7 @@ export function CreateStudySetPage() {
                         value={formData.coverImageUrl || ''}
                         onChange={(e) => setFormData((prev) => ({ ...prev, coverImageUrl: e.target.value }))}
                         placeholder={t('createStudySet.coverImagePlaceholder')}
-                        className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                        className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                       />
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export function CreateStudySetPage() {
                         onChange={(e) => setTagInput(e.target.value)}
                         onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTag(); } }}
                         placeholder={t('createStudySet.addTag')}
-                        className="flex-1 px-3 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                        className="flex-1 px-3 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                       />
                       <Button type="button" variant="outline" size="sm" onClick={addTag} disabled={!tagInput.trim()}>
                         <Plus className="w-4 h-4" />
@@ -201,9 +201,9 @@ export function CreateStudySetPage() {
                     {formData.tags && formData.tags.length > 0 && (
                       <div className="flex flex-wrap gap-1.5">
                         {formData.tags.map((tag) => (
-                          <span key={tag} className="inline-flex items-center gap-1 px-2 py-0.5 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs">
+                          <span key={tag} className="inline-flex items-center gap-1 px-2 py-0.5 bg-primary/10 text-green-600 dark:text-green-400 rounded-full text-xs">
                             {tag}
-                            <button type="button" onClick={() => removeTag(tag)} className="p-0.5 hover:bg-green-500/20 rounded-full">
+                            <button type="button" onClick={() => removeTag(tag)} className="p-0.5 hover:bg-primary/20 rounded-full">
                               <X className="w-3 h-3" />
                             </button>
                           </span>
@@ -222,7 +222,7 @@ export function CreateStudySetPage() {
                         value={formData.examDate || ''}
                         onChange={(e) => setFormData((prev) => ({ ...prev, examDate: e.target.value || undefined }))}
                         min={new Date().toISOString().slice(0, 16)}
-                        className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                        className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                       />
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">{t('createStudySet.examDateHint')}</p>
@@ -239,7 +239,7 @@ export function CreateStudySetPage() {
                           value={formData.examSubject || ''}
                           onChange={(e) => setFormData((prev) => ({ ...prev, examSubject: e.target.value }))}
                           placeholder={t('createStudySet.examSubjectPlaceholder')}
-                          className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                          className="w-full pl-9 pr-4 py-2 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                         />
                       </div>
                     </div>
@@ -251,14 +251,14 @@ export function CreateStudySetPage() {
                       <button
                         type="button"
                         onClick={() => setFormData((prev) => ({ ...prev, isPublic: false }))}
-                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm rounded-lg border transition-colors ${!formData.isPublic ? 'border-green-500 bg-green-500/10 text-green-600 dark:text-green-400' : 'border-border hover:border-green-500/50'}`}
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm rounded-lg border transition-colors ${!formData.isPublic ? 'border-primary bg-primary/10 text-green-600 dark:text-green-400' : 'border-border hover:border-primary/50'}`}
                       >
                         <Lock className="w-3.5 h-3.5" />{t('createStudySet.private')}
                       </button>
                       <button
                         type="button"
                         onClick={() => setFormData((prev) => ({ ...prev, isPublic: true }))}
-                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm rounded-lg border transition-colors ${formData.isPublic ? 'border-green-500 bg-green-500/10 text-green-600 dark:text-green-400' : 'border-border hover:border-green-500/50'}`}
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 text-sm rounded-lg border transition-colors ${formData.isPublic ? 'border-primary bg-primary/10 text-green-600 dark:text-green-400' : 'border-border hover:border-primary/50'}`}
                       >
                         <Globe className="w-3.5 h-3.5" />{t('createStudySet.public')}
                       </button>
@@ -302,7 +302,7 @@ export function CreateStudySetPage() {
               type="button"
               onClick={handleSubmit}
               disabled={!formData.title.trim() || isSaving || storeLoading}
-              className="bg-green-500 hover:bg-green-600 min-w-[140px] sm:min-w-[180px]"
+              className="bg-primary hover:bg-[#8e5243] min-w-[140px] sm:min-w-[180px]"
             >
               {isSaving ? (
                 <><Loader2 className="w-4 h-4 mr-2 animate-spin" />{t('createStudySet.creating')}</>
@@ -316,3 +316,5 @@ export function CreateStudySetPage() {
     </DashboardLayout>
   );
 }
+
+

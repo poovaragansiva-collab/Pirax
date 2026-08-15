@@ -55,7 +55,7 @@ const tutorialCategories: TutorialCategory[] = [
         gradient: 'from-green-500 to-emerald-600',
       },
       {
-        title: 'Navigating Studyield',
+        title: 'Navigating PIRAX',
         description: 'A complete walkthrough of the dashboard, sidebar, and all key sections.',
         duration: '4:15',
         icon: BookOpen,
@@ -122,7 +122,7 @@ const tutorialCategories: TutorialCategory[] = [
         description: 'Generate comprehensive research reports on any topic with AI analysis.',
         duration: '7:00',
         icon: Microscope,
-        gradient: 'from-emerald-500 to-green-600',
+        gradient: 'from-primary to-green-600',
       },
     ],
   },
@@ -323,7 +323,7 @@ export function TutorialPage() {
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-                Watch step-by-step video tutorials to master every feature of Studyield.
+                Watch step-by-step video tutorials to master every feature of PIRAX.
                 From creating your first study set to advanced AI-powered tools — we've got you covered.
               </p>
 
@@ -340,7 +340,7 @@ export function TutorialPage() {
                   placeholder={`Search ${totalTutorials} tutorials...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-14 h-14 text-lg rounded-xl border-2 border-border focus:border-green-500"
+                  className="pl-14 h-14 text-lg rounded-xl border-2 border-border focus:border-primary"
                 />
               </motion.div>
             </motion.div>
@@ -363,7 +363,7 @@ export function TutorialPage() {
                       className={cn(
                         'inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm whitespace-nowrap transition-all shrink-0',
                         isActive
-                          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
+                          ? 'bg-gradient-to-r from-green-500 to-primary text-white shadow-lg'
                           : 'bg-card border-2 border-border hover:border-green-300 dark:hover:border-green-700'
                       )}
                     >
@@ -463,3 +463,5 @@ export function TutorialPage() {
     </PublicLayout>
   );
 }
+
+

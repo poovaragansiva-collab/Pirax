@@ -141,3 +141,4 @@ export const useNotificationsStore = create<NotificationsState>((set, get) => ({
 
   toggle: () => set((state) => ({ isOpen: !state.isOpen })),
 }));
+

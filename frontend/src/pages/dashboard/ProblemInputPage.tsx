@@ -207,7 +207,7 @@ export function ProblemInputPage() {
             <div className="relative">
               <button
                 onClick={() => setShowSubjectDropdown(!showSubjectDropdown)}
-                className="flex items-center justify-between w-full sm:w-64 px-3 py-2 bg-muted/50 rounded-lg text-sm border border-border hover:border-green-500/50 transition-colors"
+                className="flex items-center justify-between w-full sm:w-64 px-3 py-2 bg-muted/50 rounded-lg text-sm border border-border hover:border-primary/50 transition-colors"
               >
                 <span>{t(`problemInput.subjects.${subject}`)}</span>
                 <ChevronDown className="w-4 h-4 text-muted-foreground" />
@@ -227,7 +227,7 @@ export function ProblemInputPage() {
                           setShowSubjectDropdown(false);
                         }}
                         className={`w-full text-left px-3 py-2 text-sm hover:bg-muted transition-colors ${
-                          subject === s ? 'text-green-500 font-medium' : ''
+                          subject === s ? 'text-primary font-medium' : ''
                         }`}
                       >
                         {t(`problemInput.subjects.${s}`)}
@@ -245,7 +245,7 @@ export function ProblemInputPage() {
               value={problemText}
               onChange={(e) => setProblemText(e.target.value)}
               placeholder={t('problemInput.textPlaceholder')}
-              className="w-full h-40 px-4 py-3 bg-muted/30 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500/50 placeholder:text-muted-foreground/60"
+              className="w-full h-40 px-4 py-3 bg-muted/30 border border-border rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-primary/50 placeholder:text-muted-foreground/60"
             />
           </div>
 
@@ -268,13 +268,13 @@ export function ProblemInputPage() {
             <div
               onDrop={handleDrop}
               onDragOver={(e) => e.preventDefault()}
-              className="mb-4 border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-green-500/50 transition-colors cursor-pointer"
+              className="mb-4 border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-primary/50 transition-colors cursor-pointer"
               onClick={() => fileInputRef.current?.click()}
             >
               <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
               <p className="text-sm text-muted-foreground">
                 {t('problemInput.dragDrop')}{' '}
-                <span className="text-green-500 font-medium">{t('problemInput.clickToUpload')}</span>
+                <span className="text-primary font-medium">{t('problemInput.clickToUpload')}</span>
               </p>
               <p className="text-xs text-muted-foreground/60 mt-1">
                 {t('problemInput.fileTypes')}
@@ -320,7 +320,7 @@ export function ProblemInputPage() {
               onClick={() => fileInputRef.current?.click()}
               className="flex items-center gap-2 px-4 py-2.5 bg-muted/50 rounded-xl text-sm font-medium hover:bg-muted transition-colors border border-border"
             >
-              <ImageIcon className="w-4 h-4 text-green-500" />
+              <ImageIcon className="w-4 h-4 text-primary" />
               {t('problemInput.image')}
             </button>
           </div>
@@ -401,3 +401,5 @@ export function ProblemInputPage() {
 }
 
 export default ProblemInputPage;
+
+

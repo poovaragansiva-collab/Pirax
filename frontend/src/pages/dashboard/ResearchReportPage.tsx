@@ -263,7 +263,7 @@ export function ResearchReportPage() {
                       <ul className="space-y-1">
                         {sec.keyPoints.map((point, j) => (
                           <li key={j} className="flex items-start gap-2 text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                             {point}
                           </li>
                         ))}
@@ -394,7 +394,7 @@ export function ResearchReportPage() {
                     onClick={() => setCitationStyle(style)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all uppercase ${
                       citationStyle === style
-                        ? 'border-green-500/50 bg-green-500/5 text-green-600'
+                        ? 'border-primary/50 bg-primary/5 text-green-600'
                         : 'border-border text-muted-foreground hover:border-muted-foreground/30'
                     }`}
                   >
@@ -429,7 +429,7 @@ export function ResearchReportPage() {
                             [`section-${i}`]: e.target.checked,
                           }))
                         }
-                        className="w-4 h-4 rounded border-border text-green-500 focus:ring-green-500"
+                        className="w-4 h-4 rounded border-border text-primary focus:ring-green-500"
                       />
                       <span className="text-sm">{sec.heading}</span>
                     </label>
@@ -491,7 +491,7 @@ function SourceCard({
             <span className="text-xs text-muted-foreground">{t('researchReport.relevance')}</span>
             <div className="flex-1 h-1.5 bg-muted rounded-full max-w-32">
               <div
-                className="h-full bg-green-500 rounded-full"
+                className="h-full bg-primary rounded-full"
                 style={{ width: `${source.relevanceScore * 100}%` }}
               />
             </div>
@@ -505,7 +505,7 @@ function SourceCard({
           className="p-2 hover:bg-muted rounded-lg text-muted-foreground hover:text-foreground transition-colors shrink-0"
           title={t('researchReport.copyCitation')}
         >
-          {copiedCitation ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
+          {copiedCitation ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
         </button>
       </div>
     </div>
@@ -513,3 +513,5 @@ function SourceCard({
 }
 
 export default ResearchReportPage;
+
+

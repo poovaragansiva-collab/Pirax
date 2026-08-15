@@ -83,7 +83,7 @@ export function FormulaCardsPage() {
       formula: 'bg-blue-500/10 text-blue-500',
       theorem: 'bg-purple-500/10 text-purple-500',
       rule: 'bg-amber-500/10 text-amber-500',
-      definition: 'bg-green-500/10 text-green-500',
+      definition: 'bg-primary/10 text-primary',
       concept: 'bg-pink-500/10 text-pink-500',
     };
     return map[c] || 'bg-muted text-muted-foreground';
@@ -117,7 +117,7 @@ export function FormulaCardsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 onClick={() => toggleFlip(i)}
-                className="bg-card rounded-2xl border p-5 cursor-pointer hover:border-green-500/30 transition-colors min-h-[160px] flex flex-col"
+                className="bg-card rounded-2xl border p-5 cursor-pointer hover:border-primary/30 transition-colors min-h-[160px] flex flex-col"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${catColor(card.category)}`}>
@@ -128,7 +128,7 @@ export function FormulaCardsPage() {
                       onClick={(e) => { e.stopPropagation(); copyCard(card, i); }}
                       className="p-1 hover:bg-muted rounded"
                     >
-                      {copied === i ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3 text-muted-foreground" />}
+                      {copied === i ? <Check className="w-3 h-3 text-primary" /> : <Copy className="w-3 h-3 text-muted-foreground" />}
                     </button>
                     <FlipVertical className="w-3 h-3 text-muted-foreground" />
                   </div>
@@ -159,3 +159,5 @@ export function FormulaCardsPage() {
 }
 
 export default FormulaCardsPage;
+
+

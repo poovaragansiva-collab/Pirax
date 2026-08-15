@@ -76,3 +76,4 @@ export const researchService = {
     await api.delete(ENDPOINTS.research.delete(id));
   },
 };
+

@@ -224,7 +224,7 @@ export function TermsPage() {
                 <section id="user-accounts" className="scroll-mt-24">
                   <div className="bg-card border-2 border-border rounded-2xl p-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-primary flex items-center justify-center">
                         <UserCog className="w-6 h-6 text-white" />
                       </div>
                       <h2 className="text-2xl font-black">{t('termsPage.userAccounts.title')}</h2>
@@ -235,7 +235,7 @@ export function TermsPage() {
                     <div className="space-y-3">
                       {(t('termsPage.userAccounts.items', { returnObjects: true }) as string[]).map((item, index) => (
                         <div key={item} className="flex items-start gap-3 p-3 bg-muted/50 rounded-xl">
-                          <span className="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 text-white text-xs font-bold flex items-center justify-center shrink-0">
+                          <span className="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-primary text-white text-xs font-bold flex items-center justify-center shrink-0">
                             {index + 1}
                           </span>
                           <span className="text-sm text-muted-foreground">{item}</span>
@@ -379,7 +379,7 @@ export function TermsPage() {
                 <section id="changes" className="scroll-mt-24">
                   <div className="bg-card border-2 border-border rounded-2xl p-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-primary flex items-center justify-center">
                         <RefreshCw className="w-6 h-6 text-white" />
                       </div>
                       <h2 className="text-2xl font-black">{t('termsPage.changes.title')}</h2>
@@ -434,7 +434,7 @@ export function TermsPage() {
                         className="bg-white/10 hover:bg-white/20 text-white border-white/30 font-semibold"
                         asChild
                       >
-                        <a href="mailto:legal@studyield.com">legal@studyield.com</a>
+                        <a href="mailto:legal@PIRAX.com">legal@PIRAX.com</a>
                       </Button>
                     </div>
                   </div>
@@ -449,3 +449,5 @@ export function TermsPage() {
     </PublicLayout>
   );
 }
+
+

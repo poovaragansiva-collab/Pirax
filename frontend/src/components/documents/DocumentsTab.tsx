@@ -55,7 +55,7 @@ function formatFileSize(bytes: number): string {
 
 function getFileIcon(mimeType: string) {
   if (mimeType.startsWith('image/')) {
-    return <Image className="w-8 h-8 text-green-500" />;
+    return <Image className="w-8 h-8 text-primary" />;
   }
   if (mimeType === 'application/pdf') {
     return <FileText className="w-8 h-8 text-red-500" />;
@@ -498,3 +498,5 @@ export function DocumentsTab({ studySetId }: DocumentsTabProps) {
     </motion.div>
   );
 }
+
+

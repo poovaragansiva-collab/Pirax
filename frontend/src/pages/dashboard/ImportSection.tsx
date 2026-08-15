@@ -83,7 +83,7 @@ interface ImportSectionProps {
 const IMPORT_SOURCES = [
   { key: 'pdf' as const, labelKey: 'importSection.pdfUpload', descKey: 'importSection.pdfUploadDesc', icon: FileText, color: 'bg-red-500/10 text-red-500', borderColor: 'hover:border-red-500/40' },
   { key: 'youtube' as const, labelKey: 'importSection.youtubeVideo', descKey: 'importSection.youtubeVideoDesc', icon: Video, color: 'bg-red-500/10 text-red-500', borderColor: 'hover:border-red-500/40' },
-  { key: 'audio-record' as const, labelKey: 'importSection.recordAudio', descKey: 'importSection.recordAudioDesc', icon: Mic, color: 'bg-emerald-500/10 text-emerald-500', borderColor: 'hover:border-emerald-500/40' },
+  { key: 'audio-record' as const, labelKey: 'importSection.recordAudio', descKey: 'importSection.recordAudioDesc', icon: Mic, color: 'bg-primary/10 text-primary', borderColor: 'hover:border-primary/40' },
   { key: 'audio-file' as const, labelKey: 'importSection.audioFile', descKey: 'importSection.audioFileDesc', icon: Music, color: 'bg-blue-500/10 text-blue-500', borderColor: 'hover:border-blue-500/40' },
   { key: 'website' as const, labelKey: 'importSection.websiteUrl', descKey: 'importSection.websiteUrlDesc', icon: Globe, color: 'bg-purple-500/10 text-purple-500', borderColor: 'hover:border-purple-500/40' },
   { key: 'camera' as const, labelKey: 'importSection.cameraScan', descKey: 'importSection.cameraScanDesc', icon: Camera, color: 'bg-amber-500/10 text-amber-500', borderColor: 'hover:border-amber-500/40' },
@@ -175,8 +175,8 @@ function CardCountPicker({
             onClick={() => setCount(n)}
             className={`px-2.5 py-1 text-xs rounded-md border transition-colors ${
               count === n
-                ? 'border-green-500 bg-green-500/10 text-green-600 dark:text-green-400'
-                : 'border-border hover:border-green-500/50'
+                ? 'border-primary bg-primary/10 text-green-600 dark:text-green-400'
+                : 'border-border hover:border-primary/50'
             }`}
           >
             {n}
@@ -198,7 +198,7 @@ function WaveformBars({ isActive }: { isActive: boolean }) {
       {bars.map((bar, i) => (
         <motion.div
           key={i}
-          className="w-1 rounded-full bg-emerald-500"
+          className="w-1 rounded-full bg-primary"
           animate={
             isActive
               ? { height: [6, bar.height, 6] }
@@ -294,7 +294,7 @@ function PDFScreen({
           type="button"
           onClick={() => onSubmit(files, count)}
           disabled={files.length === 0}
-          className="w-full bg-green-500 hover:bg-green-600"
+          className="w-full bg-primary hover:bg-[#8e5243]"
         >
           <Sparkles className="w-4 h-4 mr-2" />
           Extract & Generate {count} Cards
@@ -351,7 +351,7 @@ function YouTubeScreen({
           </div>
           <div className="p-3">
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
               <span>Video found</span>
               <span className="text-muted-foreground/50">|</span>
               <span>Transcript will be extracted</span>
@@ -366,7 +366,7 @@ function YouTubeScreen({
           type="button"
           onClick={() => onSubmit(url, count)}
           disabled={!videoId}
-          className="w-full bg-green-500 hover:bg-green-600"
+          className="w-full bg-primary hover:bg-[#8e5243]"
         >
           <Sparkles className="w-4 h-4 mr-2" />
           Extract & Generate {count} Cards
@@ -453,7 +453,7 @@ function AudioRecordScreen({
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-      <ScreenHeader icon={Mic} title="Record Audio" onBack={onBack} color="bg-emerald-500/10 text-emerald-500" />
+      <ScreenHeader icon={Mic} title="Record Audio" onBack={onBack} color="bg-primary/10 text-primary" />
 
       {error && (
         <div className="flex items-center gap-2 p-3 mb-4 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-500">
@@ -524,7 +524,7 @@ function AudioRecordScreen({
       {status === 'done' && audioBlob && (
         <div className="space-y-4">
           <CardCountPicker count={count} setCount={setCount} />
-          <Button type="button" onClick={() => onSubmit(audioBlob, count)} className="w-full bg-green-500 hover:bg-green-600">
+          <Button type="button" onClick={() => onSubmit(audioBlob, count)} className="w-full bg-primary hover:bg-[#8e5243]">
             <Sparkles className="w-4 h-4 mr-2" />
             Transcribe & Generate {count} Cards
           </Button>
@@ -595,7 +595,7 @@ function AudioFileScreen({
           type="button"
           onClick={() => file && onSubmit(file, count)}
           disabled={!file}
-          className="w-full bg-green-500 hover:bg-green-600"
+          className="w-full bg-primary hover:bg-[#8e5243]"
         >
           <Sparkles className="w-4 h-4 mr-2" />
           Transcribe & Generate {count} Cards
@@ -645,7 +645,7 @@ function WebsiteScreen({
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{url}</p>
               <div className="flex items-center gap-2 text-xs text-muted-foreground mt-0.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
                 <span>URL looks valid</span>
               </div>
             </div>
@@ -656,7 +656,7 @@ function WebsiteScreen({
                 type="checkbox"
                 checked={includeImages}
                 onChange={(e) => setIncludeImages(e.target.checked)}
-                className="w-4 h-4 rounded border-border text-green-500 focus:ring-green-500/20"
+                className="w-4 h-4 rounded border-border text-primary focus:ring-primary/20"
               />
               <span className="text-xs text-muted-foreground">
                 <Image className="w-3.5 h-3.5 inline mr-1" />
@@ -673,7 +673,7 @@ function WebsiteScreen({
           type="button"
           onClick={() => onSubmit(url, count, includeImages)}
           disabled={!isValidUrl}
-          className="w-full bg-green-500 hover:bg-green-600"
+          className="w-full bg-primary hover:bg-[#8e5243]"
         >
           <Sparkles className="w-4 h-4 mr-2" />
           Extract & Generate {count} Cards
@@ -827,7 +827,7 @@ function CameraScreen({
       {captures.length > 0 && (
         <div className="space-y-4">
           <CardCountPicker count={count} setCount={setCount} />
-          <Button type="button" onClick={handleSubmit} className="w-full bg-green-500 hover:bg-green-600">
+          <Button type="button" onClick={handleSubmit} className="w-full bg-primary hover:bg-[#8e5243]">
             <Sparkles className="w-4 h-4 mr-2" />
             OCR & Generate {count} Cards
           </Button>
@@ -961,7 +961,7 @@ function TextScreen({
             onChange={(e) => setText(e.target.value)}
             placeholder={`Paste your terms and definitions here...\n\nExample (tab-separated):\nPhotosynthesis\tThe process by which plants convert sunlight to energy\nMitosis\tCell division producing two identical cells`}
             rows={10}
-            className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-y font-mono"
+            className="w-full px-3 py-2.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-y font-mono"
           />
           {previewCount > 0 && (
             <p className="text-xs text-muted-foreground mt-1">
@@ -976,7 +976,7 @@ function TextScreen({
             <select
               value={termSep}
               onChange={(e) => setTermSep(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20"
+              className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="\\t">Tab</option>
               <option value=",">Comma</option>
@@ -989,7 +989,7 @@ function TextScreen({
             <select
               value={cardSep}
               onChange={(e) => setCardSep(e.target.value)}
-              className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20"
+              className="w-full px-2.5 py-1.5 text-sm bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="\\n">New line</option>
               <option value=";">Semicolon</option>
@@ -998,7 +998,7 @@ function TextScreen({
           </div>
         </div>
 
-        <Button type="button" onClick={parseText} disabled={!text.trim()} className="w-full bg-green-500 hover:bg-green-600">
+        <Button type="button" onClick={parseText} disabled={!text.trim()} className="w-full bg-primary hover:bg-[#8e5243]">
           <FileText className="w-4 h-4 mr-2" />
           Import {previewCount > 0 ? `${previewCount} ` : ''}Cards
         </Button>
@@ -1084,7 +1084,7 @@ function HandwritingScreen({
           type="button"
           onClick={() => onSubmit(files, count)}
           disabled={files.length === 0}
-          className="w-full bg-green-500 hover:bg-green-600"
+          className="w-full bg-primary hover:bg-[#8e5243]"
         >
           <Sparkles className="w-4 h-4 mr-2" />
           OCR & Generate {count} Cards
@@ -1114,8 +1114,8 @@ function ProcessingScreen({
       exit={{ opacity: 0 }}
       className="text-center py-4"
     >
-      <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-5">
-        <Loader2 className="w-8 h-8 text-green-500 animate-spin" />
+      <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+        <Loader2 className="w-8 h-8 text-primary animate-spin" />
       </div>
 
       <h3 className="font-semibold text-lg mb-1">{t('importSection.processing', { source: sourceLabel })}</h3>
@@ -1130,9 +1130,9 @@ function ProcessingScreen({
           return (
             <div key={step} className="flex items-center gap-3 py-2">
               {isComplete ? (
-                <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
               ) : isCurrent ? (
-                <Loader2 className="w-5 h-5 text-green-500 animate-spin shrink-0" />
+                <Loader2 className="w-5 h-5 text-primary animate-spin shrink-0" />
               ) : (
                 <Circle className="w-5 h-5 text-muted-foreground/30 shrink-0" />
               )}
@@ -1148,7 +1148,7 @@ function ProcessingScreen({
       <div className="max-w-xs mx-auto mb-4">
         <div className="h-2 bg-muted rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-green-500 rounded-full"
+            className="h-full bg-primary rounded-full"
             initial={{ width: '0%' }}
             animate={{ width: `${processing.progress}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -1197,9 +1197,9 @@ function SuccessScreen({
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.1 }}
-        className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-5"
+        className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5"
       >
-        <Check className="w-8 h-8 text-green-500" />
+        <Check className="w-8 h-8 text-primary" />
       </motion.div>
 
       <h3 className="font-semibold text-lg mb-1">{t('importSection.importSuccessful')}</h3>
@@ -1246,7 +1246,7 @@ function SuccessScreen({
 
       {/* Actions */}
       <div className="flex flex-col gap-2 max-w-xs mx-auto">
-        <Button type="button" onClick={onAddCards} className="w-full bg-green-500 hover:bg-green-600">
+        <Button type="button" onClick={onAddCards} className="w-full bg-primary hover:bg-[#8e5243]">
           <Plus className="w-4 h-4 mr-2" />
           {t('importSection.addCardsToSet', { count: result.cards.length })}
         </Button>
@@ -1565,3 +1565,5 @@ export function ImportSection({ onCardsImported, studySetId }: ImportSectionProp
     </AnimatePresence>
   );
 }
+
+

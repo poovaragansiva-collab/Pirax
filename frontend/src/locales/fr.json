@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "Studyield",
+    "appName": "PIRAX",
     "loading": "Chargement...",
     "save": "Enregistrer",
     "cancel": "Annuler",
@@ -160,18 +160,18 @@
     "badge": "Avis d'étudiants",
     "title": "Adoré par les",
     "titleHighlight": "étudiants du monde entier",
-    "description": "Découvrez ce que les étudiants disent de leur expérience d'apprentissage avec Studyield.",
+    "description": "Découvrez ce que les étudiants disent de leur expérience d'apprentissage avec PIRAX.",
     "t1": {
       "name": "Sarah Chen",
       "role": "Étudiante en pré-médecine",
       "university": "Stanford University",
-      "text": "Studyield a complètement transformé ma façon d'étudier la chimie organique. Les flashcards générées par l'IA m'ont fait gagner des heures de préparation, et le système de répétition espacée m'a aidée à tout retenir pour mon MCAT."
+      "text": "PIRAX a complètement transformé ma façon d'étudier la chimie organique. Les flashcards générées par l'IA m'ont fait gagner des heures de préparation, et le système de répétition espacée m'a aidée à tout retenir pour mon MCAT."
     },
     "t2": {
       "name": "James Williams",
       "role": "Étudiant en informatique",
       "university": "MIT",
-      "text": "La fonctionnalité d'analyse de documents est incroyable. J'importe mes PDF de cours et j'ai des flashcards et des quiz prêts en quelques secondes. Mes notes sont passées de B+ à A depuis que j'utilise Studyield."
+      "text": "La fonctionnalité d'analyse de documents est incroyable. J'importe mes PDF de cours et j'ai des flashcards et des quiz prêts en quelques secondes. Mes notes sont passées de B+ à A depuis que j'utilise PIRAX."
     },
     "t3": {
       "name": "Aiko Tanaka",
@@ -189,13 +189,13 @@
       "name": "Emma Rodriguez",
       "role": "Étudiante en médecine",
       "university": "Johns Hopkins",
-      "text": "J'avais du mal avec l'anatomie jusqu'à ce que je découvre Studyield. Les flashcards à occultation d'image ont rendu l'apprentissage des structures anatomiques tellement plus facile. Je recommande vivement à tout étudiant en médecine !"
+      "text": "J'avais du mal avec l'anatomie jusqu'à ce que je découvre PIRAX. Les flashcards à occultation d'image ont rendu l'apprentissage des structures anatomiques tellement plus facile. Je recommande vivement à tout étudiant en médecine !"
     },
     "t6": {
       "name": "David Kim",
       "role": "Étudiant en MBA",
       "university": "Wharton School",
-      "text": "Notre groupe d'étude utilise la fonctionnalité de quiz en direct de Studyield pour la préparation aux études de cas. Participer à des quiz en temps réel rend nos sessions de révision incroyablement engageantes et productives."
+      "text": "Notre groupe d'étude utilise la fonctionnalité de quiz en direct de PIRAX pour la préparation aux études de cas. Participer à des quiz en temps réel rend nos sessions de révision incroyablement engageantes et productives."
     }
   },
   "howItWorks": {
@@ -296,7 +296,7 @@
       "cookiePolicy": "Politique de cookies",
       "dataDeletion": "Suppression des données"
     },
-    "copyright": "{{year}} Studyield. Tous droits réservés.",
+    "copyright": "{{year}} PIRAX. Tous droits réservés.",
     "madeWith": "Fait avec",
     "andAI": "et l'IA pour un meilleur apprentissage",
     "sitemap": "Plan du site",
@@ -878,15 +878,15 @@
     "badge": "FAQ",
     "title": "Questions",
     "titleHighlight": "fréquentes",
-    "description": "Tout ce que vous devez savoir sur Studyield. Vous ne trouvez pas ce que vous cherchez ? Contactez notre équipe de support.",
+    "description": "Tout ce que vous devez savoir sur PIRAX. Vous ne trouvez pas ce que vous cherchez ? Contactez notre équipe de support.",
     "stillHaveQuestions": "Vous avez encore des questions ?",
     "contactSupport": "Contacter le support",
     "q1": "Quels types de documents puis-je téléverser ?",
-    "a1": "Studyield prend en charge une grande variété de formats de documents, notamment les PDF, les documents Word (.docx, .doc), les fichiers texte, les fichiers markdown et les images (PNG, JPEG). Notre IA traite ces documents pour en extraire le texte et créer des supports d'apprentissage.",
+    "a1": "PIRAX prend en charge une grande variété de formats de documents, notamment les PDF, les documents Word (.docx, .doc), les fichiers texte, les fichiers markdown et les images (PNG, JPEG). Notre IA traite ces documents pour en extraire le texte et créer des supports d'apprentissage.",
     "q2": "Comment fonctionne le système de répétition espacée ?",
     "a2": "Notre système de flashcards utilise l'algorithme de répétition espacée SM-2 pour optimiser votre apprentissage. En fonction de votre capacité à vous souvenir de chaque carte, le système calcule le moment optimal pour votre prochaine révision. Les cartes qui vous posent problème apparaissent plus fréquemment, tandis que les cartes maîtrisées sont montrées moins souvent.",
-    "q3": "Puis-je utiliser Studyield hors ligne ?",
-    "a3": "Actuellement, Studyield nécessite une connexion Internet pour la plupart des fonctionnalités car notre traitement IA s'effectue dans le cloud. Cependant, nous travaillons sur le support hors ligne pour la révision des flashcards dans de futures mises à jour.",
+    "q3": "Puis-je utiliser PIRAX hors ligne ?",
+    "a3": "Actuellement, PIRAX nécessite une connexion Internet pour la plupart des fonctionnalités car notre traitement IA s'effectue dans le cloud. Cependant, nous travaillons sur le support hors ligne pour la révision des flashcards dans de futures mises à jour.",
     "q4": "Quelle est la précision du contenu généré par l'IA ?",
     "a4": "Notre IA génère du contenu de haute qualité basé sur vos supports téléversés. Cependant, nous recommandons toujours de vérifier les flashcards et quiz générés pour en assurer la précision. Vous pouvez facilement modifier tout contenu généré selon vos préférences.",
     "q5": "Mes données sont-elles sécurisées et privées ?",
@@ -895,14 +895,14 @@
     "a6": "Oui ! Vous pouvez rendre vos sets d'étude publics pour que tout le monde puisse y accéder, ou partager des liens privés avec des personnes spécifiques. Tous vos supports d'étude sont privés par défaut, et vous contrôlez qui peut les voir.",
     "q7": "Qu'est-ce que la fonctionnalité Clonage d'examen ?",
     "a7": "Le Clonage d'examen analyse le style, le format et la difficulté de vos examens passés ou tests pratiques. Il génère ensuite de nouvelles questions correspondant exactement à ce style, vous aidant à vous préparer avec du matériel pratique pertinent.",
-    "q8": "Studyield est-il abordable pour les étudiants ?",
+    "q8": "PIRAX est-il abordable pour les étudiants ?",
     "a8": "Absolument ! Nos tarifs sont conçus pour les étudiants. Commencez avec un essai gratuit de 7 jours, puis choisissez entre les forfaits mensuels ou annuels — tous les deux adaptés au budget des étudiants.",
     "q9": "Puis-je annuler mon abonnement à tout moment ?",
     "a9": "Absolument ! Vous pouvez annuler votre abonnement à tout moment depuis les Paramètres du compte. Vous continuerez à avoir accès aux fonctionnalités premium jusqu'à la fin de votre période de facturation. Aucun frais d'annulation.",
     "q10": "Que se passe-t-il si je rétrograde mon forfait ?",
     "a10": "Lorsque vous rétrogradez, vous conservez l'accès aux fonctionnalités premium jusqu'à la fin de votre cycle de facturation en cours. Après cela, votre compte passe au nouveau forfait. Vos supports d'étude sont conservés, mais vous pourriez avoir un accès limité à certaines fonctionnalités.",
     "q11": "Quels navigateurs et appareils sont pris en charge ?",
-    "a11": "Studyield fonctionne sur tous les navigateurs modernes, y compris Chrome, Firefox, Safari et Edge. Il est entièrement responsive et fonctionne parfaitement sur ordinateur, tablette et mobile. Les applications mobiles natives pour iOS et Android arrivent bientôt.",
+    "a11": "PIRAX fonctionne sur tous les navigateurs modernes, y compris Chrome, Firefox, Safari et Edge. Il est entièrement responsive et fonctionne parfaitement sur ordinateur, tablette et mobile. Les applications mobiles natives pour iOS et Android arrivent bientôt.",
     "q12": "Qu'est-ce que la fonctionnalité Enseigner en retour ?",
     "a12": "Enseigner en retour est une fonctionnalité Pro qui vous aide à renforcer votre apprentissage en vous faisant expliquer des concepts à l'IA. L'IA évalue votre explication, identifie les lacunes dans votre compréhension et fournit des retours ciblés pour consolider vos connaissances.",
     "searchPlaceholder": "Rechercher dans la FAQ...",
@@ -1062,10 +1062,10 @@
     }
   },
   "about": {
-    "badge": "À propos de Studyield",
+    "badge": "À propos de PIRAX",
     "title": "Étudiez plus intelligemment,",
     "titleHighlight": "propulsé par l'IA",
-    "description": "Studyield aide les étudiants à étudier plus efficacement en transformant des documents en flashcards, quiz et outils d'apprentissage interactifs — le tout propulsé par l'IA.",
+    "description": "PIRAX aide les étudiants à étudier plus efficacement en transformant des documents en flashcards, quiz et outils d'apprentissage interactifs — le tout propulsé par l'IA.",
     "stats": {
       "featuresCount": "10+",
       "featuresLabel": "Outils d'apprentissage",
@@ -1076,10 +1076,10 @@
       "uptime": "Gratuit",
       "uptimeLabel": "Pour commencer"
     },
-    "ourStory": "Pourquoi nous avons créé Studyield",
-    "storyP1": "Nous avons créé Studyield parce que nous en avions assez de passer des heures à créer des flashcards et des notes d'étude à la main. En tant qu'étudiants nous-mêmes, nous savions que l'IA pouvait faire le gros du travail — extraire les concepts clés des documents, générer des quiz et planifier les révisions — pour que nous puissions nous concentrer sur l'apprentissage lui-même.",
-    "storyP2": "Studyield utilise des techniques éprouvées comme la répétition espacée et le rappel actif, combinées avec une IA qui comprend vos documents. Téléversez un PDF, et en quelques secondes vous avez des flashcards, des quiz et un tuteur IA qui peut répondre aux questions sur votre matériel.",
-    "storyP3": "Nous sommes une petite équipe qui construit l'outil d'étude que nous avons toujours voulu. Studyield est gratuit pour commencer, et nous l'améliorons continuellement grâce aux retours de vrais étudiants qui l'utilisent chaque jour.",
+    "ourStory": "Pourquoi nous avons créé PIRAX",
+    "storyP1": "Nous avons créé PIRAX parce que nous en avions assez de passer des heures à créer des flashcards et des notes d'étude à la main. En tant qu'étudiants nous-mêmes, nous savions que l'IA pouvait faire le gros du travail — extraire les concepts clés des documents, générer des quiz et planifier les révisions — pour que nous puissions nous concentrer sur l'apprentissage lui-même.",
+    "storyP2": "PIRAX utilise des techniques éprouvées comme la répétition espacée et le rappel actif, combinées avec une IA qui comprend vos documents. Téléversez un PDF, et en quelques secondes vous avez des flashcards, des quiz et un tuteur IA qui peut répondre aux questions sur votre matériel.",
+    "storyP3": "Nous sommes une petite équipe qui construit l'outil d'étude que nous avons toujours voulu. PIRAX est gratuit pour commencer, et nous l'améliorons continuellement grâce aux retours de vrais étudiants qui l'utilisent chaque jour.",
     "whatWeOffer": "Ce que vous pouvez faire",
     "features": {
       "studySets": "Sets d'étude et flashcards",
@@ -1090,12 +1090,12 @@
       "examClone": "Clonage d'examen"
     },
     "ourValues": "Ce qui nous tient à cœur",
-    "valuesDescription": "Les principes qui guident la construction de Studyield.",
+    "valuesDescription": "Les principes qui guident la construction de PIRAX.",
     "values": {
       "missionDriven": "Apprentissage accessible",
-      "missionDrivenDesc": "Des outils d'étude de qualité ne devraient pas coûter une fortune. Studyield offre un essai gratuit de 7 jours pour que chaque étudiant puisse découvrir l'apprentissage propulsé par l'IA.",
+      "missionDrivenDesc": "Des outils d'étude de qualité ne devraient pas coûter une fortune. PIRAX offre un essai gratuit de 7 jours pour que chaque étudiant puisse découvrir l'apprentissage propulsé par l'IA.",
       "userCentric": "Conçu pour les étudiants",
-      "userCentricDesc": "Nous utilisons Studyield nous-mêmes. Chaque fonctionnalité est conçue pour la façon dont les étudiants étudient réellement — pas comme nous pensons qu'ils devraient le faire.",
+      "userCentricDesc": "Nous utilisons PIRAX nous-mêmes. Chaque fonctionnalité est conçue pour la façon dont les étudiants étudient réellement — pas comme nous pensons qu'ils devraient le faire.",
       "innovationFirst": "Une IA vraiment utile",
       "innovationFirstDesc": "Nous n'ajoutons pas l'IA pour le plaisir. Chaque fonctionnalité IA résout un vrai problème — générer des flashcards, expliquer des concepts ou créer des examens pratiques.",
       "communityFocused": "Apprendre ensemble",
@@ -1109,7 +1109,7 @@
     "badge": "Nous sommes là pour vous aider",
     "title": "Entrez en",
     "titleHighlight": "contact",
-    "description": "Des questions sur Studyield ? Nous sommes là pour vous aider. Contactez-nous par l'un des moyens ci-dessous ou remplissez le formulaire de contact.",
+    "description": "Des questions sur PIRAX ? Nous sommes là pour vous aider. Contactez-nous par l'un des moyens ci-dessous ou remplissez le formulaire de contact.",
     "methods": {
       "emailSupport": "Support par e-mail",
       "emailSupportDesc": "Obtenez de l'aide pour toute question ou problème",
@@ -1230,7 +1230,7 @@
       "a1": "Oui, vous pouvez passer au supérieur ou rétrograder votre forfait à tout moment. Lors d'une mise à niveau, vous obtiendrez un accès immédiat aux nouvelles fonctionnalités. Lors d'une rétrogradation, le changement prend effet à la fin de votre cycle de facturation.",
       "q2": "Que se passe-t-il si je rétrograde vers le Gratuit ?",
       "a2": "Vos supports d'étude seront conservés, mais vous aurez un accès limité aux fonctionnalités premium. Vous pouvez repasser au Pro à tout moment pour retrouver l'accès complet.",
-      "q3": "Studyield est-il abordable pour les étudiants ?",
+      "q3": "PIRAX est-il abordable pour les étudiants ?",
       "a3": "Absolument ! Nos tarifs sont conçus pour les étudiants. Commencez avec un essai gratuit de 7 jours, puis choisissez entre les forfaits mensuels (7,99 $/mois) ou annuels (47,88 $/an) — tous les deux adaptés au budget des étudiants.",
       "q4": "Quels modes de paiement acceptez-vous ?",
       "a4": "Nous acceptons toutes les principales cartes de crédit (Visa, Mastercard, American Express), PayPal et, dans certaines régions, des modes de paiement locaux. Tous les paiements sont traités de manière sécurisée via Stripe.",
@@ -1240,11 +1240,11 @@
       "a6": "Une requête IA inclut la génération de flashcards à partir de documents, la création de quiz, l'utilisation du chat tuteur IA, la résolution de problèmes et le clonage d'examen. Les opérations de base comme la révision de flashcards ne comptent pas.",
       "q7": "Quels cycles de facturation proposez-vous ?",
       "a7": "Nous proposons des cycles de facturation mensuels (7,99 $/mois) et annuels (47,88 $/an). Le forfait annuel vous fait économiser environ 50% par rapport au paiement mensuel.",
-      "q8": "Studyield est-il abordable pour les étudiants ?",
+      "q8": "PIRAX est-il abordable pour les étudiants ?",
       "a8": "Absolument ! Nos tarifs sont conçus pour les étudiants. Commencez avec un essai gratuit de 7 jours, puis choisissez entre le mensuel (7,99 $/mois) ou l'annuel (47,88 $/an) — les deux sont adaptés au budget des étudiants."
     },
     "ctaTitle": "Prêt à transformer votre apprentissage ?",
-    "ctaDescription": "Rejoignez des milliers d'étudiants qui apprennent déjà plus intelligemment avec Studyield. Commencez gratuitement dès aujourd'hui.",
+    "ctaDescription": "Rejoignez des milliers d'étudiants qui apprennent déjà plus intelligemment avec PIRAX. Commencez gratuitement dès aujourd'hui.",
     "startFree": "Commencer gratuitement",
     "talkToSales": "Contacter l'équipe commerciale"
   },
@@ -1252,7 +1252,7 @@
     "badge": "FAQ",
     "title": "Questions",
     "titleHighlight": "fréquentes",
-    "description": "Trouvez les réponses aux questions les plus courantes sur Studyield. Vous ne trouvez pas ce que vous cherchez ? Contactez notre équipe de support.",
+    "description": "Trouvez les réponses aux questions les plus courantes sur PIRAX. Vous ne trouvez pas ce que vous cherchez ? Contactez notre équipe de support.",
     "searchPlaceholder": "Rechercher dans la FAQ...",
     "questionsCount": "{{count}} questions",
     "categories": {
@@ -1264,18 +1264,18 @@
       "technical": "Technique"
     },
     "general": {
-      "q1": "Qu'est-ce que Studyield ?",
-      "a1": "Studyield est une plateforme d'apprentissage propulsée par l'IA qui vous aide à étudier plus intelligemment. Téléversez des documents, générez des flashcards, passez des quiz et discutez avec un tuteur IA — le tout conçu pour vous aider à maîtriser n'importe quel sujet plus rapidement grâce à des techniques d'apprentissage éprouvées comme la répétition espacée.",
-      "q2": "Studyield est-il gratuit ?",
-      "a2": "Oui ! Studyield offre un essai gratuit de 7 jours qui comprend 3 sets d'étude, 50 flashcards et 10 requêtes IA. Après l'essai, passez au Pro pour un accès illimité et des fonctionnalités avancées.",
-      "q3": "Sur quels appareils puis-je utiliser Studyield ?",
-      "a3": "Studyield fonctionne sur tout appareil doté d'un navigateur web moderne — ordinateurs, tablettes et smartphones. L'application web est entièrement responsive et optimisée pour les écrans mobiles.",
-      "q4": "Dois-je créer un compte pour utiliser Studyield ?",
+      "q1": "Qu'est-ce que PIRAX ?",
+      "a1": "PIRAX est une plateforme d'apprentissage propulsée par l'IA qui vous aide à étudier plus intelligemment. Téléversez des documents, générez des flashcards, passez des quiz et discutez avec un tuteur IA — le tout conçu pour vous aider à maîtriser n'importe quel sujet plus rapidement grâce à des techniques d'apprentissage éprouvées comme la répétition espacée.",
+      "q2": "PIRAX est-il gratuit ?",
+      "a2": "Oui ! PIRAX offre un essai gratuit de 7 jours qui comprend 3 sets d'étude, 50 flashcards et 10 requêtes IA. Après l'essai, passez au Pro pour un accès illimité et des fonctionnalités avancées.",
+      "q3": "Sur quels appareils puis-je utiliser PIRAX ?",
+      "a3": "PIRAX fonctionne sur tout appareil doté d'un navigateur web moderne — ordinateurs, tablettes et smartphones. L'application web est entièrement responsive et optimisée pour les écrans mobiles.",
+      "q4": "Dois-je créer un compte pour utiliser PIRAX ?",
       "a4": "Oui, vous avez besoin d'un compte gratuit pour sauvegarder vos supports d'étude et suivre votre progression. Vous pouvez vous inscrire avec votre adresse e-mail."
     },
     "features": {
       "q1": "Quels types de documents puis-je téléverser ?",
-      "a1": "Studyield prend en charge les PDF, documents Word (.docx, .doc), fichiers texte, fichiers markdown et images (PNG, JPEG). Notre IA extrait le texte de ces documents pour créer des supports d'apprentissage.",
+      "a1": "PIRAX prend en charge les PDF, documents Word (.docx, .doc), fichiers texte, fichiers markdown et images (PNG, JPEG). Notre IA extrait le texte de ces documents pour créer des supports d'apprentissage.",
       "q2": "Comment l'IA génère-t-elle les flashcards ?",
       "a2": "Notre IA analyse vos documents téléversés pour identifier les concepts clés, définitions et informations importantes. Elle crée ensuite des paires question-réponse optimisées pour l'apprentissage et la rétention.",
       "q3": "Quelle est la précision du contenu généré par l'IA ?",
@@ -1302,7 +1302,7 @@
       "a2": "Oui, vous pouvez passer au supérieur ou rétrograder à tout moment.",
       "q3": "Y a-t-il un essai gratuit ?",
       "a3": "Oui ! L'essai gratuit de 7 jours vous donne accès aux fonctionnalités principales — aucune carte de crédit requise.",
-      "q4": "Studyield est-il abordable pour les étudiants ?",
+      "q4": "PIRAX est-il abordable pour les étudiants ?",
       "a4": "Absolument ! Nos tarifs sont conçus pour les étudiants.",
       "q5": "Comment annuler mon abonnement ?",
       "a5": "Vous pouvez annuler à tout moment depuis Paramètres du compte > Facturation > Gérer l'abonnement.",
@@ -1320,10 +1320,10 @@
       "a4": "Par défaut, vos supports sont privés et visibles uniquement par vous."
     },
     "technical": {
-      "q1": "Puis-je utiliser Studyield hors ligne ?",
+      "q1": "Puis-je utiliser PIRAX hors ligne ?",
       "a1": "Actuellement, la plupart des fonctionnalités nécessitent une connexion Internet. Nous travaillons sur le support hors ligne.",
       "q2": "Quels navigateurs sont pris en charge ?",
-      "a2": "Studyield fonctionne sur tous les navigateurs modernes, y compris Chrome, Firefox, Safari et Edge.",
+      "a2": "PIRAX fonctionne sur tous les navigateurs modernes, y compris Chrome, Firefox, Safari et Edge.",
       "q3": "Qu'est-ce que le Résolveur de problèmes ?",
       "a3": "Le Résolveur de problèmes est une fonctionnalité Pro qui vous aide à résoudre des problèmes complexes étape par étape.",
       "q4": "Qu'est-ce qui compte comme une requête IA ?",
@@ -1505,7 +1505,7 @@
     }
   },
   "onboarding": {
-    "title": "Bienvenue sur Studyield",
+    "title": "Bienvenue sur PIRAX",
     "skipForNow": "Passer pour le moment",
     "stepOf": "Étape {{current}} sur {{total}}",
     "welcome": {
@@ -1674,7 +1674,7 @@
     },
     "features": {
       "title": "Voici ce que vous pouvez faire",
-      "description": "Studyield regorge d'outils pour rendre vos études plus rapides et plus efficaces",
+      "description": "PIRAX regorge d'outils pour rendre vos études plus rapides et plus efficaces",
       "studySets": "Sets d'étude",
       "studySetsDesc": "Créez des flashcards manuellement ou générez-les à partir de documents avec l'IA",
       "aiChat": "Tuteur IA par chat",
@@ -1700,7 +1700,7 @@
       "deepResearch": "Recherche approfondie",
       "deepResearchDesc": "Exploration approfondie de n'importe quel sujet propulsée par l'IA",
       "adFreeTitle": "100% sans publicité, toujours",
-      "adFreeDesc": "Pas de pub, pas de distractions. Juste vous et vos études. Studyield n'affichera jamais de publicités."
+      "adFreeDesc": "Pas de pub, pas de distractions. Juste vous et vos études. PIRAX n'affichera jamais de publicités."
     },
     "done": {
       "title": "Tout est prêt !",
@@ -1799,7 +1799,7 @@
     "articles": "{{count}} articles",
     "categories": {
       "gettingStarted": "Premiers pas",
-      "gettingStartedDesc": "Apprenez les bases de Studyield et démarrez rapidement",
+      "gettingStartedDesc": "Apprenez les bases de PIRAX et démarrez rapidement",
       "studySets": "Sets d'étude et flashcards",
       "studySetsDesc": "Créez, gérez et maîtrisez vos supports d'apprentissage",
       "documents": "Traitement de documents",
@@ -1839,24 +1839,24 @@
     "faqSubtitle": "Réponses rapides aux questions les plus courantes",
     "faqs": {
       "q1": "Quels types de documents puis-je téléverser ?",
-      "a1": "Studyield prend en charge une grande variété de formats de documents, notamment les PDF, les documents Word (.docx, .doc), les fichiers texte, les fichiers markdown et les images (PNG, JPEG). Notre IA traite ces documents pour en extraire le texte et créer des supports d'apprentissage.",
+      "a1": "PIRAX prend en charge une grande variété de formats de documents, notamment les PDF, les documents Word (.docx, .doc), les fichiers texte, les fichiers markdown et les images (PNG, JPEG). Notre IA traite ces documents pour en extraire le texte et créer des supports d'apprentissage.",
       "q2": "Comment fonctionne le système de répétition espacée ?",
       "a2": "Notre système de flashcards utilise l'algorithme de répétition espacée SM-2 pour optimiser votre apprentissage. En fonction de votre capacité à vous souvenir de chaque carte, le système calcule le moment optimal pour votre prochaine révision.",
-      "q3": "Puis-je utiliser Studyield hors ligne ?",
-      "a3": "Actuellement, Studyield nécessite une connexion Internet pour la plupart des fonctionnalités car notre traitement IA s'effectue dans le cloud. Cependant, nous travaillons sur le support hors ligne.",
+      "q3": "Puis-je utiliser PIRAX hors ligne ?",
+      "a3": "Actuellement, PIRAX nécessite une connexion Internet pour la plupart des fonctionnalités car notre traitement IA s'effectue dans le cloud. Cependant, nous travaillons sur le support hors ligne.",
       "q4": "Quelle est la précision du contenu généré par l'IA ?",
       "a4": "Notre IA génère du contenu de haute qualité. Cependant, nous recommandons toujours de vérifier les flashcards et quiz générés pour en assurer la précision.",
       "q5": "Mes données sont-elles sécurisées et privées ?",
       "a5": "Oui, nous prenons la sécurité des données au sérieux. Tous les documents sont chiffrés au repos et en transit. Vos supports d'étude ne sont jamais partagés avec d'autres utilisateurs ni utilisés pour entraîner des modèles d'IA.",
       "q6": "Qu'est-ce que la fonctionnalité Clonage d'examen ?",
       "a6": "Le Clonage d'examen analyse le style, le format et la difficulté de vos examens passés. Il génère ensuite de nouvelles questions correspondant exactement à ce style.",
-      "q7": "Studyield est-il abordable pour les étudiants ?",
+      "q7": "PIRAX est-il abordable pour les étudiants ?",
       "a7": "Absolument ! Nos tarifs sont conçus pour les étudiants. Commencez avec un essai gratuit de 7 jours, puis choisissez entre les forfaits mensuels ou annuels.",
       "q8": "Comment annuler mon abonnement ?",
       "a8": "Vous pouvez annuler votre abonnement à tout moment depuis les Paramètres du compte. Allez dans Paramètres > Facturation > Gérer l'abonnement et cliquez sur \"Annuler le forfait\". Vous conserverez l'accès aux fonctionnalités premium jusqu'à la fin de votre période de facturation."
     },
     "videoTutorials": "Tutoriels vidéo",
-    "videoTutorialsDesc": "Apprenez à utiliser Studyield avec nos guides vidéo étape par étape.",
+    "videoTutorialsDesc": "Apprenez à utiliser PIRAX avec nos guides vidéo étape par étape.",
     "watchTutorials": "Voir les tutoriels",
     "ctaTitle": "Besoin d'aide supplémentaire ?",
     "ctaDescription": "Notre équipe de support est prête à vous aider. Nous répondons généralement sous 24 heures.",
@@ -1885,7 +1885,7 @@
     },
     "introduction": {
       "title": "Introduction",
-      "p1": "Chez Studyield, nous prenons votre vie privée au sérieux. Cette Politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre plateforme d'apprentissage propulsée par l'IA.",
+      "p1": "Chez PIRAX, nous prenons votre vie privée au sérieux. Cette Politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre plateforme d'apprentissage propulsée par l'IA.",
       "p2": "Veuillez lire attentivement cette politique de confidentialité. Si vous n'acceptez pas les termes de cette politique, veuillez ne pas accéder à la plateforme."
     },
     "informationCollected": {
@@ -1899,7 +1899,7 @@
         "Préférences de communication"
       ],
       "studyContent": "Contenu d'étude",
-      "studyContentDesc": "Lorsque vous utilisez Studyield, nous stockons :",
+      "studyContentDesc": "Lorsque vous utilisez PIRAX, nous stockons :",
       "studyItems": [
         "Les documents que vous téléversez (PDF, images)",
         "Les flashcards et sets d'étude",
@@ -1982,7 +1982,7 @@
     "badge": "Accord juridique",
     "title": "Conditions",
     "titleHighlight": "d'utilisation",
-    "description": "Veuillez lire attentivement ces conditions avant d'utiliser Studyield. En accédant à notre plateforme, vous acceptez d'être lié par ces conditions.",
+    "description": "Veuillez lire attentivement ces conditions avant d'utiliser PIRAX. En accédant à notre plateforme, vous acceptez d'être lié par ces conditions.",
     "lastUpdated": "Dernière mise à jour : 14 février 2026",
     "contents": "Sommaire",
     "toc": {
@@ -2002,11 +2002,11 @@
     },
     "acceptance": {
       "title": "1. Acceptation des conditions",
-      "content": "En accédant ou en utilisant Studyield, vous acceptez d'être lié par ces Conditions d'utilisation et toutes les lois et réglementations applicables. Si vous n'acceptez pas ces conditions, il vous est interdit d'utiliser cette plateforme."
+      "content": "En accédant ou en utilisant PIRAX, vous acceptez d'être lié par ces Conditions d'utilisation et toutes les lois et réglementations applicables. Si vous n'acceptez pas ces conditions, il vous est interdit d'utiliser cette plateforme."
     },
     "descriptionOfService": {
       "title": "2. Description du service",
-      "intro": "Studyield est une plateforme d'apprentissage propulsée par l'IA qui fournit :",
+      "intro": "PIRAX est une plateforme d'apprentissage propulsée par l'IA qui fournit :",
       "items": [
         "Sets d'étude avec téléversement et analyse de documents",
         "Flashcards générées par l'IA avec répétition espacée",
@@ -2042,7 +2042,7 @@
     "contentOwnership": {
       "title": "5. Propriété du contenu",
       "yourContent": "Votre contenu",
-      "yourContentDesc": "Vous conservez la propriété de tout contenu que vous téléversez sur Studyield, y compris les documents, notes et supports d'étude. En téléversant du contenu, vous nous accordez une licence limitée pour le traiter, le stocker et l'afficher afin de fournir nos services.",
+      "yourContentDesc": "Vous conservez la propriété de tout contenu que vous téléversez sur PIRAX, y compris les documents, notes et supports d'étude. En téléversant du contenu, vous nous accordez une licence limitée pour le traiter, le stocker et l'afficher afin de fournir nos services.",
       "aiGenerated": "Contenu généré par l'IA",
       "aiGeneratedDesc": "Le contenu généré par notre IA (flashcards, quiz, résumés) basé sur vos supports vous appartient. Vous pouvez l'utiliser, le modifier et le partager librement."
     },
@@ -2058,11 +2058,11 @@
     },
     "aiDisclaimer": {
       "title": "7. Avertissement IA",
-      "content": "Notre IA génère du contenu pour aider votre apprentissage. Bien que nous nous efforcions d'être précis, le contenu généré par l'IA peut contenir des erreurs. Vous devriez vérifier tous les supports générés et ne pas vous fier uniquement à l'IA pour des décisions critiques. Studyield n'est pas responsable des erreurs dans le contenu généré par l'IA."
+      "content": "Notre IA génère du contenu pour aider votre apprentissage. Bien que nous nous efforcions d'être précis, le contenu généré par l'IA peut contenir des erreurs. Vous devriez vérifier tous les supports générés et ne pas vous fier uniquement à l'IA pour des décisions critiques. PIRAX n'est pas responsable des erreurs dans le contenu généré par l'IA."
     },
     "liability": {
       "title": "8. Limitation de responsabilité",
-      "content": "Dans les limites maximales permises par la loi, Studyield ne sera pas responsable de tout dommage indirect, accessoire, spécial, consécutif ou punitif, y compris la perte de données, de profits ou de clientèle, résultant de votre utilisation du service."
+      "content": "Dans les limites maximales permises par la loi, PIRAX ne sera pas responsable de tout dommage indirect, accessoire, spécial, consécutif ou punitif, y compris la perte de données, de profits ou de clientèle, résultant de votre utilisation du service."
     },
     "availability": {
       "title": "9. Disponibilité du service",
@@ -2078,7 +2078,7 @@
     },
     "governingLaw": {
       "title": "12. Droit applicable",
-      "content": "Ces conditions sont régies et interprétées conformément au droit applicable. Tout litige découlant de ces conditions ou de l'utilisation de Studyield sera résolu par négociation de bonne foi ou, si nécessaire, par arbitrage contraignant."
+      "content": "Ces conditions sont régies et interprétées conformément au droit applicable. Tout litige découlant de ces conditions ou de l'utilisation de PIRAX sera résolu par négociation de bonne foi ou, si nécessaire, par arbitrage contraignant."
     },
     "contact": {
       "title": "13. Contact",
@@ -2096,7 +2096,7 @@
     "badge": "Politique de cookies",
     "title": "Politique de",
     "titleHighlight": "cookies",
-    "description": "Découvrez comment nous utilisons les cookies et technologies similaires pour améliorer votre expérience sur Studyield.",
+    "description": "Découvrez comment nous utilisons les cookies et technologies similaires pour améliorer votre expérience sur PIRAX.",
     "lastUpdated": "Dernière mise à jour : 14 février 2026",
     "contents": "Sommaire",
     "toc": {
@@ -2112,7 +2112,7 @@
     "whatAreCookies": {
       "title": "Qu'est-ce qu'un cookie",
       "content": "Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez un site web. Ils sont largement utilisés pour faire fonctionner les sites web plus efficacement, offrir une meilleure expérience utilisateur et fournir des informations utiles aux propriétaires de sites.",
-      "note": "En utilisant Studyield, vous consentez à l'utilisation de cookies conformément à cette Politique de cookies. Vous pouvez gérer vos préférences à tout moment.",
+      "note": "En utilisant PIRAX, vous consentez à l'utilisation de cookies conformément à cette Politique de cookies. Vous pouvez gérer vos préférences à tout moment.",
       "noteLabel": "Note :"
     },
     "typesOfCookies": {
@@ -2170,7 +2170,7 @@
     },
     "howWeUse": {
       "title": "Comment nous utilisons les cookies",
-      "description": "Nous utilisons les cookies à diverses fins pour améliorer votre expérience sur Studyield :",
+      "description": "Nous utilisons les cookies à diverses fins pour améliorer votre expérience sur PIRAX :",
       "items": [
         {
           "title": "Authentification",
@@ -2238,11 +2238,11 @@
         }
       ],
       "warningLabel": "Attention :",
-      "warning": "La désactivation des cookies essentiels peut affecter le fonctionnement de Studyield et vous empêcher d'utiliser certaines fonctionnalités."
+      "warning": "La désactivation des cookies essentiels peut affecter le fonctionnement de PIRAX et vous empêcher d'utiliser certaines fonctionnalités."
     },
     "cookieSettings": {
       "title": "Paramètres des cookies",
-      "description": "Vous pouvez personnaliser vos préférences de cookies pour Studyield à tout moment. Cliquez sur le bouton ci-dessous pour gérer les types de cookies que vous autorisez.",
+      "description": "Vous pouvez personnaliser vos préférences de cookies pour PIRAX à tout moment. Cliquez sur le bouton ci-dessous pour gérer les types de cookies que vous autorisez.",
       "managePreferences": "Gérer les préférences de cookies"
     },
     "policyUpdates": {
@@ -2263,7 +2263,7 @@
     "badge": "Conforme au RGPD",
     "title": "Compte et",
     "titleHighlight": "suppression des données",
-    "description": "Nous respectons votre droit à l'oubli. Découvrez comment supprimer définitivement votre compte Studyield et toutes les données associées. Ce processus est irréversible.",
+    "description": "Nous respectons votre droit à l'oubli. Découvrez comment supprimer définitivement votre compte PIRAX et toutes les données associées. Ce processus est irréversible.",
     "importantNotice": {
       "title": "Important : cette action est irréversible",
       "description": "Une fois votre compte supprimé, toutes vos données seront définitivement effacées de nos serveurs. Veuillez exporter tout support d'étude important avant de continuer.",
@@ -2315,7 +2315,7 @@
       "steps": [
         {
           "title": "Connectez-vous à votre compte",
-          "description": "Connectez-vous à Studyield avec votre e-mail et mot de passe pour accéder aux paramètres de votre compte."
+          "description": "Connectez-vous à PIRAX avec votre e-mail et mot de passe pour accéder aux paramètres de votre compte."
         },
         {
           "title": "Accédez aux paramètres du compte",
@@ -2356,7 +2356,7 @@
     "badge": "Navigation du site",
     "title": "Plan du",
     "titleHighlight": "site",
-    "description": "Vue d'ensemble complète de toutes les pages de Studyield. Trouvez exactement ce que vous cherchez.",
+    "description": "Vue d'ensemble complète de toutes les pages de PIRAX. Trouvez exactement ce que vous cherchez.",
     "quickAccess": "Accès rapide",
     "sections": {
       "mainPages": "Pages principales",
@@ -2367,7 +2367,7 @@
     },
     "links": {
       "home": "Accueil",
-      "homeDesc": "Bienvenue sur Studyield",
+      "homeDesc": "Bienvenue sur PIRAX",
       "aboutUs": "À propos de nous",
       "aboutUsDesc": "Découvrez notre mission",
       "features": "Fonctionnalités",
@@ -2418,7 +2418,7 @@
     "xmlSitemapDesc": "Pour les moteurs de recherche et développeurs",
     "viewSitemapXml": "Voir sitemap.xml",
     "ctaTitle": "Vous ne trouvez pas ce que vous cherchez ?",
-    "ctaDescription": "Notre équipe de support est là pour vous aider à naviguer sur Studyield.",
+    "ctaDescription": "Notre équipe de support est là pour vous aider à naviguer sur PIRAX.",
     "contactUs": "Contactez-nous",
     "helpCenterBtn": "Centre d'aide"
   },
@@ -4023,7 +4023,7 @@
       ]
     },
     "faq": {
-      "studentQuestion": "Studyield est-il abordable pour les étudiants ?",
+      "studentQuestion": "PIRAX est-il abordable pour les étudiants ?",
       "studentAnswer": "Absolument ! Nos tarifs sont conçus pour les étudiants. Commencez avec un essai gratuit de 7 jours, puis choisissez entre les forfaits mensuels (7,99 $/mois) ou annuels (47,88 $/an) — tous les deux adaptés au budget des étudiants."
     }
   }

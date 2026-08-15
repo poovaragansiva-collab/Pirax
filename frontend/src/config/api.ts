@@ -245,3 +245,4 @@ export const ENDPOINTS = {
     togglePin: (id: string) => `/notes/${id}/pin`,
   },
 };
+

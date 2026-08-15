@@ -73,7 +73,7 @@ function getSourceIcon(type: SourceType) {
       return <PenTool className="w-5 h-5 text-orange-500" />;
     case 'file':
     default:
-      return <FileText className="w-5 h-5 text-green-500" />;
+      return <FileText className="w-5 h-5 text-primary" />;
   }
 }
 
@@ -105,7 +105,7 @@ function getSourceBgColor(type: SourceType): string {
       return 'bg-orange-500/10';
     case 'file':
     default:
-      return 'bg-green-500/10';
+      return 'bg-primary/10';
   }
 }
 
@@ -362,3 +362,5 @@ export function SourcesTab({ studySetId }: SourcesTabProps) {
     </motion.div>
   );
 }
+
+

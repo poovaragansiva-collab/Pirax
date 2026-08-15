@@ -49,7 +49,7 @@ function WelcomeVisual() {
         animate={{ scale: [0.9, 1.05, 0.9] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <img src="/logos/studyield-logo.png" alt="Studyield" className="w-20 h-20 object-contain drop-shadow-2xl" />
+        <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-20 h-20 object-contain drop-shadow-2xl" />
       </motion.div>
       {icons.map((Icon, i) => {
         const baseAngle = (i / icons.length) * 360;
@@ -121,7 +121,7 @@ function AiChatVisual() {
       <motion.div
         animate={{ opacity: [0.7, 1, 0.7], y: [0, -2, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="ml-auto max-w-[70%] px-3 py-2 rounded-2xl rounded-br-sm bg-green-500 text-white text-xs shadow-md"
+        className="ml-auto max-w-[70%] px-3 py-2 rounded-2xl rounded-br-sm bg-primary text-white text-xs shadow-md"
       >
         How does photosynthesis work?
       </motion.div>
@@ -144,7 +144,7 @@ function AiChatVisual() {
         {[0, 1, 2].map((i) => (
           <motion.div
             key={i}
-            className="w-1.5 h-1.5 rounded-full bg-green-500"
+            className="w-1.5 h-1.5 rounded-full bg-primary"
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
           />
@@ -176,7 +176,7 @@ function ProblemSolverVisual() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
         className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border-2 border-orange-200 dark:border-orange-800 p-3"
       >
-        <div className="text-[10px] text-green-500 font-bold mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> SOLUTION</div>
+        <div className="text-[10px] text-primary font-bold mb-1 flex items-center gap-1"><Check className="w-3 h-3" /> SOLUTION</div>
         <div className="space-y-0.5 text-xs font-mono text-muted-foreground">
           <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}>(x + 2)(x + 3) = 0</motion.div>
           <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity, delay: 0.4 }} className="font-bold text-foreground">x = -2, x = -3</motion.div>
@@ -210,7 +210,7 @@ function ExamCloneVisual() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
         className="absolute right-2 top-4 w-24 h-28 bg-white dark:bg-gray-800 rounded-lg shadow-xl border-2 border-indigo-300 dark:border-indigo-700 p-2"
       >
-        <div className="text-[8px] font-bold text-green-500 mb-1 flex items-center gap-0.5"><Sparkles className="w-2.5 h-2.5" /> NEW EXAM</div>
+        <div className="text-[8px] font-bold text-primary mb-1 flex items-center gap-0.5"><Sparkles className="w-2.5 h-2.5" /> NEW EXAM</div>
         <div className="space-y-1">
           {[1, 2, 3].map((i) => (
             <motion.div
@@ -474,7 +474,7 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
 
   const slides = [
     {
-      gradient: 'from-green-500 via-emerald-500 to-teal-500',
+      gradient: 'from-green-500 via-primary to-teal-500',
       bg: 'from-green-50 via-emerald-50 to-teal-50',
       bgDark: 'dark:from-green-950/40 dark:via-emerald-950/30 dark:to-teal-950/40',
       title: t('onboarding.welcome.greeting', { name: t('onboarding.welcome.defaultName', { defaultValue: 'there' }) }),
@@ -490,7 +490,7 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
       bullets: [t('onboarding.slides.studySetsBullet1'), t('onboarding.slides.studySetsBullet2'), t('onboarding.slides.studySetsBullet3')],
     },
     {
-      gradient: 'from-green-500 via-emerald-500 to-green-600',
+      gradient: 'from-green-500 via-primary to-green-600',
       bg: 'from-green-50 via-emerald-50 to-green-50',
       bgDark: 'dark:from-green-950/40 dark:via-emerald-950/30 dark:to-green-950/40',
       title: t('onboarding.slides.aiChatTitle'),
@@ -546,7 +546,7 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
       bullets: [t('onboarding.slides.handwritingOcrBullet1'), t('onboarding.slides.handwritingOcrBullet2'), t('onboarding.slides.handwritingOcrBullet3')],
     },
     {
-      gradient: 'from-green-500 via-emerald-500 to-teal-500',
+      gradient: 'from-green-500 via-primary to-teal-500',
       bg: 'from-green-50 via-emerald-50 to-teal-50',
       bgDark: 'dark:from-green-950/40 dark:via-emerald-950/30 dark:to-teal-950/40',
       title: t('onboarding.slides.adFreeTitle'),
@@ -574,8 +574,8 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4 relative z-10">
         <div className="flex items-center gap-2">
-          <img src="/logos/studyield-logo.png" alt="Studyield" className="w-11 h-11 object-contain" />
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</span>
+          <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-11 h-11 object-contain" />
+          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">PIRAX</span>
         </div>
         <button onClick={onFinish} className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium px-3 py-1.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">
           {t('onboarding.slides.skip')}
@@ -639,7 +639,7 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
               {slide.extra === 'welcome' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="flex flex-wrap items-center justify-center gap-2">
                   {[
-                    { icon: BanIcon, label: t('onboarding.welcome.adFree'), c: 'bg-green-500/10 border-green-500/20 text-green-700 dark:text-green-300' },
+                    { icon: BanIcon, label: t('onboarding.welcome.adFree'), c: 'bg-primary/10 border-primary/20 text-green-700 dark:text-green-300' },
                     { icon: ShieldCheck, label: t('onboarding.welcome.freeToUse'), c: 'bg-blue-500/10 border-blue-500/20 text-blue-700 dark:text-blue-300' },
                     { icon: Zap, label: t('onboarding.welcome.aiPowered'), c: 'bg-purple-500/10 border-purple-500/20 text-purple-700 dark:text-purple-300' },
                   ].map((b, i) => (
@@ -675,7 +675,7 @@ function FeatureSlideshow({ onFinish }: { onFinish: () => void }) {
                     <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.22 + i * 0.06 }}
                       className="flex items-start gap-2.5 p-1.5 rounded-lg"
                     >
-                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-green-500 to-primary flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-white" />
                       </div>
                       <span className="text-xs text-foreground/80 leading-relaxed">{bullet}</span>
@@ -839,8 +839,8 @@ function SetupWizard() {
       {/* Header */}
       <div className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <img src="/logos/studyield-logo.png" alt="Studyield" className="w-11 h-11 object-contain" />
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">Studyield</span>
+          <img src="/logos/PIRAX-logo.png" alt="PIRAX" className="w-11 h-11 object-contain" />
+          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent">PIRAX</span>
         </div>
         {step !== 'done' && (
           <button
@@ -857,7 +857,7 @@ function SetupWizard() {
         <div className="px-6">
           <div className="h-1.5 bg-muted rounded-full overflow-hidden max-w-2xl mx-auto">
             <motion.div
-              className="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+              className="h-full bg-gradient-to-r from-green-500 to-primary rounded-full"
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
             />
@@ -899,16 +899,16 @@ function SetupWizard() {
                         className={cn(
                           'relative p-4 rounded-xl border-2 text-left transition-all',
                           education === level.id
-                            ? 'border-green-500 bg-green-500/5 shadow-md shadow-green-500/10'
+                            ? 'border-primary bg-primary/5 shadow-md shadow-primary/10'
                             : 'border-border hover:border-muted-foreground/30 bg-card hover:shadow-sm'
                         )}
                       >
                         <div className="flex items-center gap-3">
                           <div className={cn(
                             'w-10 h-10 rounded-lg flex items-center justify-center shrink-0',
-                            education === level.id ? 'bg-green-500/10' : 'bg-muted'
+                            education === level.id ? 'bg-primary/10' : 'bg-muted'
                           )}>
-                            <level.icon className={cn('w-5 h-5', education === level.id ? 'text-green-500' : 'text-muted-foreground')} />
+                            <level.icon className={cn('w-5 h-5', education === level.id ? 'text-primary' : 'text-muted-foreground')} />
                           </div>
                           <div>
                             <p className="text-sm font-semibold">{level.label}</p>
@@ -917,7 +917,7 @@ function SetupWizard() {
                         </div>
                         {education === level.id && (
                           <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="absolute top-3 right-3">
-                            <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center">
+                            <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
                               <Check className="w-3 h-3 text-white" />
                             </div>
                           </motion.div>
@@ -946,8 +946,8 @@ function SetupWizard() {
                         className={cn(
                           'px-4 py-2 rounded-full text-sm font-medium border-2 transition-all',
                           selectedSubjects.includes(subject)
-                            ? 'bg-green-500 text-white border-green-500 shadow-md shadow-green-500/20'
-                            : 'bg-card border-border hover:border-green-500/50 text-foreground'
+                            ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
+                            : 'bg-card border-border hover:border-primary/50 text-foreground'
                         )}
                       >
                         {selectedSubjects.includes(subject) && <Check className="w-3 h-3 inline mr-1" />}
@@ -958,7 +958,7 @@ function SetupWizard() {
                   {selectedSubjects.filter((s) => !SUBJECTS.includes(s)).length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
                       {selectedSubjects.filter((s) => !SUBJECTS.includes(s)).map((subject) => (
-                        <span key={subject} className="inline-flex items-center gap-1 px-3 py-1.5 bg-green-500 text-white rounded-full text-sm font-medium">
+                        <span key={subject} className="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-white rounded-full text-sm font-medium">
                           {subject}
                           <button onClick={() => toggleSubject(subject)}><X className="w-3 h-3" /></button>
                         </span>
@@ -971,7 +971,7 @@ function SetupWizard() {
                       onChange={(e) => setCustomSubject(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && addCustomSubject()}
                       placeholder={t('onboarding.subjects.addCustomPlaceholder')}
-                      className="flex-1 px-4 py-2.5 bg-card border-2 border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-green-500 transition-all"
+                      className="flex-1 px-4 py-2.5 bg-card border-2 border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:border-primary transition-all"
                     />
                     <Button variant="outline" onClick={addCustomSubject} disabled={!customSubject.trim()}>
                       {t('onboarding.subjects.add')}
@@ -1001,19 +1001,19 @@ function SetupWizard() {
                         className={cn(
                           'w-full p-4 rounded-xl border-2 text-left transition-all flex items-center gap-4',
                           goal === g.id
-                            ? 'border-green-500 bg-green-500/5 shadow-md shadow-green-500/10'
+                            ? 'border-primary bg-primary/5 shadow-md shadow-primary/10'
                             : 'border-border hover:border-muted-foreground/30 bg-card hover:shadow-sm'
                         )}
                       >
-                        <div className={cn('w-11 h-11 rounded-lg flex items-center justify-center shrink-0', goal === g.id ? 'bg-green-500/10' : 'bg-muted')}>
-                          <g.icon className={cn('w-5 h-5', goal === g.id ? 'text-green-500' : 'text-muted-foreground')} />
+                        <div className={cn('w-11 h-11 rounded-lg flex items-center justify-center shrink-0', goal === g.id ? 'bg-primary/10' : 'bg-muted')}>
+                          <g.icon className={cn('w-5 h-5', goal === g.id ? 'text-primary' : 'text-muted-foreground')} />
                         </div>
                         <div className="flex-1">
                           <p className="text-sm font-semibold">{g.label}</p>
                           <p className="text-xs text-muted-foreground">{g.desc}</p>
                         </div>
                         {goal === g.id && (
-                          <div className="w-5 h-5 rounded-full bg-green-500 flex items-center justify-center shrink-0">
+                          <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0">
                             <Check className="w-3 h-3 text-white" />
                           </div>
                         )}
@@ -1032,7 +1032,7 @@ function SetupWizard() {
                     transition={{ type: 'spring', delay: 0.1, damping: 10 }}
                     className="relative w-28 h-28 mx-auto mb-8"
                   >
-                    <div className="absolute inset-0 rounded-full bg-green-500/20 animate-ping" style={{ animationDuration: '2s' }} />
+                    <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" style={{ animationDuration: '2s' }} />
                     <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-xl shadow-green-500/30">
                       <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', delay: 0.3, damping: 8 }}>
                         <Check className="w-14 h-14 text-white" />
@@ -1048,7 +1048,7 @@ function SetupWizard() {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="grid grid-cols-3 gap-3 mb-8 max-w-lg mx-auto">
                     {[
                       { icon: BookOpen, label: t('onboarding.done.createStudySet'), color: 'from-blue-500 to-cyan-500', shadow: 'shadow-blue-500/20' },
-                      { icon: MessageSquare, label: t('onboarding.done.chatWithAI'), color: 'from-green-500 to-emerald-500', shadow: 'shadow-green-500/20' },
+                      { icon: MessageSquare, label: t('onboarding.done.chatWithAI'), color: 'from-green-500 to-primary', shadow: 'shadow-primary/20' },
                       { icon: Target, label: t('onboarding.done.trackProgress'), color: 'from-purple-500 to-violet-500', shadow: 'shadow-purple-500/20' },
                     ].map((f, i) => (
                       <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 + i * 0.1 }}
@@ -1119,3 +1119,5 @@ export function OnboardingPage() {
 }
 
 export default OnboardingPage;
+
+

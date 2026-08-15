@@ -73,7 +73,7 @@ function AIChatDemo() {
           <Bot className="w-3 h-3 text-white" />
         </div>
         <div>
-          <p className="text-[11px] font-medium leading-none">Studyield AI</p>
+          <p className="text-[11px] font-medium leading-none">PIRAX AI</p>
           <p className="text-[9px] text-indigo-500 flex items-center gap-0.5 mt-0.5">
             <span className="w-1 h-1 rounded-full bg-indigo-500 animate-pulse" />
             {t('featuresPage.aiChat.online')}
@@ -520,7 +520,7 @@ export function FeaturesSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <motion.div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium mb-5" whileHover={{ scale: 1.05 }}>
+            <motion.div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-green-600 dark:text-green-400 text-sm font-medium mb-5" whileHover={{ scale: 1.05 }}>
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}>
                 <Sparkles className="w-4 h-4" />
               </motion.div>
@@ -530,7 +530,7 @@ export function FeaturesSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
               {t('featuresPage.title')}{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-green-500 via-primary to-teal-500 bg-clip-text text-transparent">
                   {t('featuresPage.titleHighlight')}
                 </span>
                 <motion.svg className="absolute -bottom-1.5 left-0 w-full" viewBox="0 0 300 12" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.5 }}>
@@ -607,3 +607,5 @@ export function FeaturesSection() {
     </section>
   );
 }
+
+

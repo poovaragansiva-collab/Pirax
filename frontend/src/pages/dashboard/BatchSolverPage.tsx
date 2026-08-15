@@ -78,7 +78,7 @@ export function BatchSolverPage() {
 
         {problems.length === 0 ? (
           <div className="space-y-4">
-            <div onClick={() => fileRef.current?.click()} className="bg-card rounded-2xl border-2 border-dashed p-8 text-center cursor-pointer hover:border-green-500/50 transition-colors">
+            <div onClick={() => fileRef.current?.click()} className="bg-card rounded-2xl border-2 border-dashed p-8 text-center cursor-pointer hover:border-primary/50 transition-colors">
               <Upload className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
               <p className="font-medium">{t('batchSolver.uploadPdfImage')}</p>
               <p className="text-sm text-muted-foreground mt-1">{t('batchSolver.dropWorksheet')}</p>
@@ -106,7 +106,7 @@ export function BatchSolverPage() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-medium text-muted-foreground">#{i + 1}</span>
-                        {solvedIds[i] && <CheckCircle className="w-4 h-4 text-green-500" />}
+                        {solvedIds[i] && <CheckCircle className="w-4 h-4 text-primary" />}
                         {solvingIdx === i && <Loader2 className="w-4 h-4 text-amber-500 animate-spin" />}
                       </div>
                       <p className="text-sm">{p}</p>
@@ -128,3 +128,5 @@ export function BatchSolverPage() {
 }
 
 export default BatchSolverPage;
+
+

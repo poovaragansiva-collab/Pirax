@@ -39,3 +39,4 @@ export const studySetsService = {
     await api.delete(ENDPOINTS.studySets.delete(id));
   },
 };
+

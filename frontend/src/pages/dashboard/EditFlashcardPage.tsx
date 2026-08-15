@@ -146,7 +146,7 @@ export function EditFlashcardPage() {
                 }
                 placeholder={t('editFlashcard.frontPlaceholder')}
                 rows={3}
-                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-none"
+                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
                 required
               />
             </div>
@@ -163,7 +163,7 @@ export function EditFlashcardPage() {
                 }
                 placeholder={t('editFlashcard.backPlaceholder')}
                 rows={3}
-                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-none"
+                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
                 required
               />
             </div>
@@ -180,7 +180,7 @@ export function EditFlashcardPage() {
                 }
                 placeholder={t('editFlashcard.notesPlaceholder')}
                 rows={2}
-                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 resize-none"
+                className="w-full px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary resize-none"
               />
             </div>
 
@@ -194,7 +194,7 @@ export function EditFlashcardPage() {
                   onChange={(e) => setTagInput(e.target.value)}
                   onKeyDown={handleTagKeyDown}
                   placeholder={t('createStudySet.addTag')}
-                  className="flex-1 px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                  className="flex-1 px-4 py-2.5 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
                 <Button
                   type="button"
@@ -210,13 +210,13 @@ export function EditFlashcardPage() {
                   {formData.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-sm"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-primary/10 text-green-600 dark:text-green-400 rounded-full text-sm"
                     >
                       {tag}
                       <button
                         type="button"
                         onClick={() => removeTag(tag)}
-                        className="p-0.5 hover:bg-green-500/20 rounded-full"
+                        className="p-0.5 hover:bg-primary/20 rounded-full"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -240,7 +240,7 @@ export function EditFlashcardPage() {
             <Button
               type="submit"
               disabled={!formData.front?.trim() || !formData.back?.trim() || isLoading}
-              className="flex-1 bg-green-500 hover:bg-green-600"
+              className="flex-1 bg-primary hover:bg-[#8e5243]"
             >
               {isLoading ? t('common.saving') : t('editFlashcard.saveChanges')}
             </Button>
@@ -250,3 +250,5 @@ export function EditFlashcardPage() {
     </DashboardLayout>
   );
 }
+
+

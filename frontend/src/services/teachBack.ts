@@ -92,3 +92,4 @@ export const teachBackService = {
     await api.delete(ENDPOINTS.teachBack.delete(id));
   },
 };
+

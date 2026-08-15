@@ -165,7 +165,7 @@ export function AccountSettingsPage() {
             )}
 
             {passwordChanged && (
-              <p className="text-xs text-green-500 flex items-center gap-1">
+              <p className="text-xs text-primary flex items-center gap-1">
                 <Check className="w-3 h-3" /> {t('accountSettingsPage.passwordChangedSuccess')}
               </p>
             )}
@@ -276,3 +276,5 @@ export function AccountSettingsPage() {
 }
 
 export default AccountSettingsPage;
+
+

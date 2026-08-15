@@ -20,7 +20,7 @@ import {
 const subjects = [
   { name: 'Mathematics', icon: Calculator, gradient: 'from-blue-500 to-indigo-500' },
   { name: 'Physics', icon: Atom, gradient: 'from-violet-500 to-purple-500' },
-  { name: 'Chemistry', icon: FlaskConical, gradient: 'from-emerald-500 to-teal-500' },
+  { name: 'Chemistry', icon: FlaskConical, gradient: 'from-primary to-teal-500' },
   { name: 'Biology', icon: Microscope, gradient: 'from-green-500 to-lime-500' },
   { name: 'Computer Science', icon: Code, gradient: 'from-orange-500 to-red-500' },
   { name: 'Literature', icon: BookOpen, gradient: 'from-rose-500 to-pink-500' },
@@ -106,9 +106,9 @@ export function TrustedBySection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 mb-5"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-5"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">
               {t('trustedBy.title')}
             </span>
@@ -116,7 +116,7 @@ export function TrustedBySection() {
 
           <h2 className="text-3xl md:text-4xl font-black text-foreground leading-tight">
             {t('trustedBy.heading')}{' '}
-            <span className="bg-gradient-to-r from-green-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-green-600 via-primary to-teal-500 bg-clip-text text-transparent">
               {t('trustedBy.headingHighlight')}
             </span>
           </h2>
@@ -131,3 +131,5 @@ export function TrustedBySection() {
     </section>
   );
 }
+
+

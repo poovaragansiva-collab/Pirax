@@ -161,8 +161,8 @@ export function StudyBuddyChatPage() {
                 <ArrowLeft className="w-5 h-5" />
               </button>
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-full bg-green-500/10 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-green-500" />
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <h1 className="text-sm font-bold">{t('studyBuddyChat.title')}</h1>
@@ -199,8 +199,8 @@ export function StudyBuddyChatPage() {
               animate={{ opacity: 1, y: 0 }}
               className="flex gap-3"
             >
-              <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
-                <Bot className="w-4 h-4 text-green-500" />
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <Bot className="w-4 h-4 text-primary" />
               </div>
               <div className="bg-card border border-border rounded-2xl rounded-tl-md p-4 max-w-[85%]">
                 <p className="text-sm">
@@ -219,14 +219,14 @@ export function StudyBuddyChatPage() {
               className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}
             >
               {msg.role !== 'user' && (
-                <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
-                  <Bot className="w-4 h-4 text-green-500" />
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 text-primary" />
                 </div>
               )}
               <div
                 className={`max-w-[85%] rounded-2xl p-4 ${
                   msg.role === 'user'
-                    ? 'bg-green-500 text-white rounded-tr-md'
+                    ? 'bg-primary text-white rounded-tr-md'
                     : 'bg-card border border-border rounded-tl-md'
                 }`}
               >
@@ -240,7 +240,7 @@ export function StudyBuddyChatPage() {
                       className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {copied === msg.message ? (
-                        <Check className="w-3 h-3 text-green-500" />
+                        <Check className="w-3 h-3 text-primary" />
                       ) : (
                         <Copy className="w-3 h-3" />
                       )}
@@ -259,8 +259,8 @@ export function StudyBuddyChatPage() {
           {/* Typing indicator */}
           {isChatLoading && (
             <div className="flex gap-3">
-              <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
-                <Bot className="w-4 h-4 text-green-500" />
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <Bot className="w-4 h-4 text-primary" />
               </div>
               <div className="bg-card border border-border rounded-2xl rounded-tl-md px-4 py-3">
                 <div className="flex gap-1">
@@ -330,3 +330,5 @@ export function StudyBuddyChatPage() {
 }
 
 export default StudyBuddyChatPage;
+
+

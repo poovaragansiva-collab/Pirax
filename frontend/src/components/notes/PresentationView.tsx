@@ -36,7 +36,7 @@ const THEMES = [
   { id: 'green', name: 'Green', bg: 'bg-emerald-950', text: 'text-white', accent: 'text-emerald-400' },
   { id: 'warm', name: 'Warm', bg: 'bg-amber-50', text: 'text-amber-900', accent: 'text-amber-600' },
   { id: 'midnight', name: 'Midnight', bg: 'bg-slate-950', text: 'text-slate-100', accent: 'text-cyan-400' },
-  { id: 'studyield', name: 'Studyield', bg: 'bg-black', text: 'text-white', accent: 'text-green-500' },
+  { id: 'PIRAX', name: 'PIRAX', bg: 'bg-black', text: 'text-white', accent: 'text-primary' },
 ];
 
 const TRANSITIONS = ['fade', 'slide', 'scale', 'none'] as const;
@@ -172,7 +172,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [timer, setTimer] = useState(0);
-  const [theme, setTheme] = useState(THEMES[7]); // Studyield theme
+  const [theme, setTheme] = useState(THEMES[7]); // PIRAX theme
   const [transition, setTransition] = useState<TransitionType>('slide');
   const [autoSlideInterval, setAutoSlideInterval] = useState(5);
 
@@ -469,12 +469,12 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
             transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
             className="mb-6"
           >
-            <Sparkles className="w-16 h-16 text-green-500" />
+            <Sparkles className="w-16 h-16 text-primary" />
           </motion.div>
           <h2 className="text-2xl font-bold text-white mb-2">{t('presentation.generatingTitle')}</h2>
           <p className="text-white/60 mb-4">{t('presentation.generatingSubtitle')}</p>
           <div className="flex items-center justify-center gap-2">
-            <Loader2 className="w-5 h-5 animate-spin text-green-500" />
+            <Loader2 className="w-5 h-5 animate-spin text-primary" />
             <span className="text-white/40 text-sm">{t('presentation.generatingWait')}</span>
           </div>
         </div>
@@ -506,7 +506,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
           <div className="flex gap-3 justify-center">
             <button
               onClick={generateSlides}
-              className="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center gap-2"
+              className="px-6 py-2 bg-primary text-white rounded-lg hover:bg-[#8e5243] flex items-center gap-2"
             >
               <RefreshCw className="w-4 h-4" />
               {t('presentation.tryAgain')}
@@ -535,13 +535,13 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
       <div className="h-12 bg-black/30 backdrop-blur flex items-center justify-between px-4 shrink-0 z-10">
         <div className="flex items-center gap-4">
           <h2 className="font-medium flex items-center gap-2 text-sm">
-            <Monitor className="w-4 h-4 text-green-500" />
+            <Monitor className="w-4 h-4 text-primary" />
             <span className="max-w-[200px] truncate">{note.title}</span>
           </h2>
           <span className="text-white/50 text-sm">
             {currentIndex + 1} / {totalSlides}
           </span>
-          <span className="text-xs text-green-500/70 flex items-center gap-1">
+          <span className="text-xs text-primary/70 flex items-center gap-1">
             <Sparkles className="w-3 h-3" />
             {t('presentation.aiGenerated')}
           </span>
@@ -559,7 +559,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
             onClick={() => setIsPlaying(!isPlaying)}
             className={cn(
               'p-2 rounded-lg transition-colors',
-              isPlaying ? 'bg-green-500 text-white' : 'bg-white/10 text-white hover:bg-white/20'
+              isPlaying ? 'bg-primary text-white' : 'bg-white/10 text-white hover:bg-white/20'
             )}
             title={isPlaying ? t('presentation.pause') : t('presentation.autoPlay')}
           >
@@ -710,7 +710,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
               className={cn(
                 'w-8 h-6 rounded border text-[10px] font-medium transition-all',
                 idx === currentIndex
-                  ? 'bg-green-500 border-green-500 text-white scale-110'
+                  ? 'bg-primary border-primary text-white scale-110'
                   : 'bg-white/10 border-white/20 text-white/50 hover:bg-white/20'
               )}
             >
@@ -722,7 +722,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
         {/* Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
           <motion.div
-            className="h-full bg-green-500"
+            className="h-full bg-primary"
             initial={{ width: 0 }}
             animate={{ width: `${((currentIndex + 1) / totalSlides) * 100}%` }}
             transition={{ duration: 0.3 }}
@@ -796,7 +796,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
                         className={cn(
                           'w-full aspect-square rounded-lg border-2 transition-all flex items-center justify-center',
                           t.bg,
-                          theme.id === t.id ? 'border-green-500 scale-105' : 'border-transparent'
+                          theme.id === t.id ? 'border-primary scale-105' : 'border-transparent'
                         )}
                         title={t.name}
                       >
@@ -820,7 +820,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
                         className={cn(
                           'px-3 py-2 rounded-lg text-xs font-medium capitalize transition-all',
                           transition === t
-                            ? 'bg-green-500 text-white'
+                            ? 'bg-primary text-white'
                             : 'bg-white/10 text-white/70 hover:bg-white/20'
                         )}
                       >
@@ -893,7 +893,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
                     'aspect-video rounded-lg border-2 p-4 text-left transition-all overflow-hidden relative',
                     theme.bg,
                     idx === currentIndex
-                      ? 'border-green-500 ring-2 ring-green-500/30'
+                      ? 'border-primary ring-2 ring-green-500/30'
                       : 'border-white/20 hover:border-white/40'
                   )}
                 >
@@ -931,7 +931,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
               onClick={(e) => e.stopPropagation()}
             >
               <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                <Keyboard className="w-5 h-5 text-green-500" />
+                <Keyboard className="w-5 h-5 text-primary" />
                 {t('presentation.keyboardShortcuts')}
               </h3>
               <div className="space-y-2">
@@ -946,7 +946,7 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
               </div>
               <button
                 onClick={() => setShowShortcuts(false)}
-                className="mt-4 w-full py-2 bg-green-500 text-white rounded-lg text-sm font-medium hover:bg-green-600"
+                className="mt-4 w-full py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-[#8e5243]"
               >
                 {t('presentation.gotIt')}
               </button>
@@ -957,3 +957,5 @@ export function PresentationView({ note, onClose }: PresentationViewProps) {
     </motion.div>
   );
 }
+
+

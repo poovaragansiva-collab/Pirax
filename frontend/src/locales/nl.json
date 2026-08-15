@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "Studyield",
+    "appName": "PIRAX",
     "loading": "Laden...",
     "save": "Opslaan",
     "cancel": "Annuleren",
@@ -160,18 +160,18 @@
     "badge": "Studentenreviews",
     "title": "Geliefd bij",
     "titleHighlight": "studenten wereldwijd",
-    "description": "Bekijk wat studenten zeggen over hun leerervaring met Studyield.",
+    "description": "Bekijk wat studenten zeggen over hun leerervaring met PIRAX.",
     "t1": {
       "name": "Sarah Chen",
       "role": "Pre-med student",
       "university": "Stanford University",
-      "text": "Studyield heeft mijn studie organische chemie compleet veranderd. De AI-gegenereerde flashcards bespaarden me uren voorbereidingstijd, en het spaced repetition systeem hielp me alles te onthouden voor mijn MCAT."
+      "text": "PIRAX heeft mijn studie organische chemie compleet veranderd. De AI-gegenereerde flashcards bespaarden me uren voorbereidingstijd, en het spaced repetition systeem hielp me alles te onthouden voor mijn MCAT."
     },
     "t2": {
       "name": "James Williams",
       "role": "Informatica student",
       "university": "MIT",
-      "text": "De documentanalysefunctie is ongelooflijk. Ik upload mijn college-PDF's en heb binnen seconden flashcards en quizzen klaar. Mijn cijfers gingen van een 7 naar een 9 sinds ik Studyield gebruik."
+      "text": "De documentanalysefunctie is ongelooflijk. Ik upload mijn college-PDF's en heb binnen seconden flashcards en quizzen klaar. Mijn cijfers gingen van een 7 naar een 9 sinds ik PIRAX gebruik."
     },
     "t3": {
       "name": "Aiko Tanaka",
@@ -189,13 +189,13 @@
       "name": "Emma Rodriguez",
       "role": "Geneeskundestudent",
       "university": "Johns Hopkins",
-      "text": "Ik had moeite met anatomie totdat ik Studyield ontdekte. De image occlusion flashcards maakten het leren van anatomische structuren zoveel makkelijker. Een echte aanrader voor elke geneeskundestudent!"
+      "text": "Ik had moeite met anatomie totdat ik PIRAX ontdekte. De image occlusion flashcards maakten het leren van anatomische structuren zoveel makkelijker. Een echte aanrader voor elke geneeskundestudent!"
     },
     "t6": {
       "name": "David Kim",
       "role": "MBA-student",
       "university": "Wharton School",
-      "text": "Onze studiegroep gebruikt de live quiz-functie van Studyield voor casestudie-voorbereiding. Realtime quizzen maken onze studiesessies ongelooflijk leuk en productief."
+      "text": "Onze studiegroep gebruikt de live quiz-functie van PIRAX voor casestudie-voorbereiding. Realtime quizzen maken onze studiesessies ongelooflijk leuk en productief."
     }
   },
   "howItWorks": {
@@ -296,7 +296,7 @@
       "cookiePolicy": "Cookiebeleid",
       "dataDeletion": "Gegevens verwijderen"
     },
-    "copyright": "{{year}} Studyield. Alle rechten voorbehouden.",
+    "copyright": "{{year}} PIRAX. Alle rechten voorbehouden.",
     "madeWith": "Gemaakt met",
     "andAI": "en AI voor beter leren",
     "sitemap": "Sitemap",
@@ -878,15 +878,15 @@
     "badge": "FAQ",
     "title": "Veelgestelde",
     "titleHighlight": "vragen",
-    "description": "Alles wat je moet weten over Studyield. Kun je niet vinden wat je zoekt? Neem contact op met ons supportteam.",
+    "description": "Alles wat je moet weten over PIRAX. Kun je niet vinden wat je zoekt? Neem contact op met ons supportteam.",
     "stillHaveQuestions": "Heb je nog vragen?",
     "contactSupport": "Contact opnemen",
     "q1": "Welke soorten documenten kan ik uploaden?",
-    "a1": "Studyield ondersteunt een grote verscheidenheid aan documentformaten, waaronder PDF's, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI verwerkt deze documenten om tekst te extraheren en leermateriaal te maken.",
+    "a1": "PIRAX ondersteunt een grote verscheidenheid aan documentformaten, waaronder PDF's, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI verwerkt deze documenten om tekst te extraheren en leermateriaal te maken.",
     "q2": "Hoe werkt het spaced repetition systeem?",
     "a2": "Ons flashcardsysteem gebruikt het SM-2 spaced repetition algoritme om je leerproces te optimaliseren. Op basis van hoe goed je elke kaart onthoudt, berekent het systeem het optimale moment voor je volgende herhaling. Kaarten waar je moeite mee hebt verschijnen vaker, terwijl beheerste kaarten minder vaak getoond worden.",
-    "q3": "Kan ik Studyield offline gebruiken?",
-    "a3": "Momenteel vereist Studyield een internetverbinding voor de meeste functies, omdat onze AI-verwerking in de cloud plaatsvindt. We werken echter aan offlineondersteuning voor het herhalen van flashcards in toekomstige updates.",
+    "q3": "Kan ik PIRAX offline gebruiken?",
+    "a3": "Momenteel vereist PIRAX een internetverbinding voor de meeste functies, omdat onze AI-verwerking in de cloud plaatsvindt. We werken echter aan offlineondersteuning voor het herhalen van flashcards in toekomstige updates.",
     "q4": "Hoe nauwkeurig is de AI-gegenereerde inhoud?",
     "a4": "Onze AI genereert inhoud van hoge kwaliteit op basis van je geüploade materiaal. We raden echter altijd aan om gegenereerde flashcards en quizzen te controleren op nauwkeurigheid. Je kunt alle gegenereerde inhoud eenvoudig bewerken naar je voorkeur.",
     "q5": "Zijn mijn gegevens veilig en privé?",
@@ -895,14 +895,14 @@
     "a6": "Ja! Je kunt je studiesets openbaar maken zodat iedereen ze kan bekijken, of privélinks delen met specifieke personen. Al je studiemateriaal is standaard privé en jij bepaalt wie het kan zien.",
     "q7": "Wat is de Examen klonen-functie?",
     "a7": "Examen klonen analyseert de stijl, het formaat en de moeilijkheidsgraad van je oude examens of oefentoetsen. Vervolgens genereert het nieuwe vragen die exact bij die stijl passen, zodat je kunt oefenen met relevant materiaal.",
-    "q8": "Is Studyield betaalbaar voor studenten?",
+    "q8": "Is PIRAX betaalbaar voor studenten?",
     "a8": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijkse of jaarlijkse abonnementen — beide budgetvriendelijk voor studenten.",
     "q9": "Kan ik mijn abonnement op elk moment opzeggen?",
     "a9": "Absoluut! Je kunt je abonnement op elk moment opzeggen via Accountinstellingen. Je behoudt toegang tot premiumfuncties tot het einde van je facturatieperiode. Geen opzegkosten.",
     "q10": "Wat gebeurt er als ik mijn abonnement downgrade?",
     "a10": "Bij een downgrade behoud je toegang tot premiumfuncties tot het einde van je huidige facturatiecyclus. Daarna schakelt je account over naar het nieuwe abonnement. Je studiemateriaal blijft bewaard, maar je hebt mogelijk beperkte toegang tot sommige functies.",
     "q11": "Welke browsers en apparaten worden ondersteund?",
-    "a11": "Studyield werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari en Edge. Het is volledig responsief en werkt uitstekend op desktop, tablet en mobiel. Eigen mobiele apps voor iOS en Android komen binnenkort.",
+    "a11": "PIRAX werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari en Edge. Het is volledig responsief en werkt uitstekend op desktop, tablet en mobiel. Eigen mobiele apps voor iOS en Android komen binnenkort.",
     "q12": "Wat is de Teruguitleg-functie?",
     "a12": "Teruguitleg is een Pro-functie die je leerproces versterkt door concepten terug uit te leggen aan de AI. De AI evalueert je uitleg, identificeert kennishiaten en geeft gerichte feedback om je kennis te versterken.",
     "searchPlaceholder": "Zoek in FAQ's...",
@@ -1062,10 +1062,10 @@
     }
   },
   "about": {
-    "badge": "Over Studyield",
+    "badge": "Over PIRAX",
     "title": "Slimmer studeren,",
     "titleHighlight": "aangedreven door AI",
-    "description": "Studyield helpt studenten effectiever te studeren door documenten om te zetten in flashcards, quizzen en interactieve leertools — allemaal aangedreven door AI.",
+    "description": "PIRAX helpt studenten effectiever te studeren door documenten om te zetten in flashcards, quizzen en interactieve leertools — allemaal aangedreven door AI.",
     "stats": {
       "featuresCount": "10+",
       "featuresLabel": "Leertools",
@@ -1076,10 +1076,10 @@
       "uptime": "Gratis",
       "uptimeLabel": "Om te beginnen"
     },
-    "ourStory": "Waarom we Studyield hebben gebouwd",
-    "storyP1": "We hebben Studyield gebouwd omdat we het zat waren om uren te besteden aan het handmatig maken van flashcards en studieaantekeningen. Als studenten wisten we dat AI het zware werk kon doen — kernconcepten uit documenten extraheren, quizzen genereren en herhalingen plannen — zodat wij ons konden concentreren op daadwerkelijk leren.",
-    "storyP2": "Studyield gebruikt bewezen technieken zoals spaced repetition en active recall, gecombineerd met AI die je documenten begrijpt. Upload een PDF en binnen seconden heb je flashcards, quizzen en een AI-tutor die vragen over je materiaal kan beantwoorden.",
-    "storyP3": "We zijn een klein team dat de studietool bouwt die we altijd al wilden. Studyield is gratis om te beginnen en we blijven het verbeteren op basis van feedback van echte studenten die het elke dag gebruiken.",
+    "ourStory": "Waarom we PIRAX hebben gebouwd",
+    "storyP1": "We hebben PIRAX gebouwd omdat we het zat waren om uren te besteden aan het handmatig maken van flashcards en studieaantekeningen. Als studenten wisten we dat AI het zware werk kon doen — kernconcepten uit documenten extraheren, quizzen genereren en herhalingen plannen — zodat wij ons konden concentreren op daadwerkelijk leren.",
+    "storyP2": "PIRAX gebruikt bewezen technieken zoals spaced repetition en active recall, gecombineerd met AI die je documenten begrijpt. Upload een PDF en binnen seconden heb je flashcards, quizzen en een AI-tutor die vragen over je materiaal kan beantwoorden.",
+    "storyP3": "We zijn een klein team dat de studietool bouwt die we altijd al wilden. PIRAX is gratis om te beginnen en we blijven het verbeteren op basis van feedback van echte studenten die het elke dag gebruiken.",
     "whatWeOffer": "Wat je kunt doen",
     "features": {
       "studySets": "Studiesets & flashcards",
@@ -1090,12 +1090,12 @@
       "examClone": "Examen klonen"
     },
     "ourValues": "Waar we om geven",
-    "valuesDescription": "De principes achter hoe we Studyield bouwen.",
+    "valuesDescription": "De principes achter hoe we PIRAX bouwen.",
     "values": {
       "missionDriven": "Toegankelijk leren",
-      "missionDrivenDesc": "Goede studietools hoeven geen fortuin te kosten. Studyield biedt een gratis proefperiode van 7 dagen zodat elke student AI-gestuurd leren kan ervaren.",
+      "missionDrivenDesc": "Goede studietools hoeven geen fortuin te kosten. PIRAX biedt een gratis proefperiode van 7 dagen zodat elke student AI-gestuurd leren kan ervaren.",
       "userCentric": "Gebouwd voor studenten",
-      "userCentricDesc": "We gebruiken Studyield zelf. Elke functie is ontworpen voor hoe studenten echt studeren — niet hoe wij denken dat ze zouden moeten studeren.",
+      "userCentricDesc": "We gebruiken PIRAX zelf. Elke functie is ontworpen voor hoe studenten echt studeren — niet hoe wij denken dat ze zouden moeten studeren.",
       "innovationFirst": "AI die echt helpt",
       "innovationFirstDesc": "We voegen geen AI toe omwille van AI. Elke AI-functie lost een echt probleem op — flashcards genereren, concepten uitleggen of oefenexamens maken.",
       "communityFocused": "Samen leren",
@@ -1109,7 +1109,7 @@
     "badge": "We helpen je graag",
     "title": "Neem",
     "titleHighlight": "contact op",
-    "description": "Heb je vragen over Studyield? We helpen je graag. Neem contact op via een van de onderstaande methoden of vul het contactformulier in.",
+    "description": "Heb je vragen over PIRAX? We helpen je graag. Neem contact op via een van de onderstaande methoden of vul het contactformulier in.",
     "methods": {
       "emailSupport": "E-mailondersteuning",
       "emailSupportDesc": "Hulp bij vragen of problemen",
@@ -1230,7 +1230,7 @@
       "a1": "Ja, je kunt je abonnement op elk moment upgraden of downgraden. Bij een upgrade krijg je direct toegang tot nieuwe functies. Bij een downgrade gaat de wijziging in aan het einde van je facturatiecyclus.",
       "q2": "Wat gebeurt er als ik downgrade naar Gratis?",
       "a2": "Je studiemateriaal blijft bewaard, maar je hebt beperkte toegang tot premiumfuncties. Je kunt op elk moment weer upgraden naar Pro om volledige toegang terug te krijgen.",
-      "q3": "Is Studyield betaalbaar voor studenten?",
+      "q3": "Is PIRAX betaalbaar voor studenten?",
       "a3": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijkse ($7,99/maand) of jaarlijkse ($47,88/jaar) abonnementen — beide budgetvriendelijk voor studenten.",
       "q4": "Welke betaalmethoden accepteren jullie?",
       "a4": "We accepteren alle gangbare creditcards (Visa, Mastercard, American Express), PayPal en in sommige regio's lokale betaalmethoden. Alle betalingen worden veilig verwerkt via Stripe.",
@@ -1240,11 +1240,11 @@
       "a6": "Een AI-verzoek omvat het genereren van flashcards uit documenten, quizzen aanmaken, de AI-tutor chat gebruiken, probleemoplossing en examen klonen. Basishandelingen zoals flashcards herhalen tellen niet mee.",
       "q7": "Welke factureringscycli bieden jullie aan?",
       "a7": "We bieden maandelijkse ($7,99/maand) en jaarlijkse ($47,88/jaar) factureringscycli. Het jaarlijkse abonnement bespaart je ongeveer 50% vergeleken met maandelijks betalen.",
-      "q8": "Is Studyield betaalbaar voor studenten?",
+      "q8": "Is PIRAX betaalbaar voor studenten?",
       "a8": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijks ($7,99/maand) of jaarlijks ($47,88/jaar) — beide zijn budgetvriendelijk voor studenten."
     },
     "ctaTitle": "Klaar om je leerervaring te transformeren?",
-    "ctaDescription": "Sluit je aan bij duizenden studenten die al slimmer leren met Studyield. Begin vandaag gratis.",
+    "ctaDescription": "Sluit je aan bij duizenden studenten die al slimmer leren met PIRAX. Begin vandaag gratis.",
     "startFree": "Gratis beginnen",
     "talkToSales": "Neem contact op"
   },
@@ -1252,7 +1252,7 @@
     "badge": "FAQ",
     "title": "Veelgestelde",
     "titleHighlight": "vragen",
-    "description": "Vind antwoorden op de meest gestelde vragen over Studyield. Kun je niet vinden wat je zoekt? Neem contact op met ons supportteam.",
+    "description": "Vind antwoorden op de meest gestelde vragen over PIRAX. Kun je niet vinden wat je zoekt? Neem contact op met ons supportteam.",
     "searchPlaceholder": "Zoek in FAQ's...",
     "questionsCount": "{{count}} vragen",
     "categories": {
@@ -1264,18 +1264,18 @@
       "technical": "Technisch"
     },
     "general": {
-      "q1": "Wat is Studyield?",
-      "a1": "Studyield is een AI-gestuurd leerplatform dat je helpt slimmer te studeren. Upload documenten, genereer flashcards, maak quizzen en chat met een AI-tutor — alles ontworpen om je elk onderwerp sneller te laten beheersen met bewezen leertechnieken zoals spaced repetition.",
-      "q2": "Is Studyield gratis te gebruiken?",
-      "a2": "Ja! Studyield biedt een gratis proefperiode van 7 dagen inclusief 3 studiesets, 50 flashcards en 10 AI-verzoeken. Na de proefperiode kun je upgraden naar Pro voor onbeperkte toegang en geavanceerde functies zoals Probleemoplosser, Examen klonen en Diepgaand onderzoek.",
-      "q3": "Op welke apparaten kan ik Studyield gebruiken?",
-      "a3": "Studyield werkt op elk apparaat met een moderne webbrowser — computers, tablets en smartphones. De webapp is volledig responsief en geoptimaliseerd voor mobiele schermen.",
-      "q4": "Moet ik een account aanmaken om Studyield te gebruiken?",
+      "q1": "Wat is PIRAX?",
+      "a1": "PIRAX is een AI-gestuurd leerplatform dat je helpt slimmer te studeren. Upload documenten, genereer flashcards, maak quizzen en chat met een AI-tutor — alles ontworpen om je elk onderwerp sneller te laten beheersen met bewezen leertechnieken zoals spaced repetition.",
+      "q2": "Is PIRAX gratis te gebruiken?",
+      "a2": "Ja! PIRAX biedt een gratis proefperiode van 7 dagen inclusief 3 studiesets, 50 flashcards en 10 AI-verzoeken. Na de proefperiode kun je upgraden naar Pro voor onbeperkte toegang en geavanceerde functies zoals Probleemoplosser, Examen klonen en Diepgaand onderzoek.",
+      "q3": "Op welke apparaten kan ik PIRAX gebruiken?",
+      "a3": "PIRAX werkt op elk apparaat met een moderne webbrowser — computers, tablets en smartphones. De webapp is volledig responsief en geoptimaliseerd voor mobiele schermen.",
+      "q4": "Moet ik een account aanmaken om PIRAX te gebruiken?",
       "a4": "Ja, je hebt een gratis account nodig om je studiemateriaal op te slaan en je voortgang bij te houden. Je kunt je registreren met je e-mailadres."
     },
     "features": {
       "q1": "Welke soorten documenten kan ik uploaden?",
-      "a1": "Studyield ondersteunt PDF, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI extraheert tekst uit deze documenten om leermateriaal te maken.",
+      "a1": "PIRAX ondersteunt PDF, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI extraheert tekst uit deze documenten om leermateriaal te maken.",
       "q2": "Hoe genereert de AI flashcards?",
       "a2": "Onze AI analyseert je geüploade documenten om kernconcepten, definities en belangrijke informatie te identificeren. Vervolgens maakt het vraag-antwoord-paren die geoptimaliseerd zijn voor leren en onthouden.",
       "q3": "Hoe nauwkeurig is de AI-gegenereerde inhoud?",
@@ -1302,7 +1302,7 @@
       "a2": "Ja, je kunt op elk moment upgraden of downgraden. Bij een upgrade krijg je direct toegang tot nieuwe functies. Bij een downgrade gaat de wijziging in aan het einde van je facturatiecyclus.",
       "q3": "Is er een gratis proefperiode?",
       "a3": "Ja! De 7-daagse gratis proefperiode geeft je toegang tot kernfuncties inclusief studiesets, flashcards, quizzen en spaced repetition — geen creditcard nodig. Na de proefperiode kun je abonneren op Pro voor onbeperkte toegang.",
-      "q4": "Is Studyield betaalbaar voor studenten?",
+      "q4": "Is PIRAX betaalbaar voor studenten?",
       "a4": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijkse of jaarlijkse abonnementen — beide budgetvriendelijk voor studenten.",
       "q5": "Hoe zeg ik mijn abonnement op?",
       "a5": "Je kunt op elk moment opzeggen via Accountinstellingen > Facturering > Abonnement beheren. Je behoudt toegang tot premiumfuncties tot het einde van je facturatieperiode.",
@@ -1320,10 +1320,10 @@
       "a4": "Standaard is je studiemateriaal privé en alleen zichtbaar voor jou. Jij bepaalt het delen — je kunt sets openbaar maken, delen met specifieke personen, of volledig privé houden."
     },
     "technical": {
-      "q1": "Kan ik Studyield offline gebruiken?",
+      "q1": "Kan ik PIRAX offline gebruiken?",
       "a1": "Momenteel vereisen de meeste functies een internetverbinding omdat AI-verwerking in de cloud plaatsvindt. We werken aan offlineondersteuning voor het herhalen van flashcards in toekomstige updates.",
       "q2": "Welke browsers worden ondersteund?",
-      "a2": "Studyield werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari en Edge. We raden aan je browser up-to-date te houden voor de beste ervaring.",
+      "a2": "PIRAX werkt op alle moderne browsers, waaronder Chrome, Firefox, Safari en Edge. We raden aan je browser up-to-date te houden voor de beste ervaring.",
       "q3": "Wat is de Probleemoplosser-functie?",
       "a3": "De Probleemoplosser is een Pro-functie die je helpt complexe problemen stap voor stap op te lossen. Je kunt wiskunde-, wetenschap- of andere problemen invoeren en de AI biedt gedetailleerde oplossingen met uitleg. Batchoplosser laat je meerdere problemen tegelijk oplossen.",
       "q4": "Wat telt als een AI-verzoek?",
@@ -1484,7 +1484,7 @@
     }
   },
   "onboarding": {
-    "title": "Welkom bij Studyield",
+    "title": "Welkom bij PIRAX",
     "skipForNow": "Nu overslaan",
     "stepOf": "Stap {{current}} van {{total}}",
     "welcome": {
@@ -1653,7 +1653,7 @@
     },
     "features": {
       "title": "Dit kun je allemaal doen",
-      "description": "Studyield zit vol tools om studeren sneller en effectiever te maken",
+      "description": "PIRAX zit vol tools om studeren sneller en effectiever te maken",
       "studySets": "Studiesets",
       "studySetsDesc": "Maak flashcards handmatig of genereer ze uit documenten met AI",
       "aiChat": "AI Chat Tutor",
@@ -1679,7 +1679,7 @@
       "deepResearch": "Diepgaand onderzoek",
       "deepResearchDesc": "AI-gestuurde diepgaande verkenning van elk onderwerp",
       "adFreeTitle": "100% reclamevrij, altijd",
-      "adFreeDesc": "Geen advertenties, geen afleidingen. Alleen jij en je studie. Studyield zal nooit reclame tonen."
+      "adFreeDesc": "Geen advertenties, geen afleidingen. Alleen jij en je studie. PIRAX zal nooit reclame tonen."
     },
     "done": {
       "title": "Je bent helemaal klaar!",
@@ -1778,7 +1778,7 @@
     "articles": "{{count}} artikelen",
     "categories": {
       "gettingStarted": "Aan de slag",
-      "gettingStartedDesc": "Leer de basis van Studyield en kom snel op gang",
+      "gettingStartedDesc": "Leer de basis van PIRAX en kom snel op gang",
       "studySets": "Studiesets & flashcards",
       "studySetsDesc": "Maak, beheer en beheers je leermateriaal",
       "documents": "Documentverwerking",
@@ -1818,24 +1818,24 @@
     "faqSubtitle": "Snelle antwoorden op de meest gestelde vragen",
     "faqs": {
       "q1": "Welke soorten documenten kan ik uploaden?",
-      "a1": "Studyield ondersteunt een grote verscheidenheid aan documentformaten, waaronder PDF's, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI verwerkt deze documenten om tekst te extraheren en leermateriaal te maken.",
+      "a1": "PIRAX ondersteunt een grote verscheidenheid aan documentformaten, waaronder PDF's, Word-documenten (.docx, .doc), platte tekstbestanden, markdown-bestanden en afbeeldingen (PNG, JPEG). Onze AI verwerkt deze documenten om tekst te extraheren en leermateriaal te maken.",
       "q2": "Hoe werkt het spaced repetition systeem?",
       "a2": "Ons flashcardsysteem gebruikt het SM-2 spaced repetition algoritme om je leerproces te optimaliseren. Op basis van hoe goed je elke kaart onthoudt, berekent het systeem het optimale moment voor je volgende herhaling. Kaarten waar je moeite mee hebt verschijnen vaker, terwijl beheerste kaarten minder vaak getoond worden.",
-      "q3": "Kan ik Studyield offline gebruiken?",
-      "a3": "Momenteel vereist Studyield een internetverbinding voor de meeste functies, omdat onze AI-verwerking in de cloud plaatsvindt. We werken echter aan offlineondersteuning voor het herhalen van flashcards in toekomstige updates.",
+      "q3": "Kan ik PIRAX offline gebruiken?",
+      "a3": "Momenteel vereist PIRAX een internetverbinding voor de meeste functies, omdat onze AI-verwerking in de cloud plaatsvindt. We werken echter aan offlineondersteuning voor het herhalen van flashcards in toekomstige updates.",
       "q4": "Hoe nauwkeurig is de AI-gegenereerde inhoud?",
       "a4": "Onze AI genereert inhoud van hoge kwaliteit op basis van je geüploade materiaal. We raden echter altijd aan om gegenereerde flashcards en quizzen te controleren op nauwkeurigheid. Je kunt alle gegenereerde inhoud eenvoudig bewerken naar je voorkeur.",
       "q5": "Zijn mijn gegevens veilig en privé?",
       "a5": "Ja, we nemen gegevensbeveiliging serieus. Alle documenten worden versleuteld in rust en tijdens verzending. Je studiemateriaal wordt nooit gedeeld met andere gebruikers of gebruikt om AI-modellen te trainen. Je kunt je gegevens op elk moment verwijderen via je accountinstellingen.",
       "q6": "Wat is de Examen klonen-functie?",
       "a6": "Examen klonen analyseert de stijl, het formaat en de moeilijkheidsgraad van je oude examens of oefentoetsen. Vervolgens genereert het nieuwe vragen die bij die exacte stijl passen, zodat je kunt oefenen met relevant materiaal.",
-      "q7": "Is Studyield betaalbaar voor studenten?",
+      "q7": "Is PIRAX betaalbaar voor studenten?",
       "a7": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijkse of jaarlijkse abonnementen — beide budgetvriendelijk voor studenten.",
       "q8": "Hoe zeg ik mijn abonnement op?",
       "a8": "Je kunt je abonnement op elk moment opzeggen via je Accountinstellingen. Ga naar Instellingen > Facturering > Abonnement beheren en klik op \"Abonnement opzeggen\". Je behoudt toegang tot premiumfuncties tot het einde van je facturatieperiode."
     },
     "videoTutorials": "Videotutorials",
-    "videoTutorialsDesc": "Leer Studyield te gebruiken met onze stapsgewijze videogidsen. Van aan de slag tot geavanceerde functies.",
+    "videoTutorialsDesc": "Leer PIRAX te gebruiken met onze stapsgewijze videogidsen. Van aan de slag tot geavanceerde functies.",
     "watchTutorials": "Tutorials bekijken",
     "ctaTitle": "Heb je nog hulp nodig?",
     "ctaDescription": "Ons supportteam staat klaar om je te helpen bij al je vragen. We reageren doorgaans binnen 24 uur.",
@@ -1864,7 +1864,7 @@
     },
     "introduction": {
       "title": "Inleiding",
-      "p1": "Bij Studyield nemen we je privacy serieus. Dit privacybeleid legt uit hoe we je gegevens verzamelen, gebruiken, openbaar maken en beschermen wanneer je ons AI-gestuurd leerplatform gebruikt.",
+      "p1": "Bij PIRAX nemen we je privacy serieus. Dit privacybeleid legt uit hoe we je gegevens verzamelen, gebruiken, openbaar maken en beschermen wanneer je ons AI-gestuurd leerplatform gebruikt.",
       "p2": "Lees dit privacybeleid zorgvuldig door. Als je niet akkoord gaat met de voorwaarden van dit privacybeleid, gebruik dan het platform niet."
     },
     "informationCollected": {
@@ -1878,7 +1878,7 @@
         "Communicatievoorkeuren"
       ],
       "studyContent": "Studie-inhoud",
-      "studyContentDesc": "Wanneer je Studyield gebruikt, slaan we het volgende op:",
+      "studyContentDesc": "Wanneer je PIRAX gebruikt, slaan we het volgende op:",
       "studyItems": [
         "Documenten die je uploadt (PDF's, afbeeldingen)",
         "Flashcards en studiesets",
@@ -1961,7 +1961,7 @@
     "badge": "Juridische overeenkomst",
     "title": "Algemene",
     "titleHighlight": "voorwaarden",
-    "description": "Lees deze voorwaarden zorgvuldig door voordat je Studyield gebruikt. Door ons platform te gebruiken, ga je akkoord met deze voorwaarden.",
+    "description": "Lees deze voorwaarden zorgvuldig door voordat je PIRAX gebruikt. Door ons platform te gebruiken, ga je akkoord met deze voorwaarden.",
     "lastUpdated": "Laatst bijgewerkt: 14 februari 2026",
     "contents": "Inhoud",
     "toc": {
@@ -1981,11 +1981,11 @@
     },
     "acceptance": {
       "title": "1. Aanvaarding van voorwaarden",
-      "content": "Door Studyield te gebruiken of er toegang toe te krijgen, ga je akkoord met deze Algemene voorwaarden en alle toepasselijke wet- en regelgeving. Als je niet akkoord gaat met deze voorwaarden, is het niet toegestaan het platform te gebruiken."
+      "content": "Door PIRAX te gebruiken of er toegang toe te krijgen, ga je akkoord met deze Algemene voorwaarden en alle toepasselijke wet- en regelgeving. Als je niet akkoord gaat met deze voorwaarden, is het niet toegestaan het platform te gebruiken."
     },
     "descriptionOfService": {
       "title": "2. Beschrijving van de dienst",
-      "intro": "Studyield is een AI-gestuurd leerplatform dat het volgende biedt:",
+      "intro": "PIRAX is een AI-gestuurd leerplatform dat het volgende biedt:",
       "items": [
         "Studiesets met document-upload en -analyse",
         "AI-gegenereerde flashcards met spaced repetition",
@@ -2021,7 +2021,7 @@
     "contentOwnership": {
       "title": "5. Eigendom van inhoud",
       "yourContent": "Jouw inhoud",
-      "yourContentDesc": "Je behoudt het eigendom van alle inhoud die je uploadt naar Studyield, inclusief documenten, notities en studiemateriaal. Door inhoud te uploaden, verleen je ons een beperkte licentie om het te verwerken, op te slaan en weer te geven voor het leveren van onze diensten.",
+      "yourContentDesc": "Je behoudt het eigendom van alle inhoud die je uploadt naar PIRAX, inclusief documenten, notities en studiemateriaal. Door inhoud te uploaden, verleen je ons een beperkte licentie om het te verwerken, op te slaan en weer te geven voor het leveren van onze diensten.",
       "aiGenerated": "AI-gegenereerde inhoud",
       "aiGeneratedDesc": "Inhoud gegenereerd door onze AI (flashcards, quizzen, samenvattingen) op basis van jouw materiaal behoort aan jou. Je kunt deze inhoud vrij gebruiken, wijzigen en delen."
     },
@@ -2037,11 +2037,11 @@
     },
     "aiDisclaimer": {
       "title": "7. AI-disclaimer",
-      "content": "Onze AI genereert inhoud om je leerproces te ondersteunen. Hoewel we streven naar nauwkeurigheid, kan AI-gegenereerde inhoud fouten bevatten. Je dient al het gegenereerde materiaal te controleren en niet uitsluitend op AI te vertrouwen voor kritieke beslissingen. Studyield is niet verantwoordelijk voor fouten in AI-gegenereerde inhoud."
+      "content": "Onze AI genereert inhoud om je leerproces te ondersteunen. Hoewel we streven naar nauwkeurigheid, kan AI-gegenereerde inhoud fouten bevatten. Je dient al het gegenereerde materiaal te controleren en niet uitsluitend op AI te vertrouwen voor kritieke beslissingen. PIRAX is niet verantwoordelijk voor fouten in AI-gegenereerde inhoud."
     },
     "liability": {
       "title": "8. Beperking van aansprakelijkheid",
-      "content": "Voor zover maximaal toegestaan door de wet, is Studyield niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolgschade of punitieve schade, inclusief verlies van gegevens, winst of goodwill, voortvloeiend uit je gebruik van de dienst."
+      "content": "Voor zover maximaal toegestaan door de wet, is PIRAX niet aansprakelijk voor indirecte, incidentele, bijzondere, gevolgschade of punitieve schade, inclusief verlies van gegevens, winst of goodwill, voortvloeiend uit je gebruik van de dienst."
     },
     "availability": {
       "title": "9. Beschikbaarheid van de dienst",
@@ -2057,7 +2057,7 @@
     },
     "governingLaw": {
       "title": "12. Toepasselijk recht",
-      "content": "Deze voorwaarden worden beheerst door en uitgelegd in overeenstemming met het toepasselijke recht. Geschillen voortvloeiend uit deze voorwaarden of het gebruik van Studyield worden opgelost via goede trouw onderhandeling of, indien nodig, via bindende arbitrage."
+      "content": "Deze voorwaarden worden beheerst door en uitgelegd in overeenstemming met het toepasselijke recht. Geschillen voortvloeiend uit deze voorwaarden of het gebruik van PIRAX worden opgelost via goede trouw onderhandeling of, indien nodig, via bindende arbitrage."
     },
     "contact": {
       "title": "13. Contact",
@@ -2075,7 +2075,7 @@
     "badge": "Cookiebeleid",
     "title": "Cookie",
     "titleHighlight": "beleid",
-    "description": "Lees hoe we cookies en vergelijkbare technologieën gebruiken om je ervaring op Studyield te verbeteren.",
+    "description": "Lees hoe we cookies en vergelijkbare technologieën gebruiken om je ervaring op PIRAX te verbeteren.",
     "lastUpdated": "Laatst bijgewerkt: 14 februari 2026",
     "contents": "Inhoud",
     "toc": {
@@ -2091,7 +2091,7 @@
     "whatAreCookies": {
       "title": "Wat zijn cookies",
       "content": "Cookies zijn kleine tekstbestanden die op je apparaat worden geplaatst wanneer je een website bezoekt. Ze worden veel gebruikt om websites beter te laten werken, een betere gebruikerservaring te bieden en website-eigenaren nuttige informatie te geven over hoe hun site wordt gebruikt.",
-      "note": "Door Studyield te gebruiken, stem je in met het gebruik van cookies in overeenstemming met dit cookiebeleid. Je kunt je cookievoorkeuren op elk moment beheren.",
+      "note": "Door PIRAX te gebruiken, stem je in met het gebruik van cookies in overeenstemming met dit cookiebeleid. Je kunt je cookievoorkeuren op elk moment beheren.",
       "noteLabel": "Opmerking:"
     },
     "typesOfCookies": {
@@ -2149,7 +2149,7 @@
     },
     "howWeUse": {
       "title": "Hoe we cookies gebruiken",
-      "description": "We gebruiken cookies voor verschillende doeleinden om je ervaring op Studyield te verbeteren:",
+      "description": "We gebruiken cookies voor verschillende doeleinden om je ervaring op PIRAX te verbeteren:",
       "items": [
         {
           "title": "Authenticatie",
@@ -2217,11 +2217,11 @@
         }
       ],
       "warningLabel": "Waarschuwing:",
-      "warning": "Het uitschakelen van essentiële cookies kan de functionaliteit van Studyield beïnvloeden en voorkomen dat je bepaalde functies kunt gebruiken."
+      "warning": "Het uitschakelen van essentiële cookies kan de functionaliteit van PIRAX beïnvloeden en voorkomen dat je bepaalde functies kunt gebruiken."
     },
     "cookieSettings": {
       "title": "Cookie-instellingen",
-      "description": "Je kunt je cookievoorkeuren voor Studyield op elk moment aanpassen. Klik op de onderstaande knop om te beheren welke soorten cookies je toestaat.",
+      "description": "Je kunt je cookievoorkeuren voor PIRAX op elk moment aanpassen. Klik op de onderstaande knop om te beheren welke soorten cookies je toestaat.",
       "managePreferences": "Cookievoorkeuren beheren"
     },
     "policyUpdates": {
@@ -2242,7 +2242,7 @@
     "badge": "AVG-conform",
     "title": "Account &",
     "titleHighlight": "gegevensverwijdering",
-    "description": "We respecteren je recht om vergeten te worden. Lees hoe je je Studyield-account en alle bijbehorende gegevens permanent kunt verwijderen. Dit proces is onomkeerbaar.",
+    "description": "We respecteren je recht om vergeten te worden. Lees hoe je je PIRAX-account en alle bijbehorende gegevens permanent kunt verwijderen. Dit proces is onomkeerbaar.",
     "importantNotice": {
       "title": "Belangrijk: deze actie kan niet ongedaan worden gemaakt",
       "description": "Zodra je je account verwijdert, worden al je gegevens permanent van onze servers verwijderd. Zorg ervoor dat je eventueel belangrijk studiemateriaal exporteert voordat je verdergaat.",
@@ -2294,7 +2294,7 @@
       "steps": [
         {
           "title": "Log in op je account",
-          "description": "Log in op Studyield met je e-mail en wachtwoord om toegang te krijgen tot je accountinstellingen."
+          "description": "Log in op PIRAX met je e-mail en wachtwoord om toegang te krijgen tot je accountinstellingen."
         },
         {
           "title": "Ga naar Accountinstellingen",
@@ -2335,7 +2335,7 @@
     "badge": "Sitenavigatie",
     "title": "Site",
     "titleHighlight": "map",
-    "description": "Volledig overzicht van alle pagina's op Studyield. Vind precies wat je zoekt.",
+    "description": "Volledig overzicht van alle pagina's op PIRAX. Vind precies wat je zoekt.",
     "quickAccess": "Snelle toegang",
     "sections": {
       "mainPages": "Hoofdpagina's",
@@ -2346,7 +2346,7 @@
     },
     "links": {
       "home": "Home",
-      "homeDesc": "Welkom bij Studyield",
+      "homeDesc": "Welkom bij PIRAX",
       "aboutUs": "Over ons",
       "aboutUsDesc": "Lees over onze missie",
       "features": "Functies",
@@ -2397,7 +2397,7 @@
     "xmlSitemapDesc": "Voor zoekmachines en ontwikkelaars",
     "viewSitemapXml": "Bekijk sitemap.xml",
     "ctaTitle": "Kun je niet vinden wat je zoekt?",
-    "ctaDescription": "Ons supportteam staat klaar om je door Studyield te navigeren.",
+    "ctaDescription": "Ons supportteam staat klaar om je door PIRAX te navigeren.",
     "contactUs": "Contact opnemen",
     "helpCenterBtn": "Helpcentrum"
   },
@@ -4002,7 +4002,7 @@
       ]
     },
     "faq": {
-      "studentQuestion": "Is Studyield betaalbaar voor studenten?",
+      "studentQuestion": "Is PIRAX betaalbaar voor studenten?",
       "studentAnswer": "Absoluut! Onze prijzen zijn ontworpen met studenten in gedachten. Begin met een gratis proefperiode van 7 dagen en kies daarna tussen maandelijkse ($7,99/mnd) of jaarlijkse ($47,88/jr) abonnementen — beide budgetvriendelijk voor studenten."
     }
   },

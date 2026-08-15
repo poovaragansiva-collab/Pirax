@@ -137,8 +137,8 @@ export function HintModePage() {
                   )}
                 </Button>
               ) : (
-                <div className="flex-1 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-center">
-                  <p className="text-sm font-medium text-green-500">{t('hintMode.allHintsRevealed')}</p>
+                <div className="flex-1 p-4 bg-primary/10 border border-primary/20 rounded-xl text-center">
+                  <p className="text-sm font-medium text-primary">{t('hintMode.allHintsRevealed')}</p>
                 </div>
               )}
               <Button variant="outline" onClick={() => navigate(`/dashboard/problem-solver/solution/${id}`)}>
@@ -153,3 +153,5 @@ export function HintModePage() {
 }
 
 export default HintModePage;
+
+

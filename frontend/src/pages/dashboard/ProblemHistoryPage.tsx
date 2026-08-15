@@ -63,7 +63,7 @@ export function ProblemHistoryPage() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="w-4 h-4 text-green-500" />;
+        return <CheckCircle className="w-4 h-4 text-primary" />;
       case 'failed':
         return <XCircle className="w-4 h-4 text-red-500" />;
       case 'pending':
@@ -153,7 +153,7 @@ export function ProblemHistoryPage() {
                         setShowFilter(false);
                       }}
                       className={`w-full text-left px-3 py-2 text-sm hover:bg-muted ${
-                        subjectFilter === s ? 'text-green-500 font-medium' : ''
+                        subjectFilter === s ? 'text-primary font-medium' : ''
                       }`}
                     >
                       {t(`problemHistory.subjectFilters.${s}`)}
@@ -204,7 +204,7 @@ export function ProblemHistoryPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.03 }}
-              className="bg-card border border-border rounded-xl p-4 hover:border-green-500/30 transition-all cursor-pointer group"
+              className="bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-all cursor-pointer group"
               onClick={() => {
                 if (session.status === 'completed') {
                   navigate(`/dashboard/problem-solver/solution/${session.id}`);
@@ -284,3 +284,5 @@ export function ProblemHistoryPage() {
 }
 
 export default ProblemHistoryPage;
+
+
