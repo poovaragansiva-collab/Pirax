@@ -13,8 +13,11 @@ import {
   OnModuleInit,
   NotFoundException,
   ForbiddenException,
+  Inject,
+  Scope,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { REQUEST } from '@nestjs/core';
 import OpenAI from 'openai';
 import { DatabaseService } from '../database/database.service';
 import { v4 as uuidv4 } from 'uuid';
@@ -53,7 +56,7 @@ export interface TranscriptionResponse {
   language?: string;
 }
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class AiService implements OnModuleInit {
   private readonly logger = new Logger(AiService.name);
 
@@ -66,6 +69,7 @@ export class AiService implements OnModuleInit {
   constructor(
     private readonly configService: ConfigService,
     private readonly db: DatabaseService,
+    @Inject(REQUEST) private readonly request: any,
   ) {}
 
   async onModuleInit() {
@@ -82,7 +86,7 @@ export class AiService implements OnModuleInit {
         baseURL: 'https://openrouter.ai/api/v1',
         defaultHeaders: {
           'HTTP-Referer': this.configService.get<string>('FRONTEND_URL', 'http://localhost:5189'),
-          'X-Title': 'Studyield',
+          'X-Title': 'PIRAX',
         },
         timeout: 120000,
       });
@@ -105,8 +109,29 @@ export class AiService implements OnModuleInit {
     }
   }
 
-  private getClient(): OpenAI {
-    // Primary: Use OpenRouter for everything (unified gateway)
+  private async getClient(): Promise<OpenAI> {
+    const userId = this.request?.user?.sub;
+    if (userId) {
+      const user = await this.db.queryOne<{ preferences: any }>(
+        'SELECT preferences FROM users WHERE id = $1',
+        [userId],
+      );
+      const userKey = user?.preferences?.openRouterKey;
+
+      if (userKey && userKey.trim() !== '') {
+        return new OpenAI({
+          apiKey: userKey,
+          baseURL: 'https://openrouter.ai/api/v1',
+          defaultHeaders: {
+            'HTTP-Referer': this.configService.get<string>('FRONTEND_URL', 'http://localhost:5189'),
+            'X-Title': 'PIRAX',
+          },
+          timeout: 120000,
+        });
+      }
+    }
+
+    // Fallback: Use system OpenRouter client
     if (this.openRouterClient) {
       return this.openRouterClient;
     }
@@ -117,7 +142,7 @@ export class AiService implements OnModuleInit {
     }
 
     throw new BadRequestException(
-      'No AI API key configured. Set OPENROUTER_API_KEY or OPENAI_API_KEY in .env file.',
+      'No AI API key configured. Please configure your OpenRouter API key in Settings -> AI Providers.',
     );
   }
 
@@ -139,7 +164,7 @@ export class AiService implements OnModuleInit {
     messages: ChatMessage[],
     options: CompletionOptions = {},
   ): Promise<CompletionResponse> {
-    const client = this.getClient();
+    const client = await this.getClient();
     const model = options.model || this.getModel('text');
 
     try {
@@ -218,7 +243,7 @@ export class AiService implements OnModuleInit {
     maxTokens?: number;
   }): Promise<string> {
     try {
-      const client = this.getClient();
+      const client = await this.getClient();
       const model = this.getModel('vision');
 
       const response = await client.chat.completions.create({
@@ -275,7 +300,7 @@ export class AiService implements OnModuleInit {
     messages: ChatMessage[],
     options: CompletionOptions = {},
   ): AsyncGenerator<{ content: string; done: boolean }> {
-    const client = this.getClient();
+    const client = await this.getClient();
     const model = options.model || this.getModel('text');
 
     const stream = await client.chat.completions.create({
