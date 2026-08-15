@@ -9,13 +9,15 @@ import { ConfigService } from '@nestjs/config';
 import Stripe from 'stripe';
 import { v4 as uuidv4 } from 'uuid';
 import { DatabaseService } from '../database/database.service';
+import Razorpay from 'razorpay';
+import * as crypto from 'crypto';
 
 export interface Subscription {
   id: string;
   userId: string;
   stripeCustomerId: string;
   stripeSubscriptionId: string | null;
-  plan: 'free' | 'monthly' | 'yearly';
+  plan: 'free' | 'pro' | 'monthly' | 'yearly';
   status: 'active' | 'canceled' | 'past_due' | 'trialing';
   currentPeriodStart: Date | null;
   currentPeriodEnd: Date | null;
@@ -34,6 +36,12 @@ export interface UsageRecord {
 
 const PLAN_LIMITS = {
   free: { ai_requests: 10, study_sets: 3, flashcards: 50, storage_bytes: 50 * 1024 * 1024 },
+  pro: {
+    ai_requests: -1,
+    study_sets: -1,
+    flashcards: -1,
+    storage_bytes: 10 * 1024 * 1024 * 1024,
+  },
   monthly: {
     ai_requests: -1,
     study_sets: -1,
@@ -52,6 +60,7 @@ const PLAN_LIMITS = {
 export class SubscriptionService implements OnModuleInit {
   private readonly logger = new Logger(SubscriptionService.name);
   private stripe: Stripe;
+  private razorpay: any = null;
   private readonly monthlyPriceId: string;
   private readonly yearlyPriceId: string;
 
@@ -65,6 +74,18 @@ export class SubscriptionService implements OnModuleInit {
     });
     this.monthlyPriceId = this.configService.get<string>('STRIPE_PRICE_ID_MONTHLY', '');
     this.yearlyPriceId = this.configService.get<string>('STRIPE_PRICE_ID_YEARLY', '');
+
+    const razorpayKeyId = this.configService.get<string>('RAZORPAY_KEY_ID');
+    const razorpayKeySecret = this.configService.get<string>('RAZORPAY_KEY_SECRET');
+    if (razorpayKeyId && razorpayKeySecret && !razorpayKeyId.includes('your-')) {
+      this.razorpay = new Razorpay({
+        key_id: razorpayKeyId,
+        key_secret: razorpayKeySecret,
+      });
+      this.logger.log('Razorpay client initialized');
+    } else {
+      this.logger.warn('Razorpay credentials not fully configured in env');
+    }
   }
 
   async onModuleInit() {
@@ -329,7 +350,7 @@ export class SubscriptionService implements OnModuleInit {
   async isPro(userId: string): Promise<boolean> {
     const subscription = await this.findByUserId(userId);
     const plan = subscription?.plan || 'free';
-    return plan === 'monthly' || plan === 'yearly';
+    return plan === 'pro' || plan === 'monthly' || plan === 'yearly';
   }
 
   async checkAndIncrementUsage(userId: string, feature: string, amount = 1): Promise<void> {
@@ -491,5 +512,138 @@ export class SubscriptionService implements OnModuleInit {
       createdAt: new Date(r.created_at as string),
       updatedAt: new Date(r.updated_at as string),
     };
+  }
+
+  async createRazorpayOrder(userId: string): Promise<{ orderId: string; amount: number; keyId: string }> {
+    if (!this.razorpay) {
+      throw new BadRequestException('Razorpay is not configured on this server');
+    }
+    const amount = 9900; // ₹99 = 9900 paise
+    const options = {
+      amount,
+      currency: 'INR',
+      receipt: `receipt_${uuidv4().substring(0, 10)}`,
+    };
+    try {
+      const order = await this.razorpay.orders.create(options);
+      // Save the pending payment record in DB
+      await this.db.query(
+        `INSERT INTO payments (user_id, razorpay_order_id, amount, currency, status)
+         VALUES ($1, $2, $3, $4, 'pending')`,
+        [userId, order.id, amount, 'INR'],
+      );
+      return {
+        orderId: order.id,
+        amount,
+        keyId: this.configService.get<string>('RAZORPAY_KEY_ID', ''),
+      };
+    } catch (err) {
+      this.logger.error(`Failed to create Razorpay order: ${(err as Error).message}`);
+      throw new BadRequestException('Failed to initialize payment with Razorpay');
+    }
+  }
+
+  async verifyRazorpayPayment(
+    userId: string,
+    orderId: string,
+    paymentId: string,
+    signature: string,
+  ): Promise<{ status: string }> {
+    // Validate signature
+    const secret = this.configService.get<string>('RAZORPAY_KEY_SECRET');
+    if (!secret) {
+      throw new BadRequestException('Razorpay secret is not configured');
+    }
+    const generatedSignature = crypto
+      .createHmac('sha256', secret)
+      .update(orderId + '|' + paymentId)
+      .digest('hex');
+
+    if (generatedSignature !== signature) {
+      throw new BadRequestException('Payment verification failed (invalid signature)');
+    }
+
+    // Update payments table status
+    await this.db.query(
+      `UPDATE payments SET razorpay_payment_id = $1, status = 'success', updated_at = $2
+       WHERE razorpay_order_id = $3 AND user_id = $4`,
+      [paymentId, new Date(), orderId, userId],
+    );
+
+    // Entitle Pro plan in subscriptions
+    await this.db.query(
+      `UPDATE subscriptions SET plan = 'pro', status = 'active', updated_at = $1 WHERE user_id = $2`,
+      [new Date(), userId],
+    );
+
+    this.logger.log(`Razorpay payment success for user ${userId}: order ${orderId}, payment ${paymentId}`);
+
+    return { status: 'success' };
+  }
+
+  async handleRazorpayWebhook(payload: string, signature: string): Promise<void> {
+    const webhookSecret = this.configService.get<string>('RAZORPAY_WEBHOOK_SECRET');
+    if (!webhookSecret) {
+      throw new BadRequestException('Razorpay webhook secret is not configured');
+    }
+    const expectedSignature = crypto
+      .createHmac('sha256', webhookSecret)
+      .update(payload)
+      .digest('hex');
+
+    if (expectedSignature !== signature) {
+      throw new BadRequestException('Webhook signature verification failed');
+    }
+
+    const event = JSON.parse(payload);
+    const eventType = event.event;
+
+    if (eventType === 'payment.captured') {
+      const paymentEntity = event.payload.payment.entity;
+      const orderId = paymentEntity.order_id;
+      const paymentId = paymentEntity.id;
+
+      // Check if this payment is already processed (idempotency)
+      const existingPayment = await this.db.queryOne<{ status: string; user_id: string }>(
+        'SELECT status, user_id FROM payments WHERE razorpay_order_id = $1',
+        [orderId],
+      );
+
+      if (!existingPayment) {
+        this.logger.warn(`No payment record found for order ${orderId} in webhook`);
+        return;
+      }
+
+      if (existingPayment.status === 'success') {
+        this.logger.log(`Webhook: Payment for order ${orderId} already marked as success (idempotent ignore)`);
+        return;
+      }
+
+      // Update payment record
+      await this.db.query(
+        `UPDATE payments SET razorpay_payment_id = $1, status = 'success', updated_at = $2
+         WHERE razorpay_order_id = $3`,
+        [paymentId, new Date(), orderId],
+      );
+
+      // Activate user entitlement
+      await this.db.query(
+        `UPDATE subscriptions SET plan = 'pro', status = 'active', updated_at = $1 WHERE user_id = $2`,
+        [new Date(), existingPayment.user_id],
+      );
+
+      this.logger.log(`Webhook: Subscription activated for user ${existingPayment.user_id} via Razorpay order ${orderId}`);
+    } else if (eventType === 'payment.failed') {
+      const paymentEntity = event.payload.payment.entity;
+      const orderId = paymentEntity.order_id;
+      const paymentId = paymentEntity.id;
+
+      await this.db.query(
+        `UPDATE payments SET razorpay_payment_id = $1, status = 'failed', updated_at = $2
+         WHERE razorpay_order_id = $3`,
+        [paymentId, new Date(), orderId],
+      );
+      this.logger.log(`Webhook: Payment failed for order ${orderId}`);
+    }
   }
 }

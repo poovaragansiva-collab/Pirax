@@ -51,6 +51,26 @@ export class SubscriptionController {
     return this.subscriptionService.verifyCheckoutSession(sessionId);
   }
 
+  @Post('razorpay/create-order')
+  @ApiOperation({ summary: 'Create a Razorpay payment order for ₹99 Pro' })
+  async createRazorpayOrder(@CurrentUser() user: JwtPayload) {
+    return this.subscriptionService.createRazorpayOrder(user.sub);
+  }
+
+  @Post('razorpay/verify')
+  @ApiOperation({ summary: 'Verify a Razorpay payment signature server-side' })
+  async verifyRazorpayPayment(
+    @CurrentUser() user: JwtPayload,
+    @Body() body: { orderId: string; paymentId: string; signature: string },
+  ) {
+    return this.subscriptionService.verifyRazorpayPayment(
+      user.sub,
+      body.orderId,
+      body.paymentId,
+      body.signature,
+    );
+  }
+
   @Get('usage')
   @ApiOperation({ summary: 'Get usage for all features' })
   async getUsage(@CurrentUser() user: JwtPayload) {

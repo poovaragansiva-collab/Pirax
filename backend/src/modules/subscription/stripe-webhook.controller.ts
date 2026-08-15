@@ -54,4 +54,21 @@ export class StripeWebhookController {
 
     return { received: true };
   }
+
+  @Public()
+  @Post('razorpay')
+  @ApiExcludeEndpoint()
+  async handleRazorpayWebhook(
+    @Req() req: RawBodyRequest<Request>,
+    @Headers('x-razorpay-signature') signature: string,
+  ) {
+    if (!req.rawBody) {
+      throw new BadRequestException('Missing raw body');
+    }
+
+    const payload = req.rawBody.toString('utf8');
+    await this.subscriptionService.handleRazorpayWebhook(payload, signature);
+
+    return { received: true };
+  }
 }

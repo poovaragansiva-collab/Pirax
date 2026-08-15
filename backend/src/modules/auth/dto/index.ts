@@ -128,8 +128,8 @@ export class TokenResponseDto {
 }
 
 export class SubscriptionDto {
-  @ApiProperty({ enum: ['free', 'monthly', 'yearly'] })
-  plan: 'free' | 'monthly' | 'yearly';
+  @ApiProperty({ enum: ['free', 'pro', 'monthly', 'yearly'] })
+  plan: 'free' | 'pro' | 'monthly' | 'yearly';
 
   @ApiProperty({ enum: ['active', 'canceled', 'past_due', 'trialing'] })
   status: 'active' | 'canceled' | 'past_due' | 'trialing';

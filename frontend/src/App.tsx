@@ -79,6 +79,7 @@ import {
   AppearanceSettingsPage,
   ChatPage,
   ChatHistoryPage,
+  SubscriptionPage,
 } from '@/pages/dashboard';
 import { PublicLayout } from '@/layouts/PublicLayout';
 import { Button } from '@/components/ui/button';
@@ -637,6 +638,14 @@ function App() {
         element={
           <ProtectedRoute>
             <ResearchReportPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/subscription"
+        element={
+          <ProtectedRoute>
+            <SubscriptionPage />
           </ProtectedRoute>
         }
       />

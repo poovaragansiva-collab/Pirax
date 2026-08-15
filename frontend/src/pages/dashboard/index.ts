@@ -52,3 +52,4 @@ export { default as NotificationSettingsPage } from './NotificationSettingsPage'
 export { default as AppearanceSettingsPage } from './AppearanceSettingsPage';
 export { default as ChatPage } from './ChatPage';
 export { default as ChatHistoryPage } from './ChatHistoryPage';
+export { default as SubscriptionPage } from './SubscriptionPage';
