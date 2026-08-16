@@ -22,21 +22,6 @@ services:
       timeout: 5s
       retries: 5
 
-  redis:
-    image: redis:7-alpine
-    container_name: studyield-redis
-    restart: unless-stopped
-    command: redis-server --appendonly yes
-    ports:
-      - "${REDIS_PORT:-6379}:6379"
-    volumes:
-      - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   qdrant:
     image: qdrant/qdrant:latest
     container_name: studyield-qdrant
@@ -85,16 +70,12 @@ services:
       - DATABASE_USER=${POSTGRES_USER:-postgres}
       - DATABASE_PASSWORD=${POSTGRES_PASSWORD:-postgres}
       - DATABASE_NAME=${POSTGRES_DB:-studyield_dev}
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
       - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333
       - CLICKHOUSE_HOST=clickhouse
       - CLICKHOUSE_PORT=8123
     depends_on:
       postgres:
-        condition: service_healthy
-      redis:
         condition: service_healthy
       qdrant:
         condition: service_started
@@ -116,8 +97,6 @@ services:
 
 volumes:
   postgres_data:
-    driver: local
-  redis_data:
     driver: local
   qdrant_data:
     driver: local

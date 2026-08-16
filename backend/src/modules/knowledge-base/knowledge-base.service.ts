@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { DatabaseService } from '../database/database.service';
 import { QdrantService } from '../qdrant/qdrant.service';
 import { EmbeddingService } from '../ai/embedding.service';
-import { QueueService } from '../queue/queue.service';
 import { ChunkingService } from './chunking.service';
 import { DocumentProcessorService } from './document-processor.service';
 
@@ -52,7 +51,6 @@ export class KnowledgeBaseService {
     private readonly db: DatabaseService,
     private readonly qdrantService: QdrantService,
     private readonly embeddingService: EmbeddingService,
-    private readonly queueService: QueueService,
     private readonly chunkingService: ChunkingService,
     private readonly documentProcessor: DocumentProcessorService,
   ) {
@@ -127,15 +125,8 @@ export class KnowledgeBaseService {
     mimeType: string,
   ): Promise<void> {
     await this.findByIdWithAccess(knowledgeBaseId, userId);
-
-    await this.queueService.addJob('knowledge-base', 'process-document', {
-      knowledgeBaseId,
-      documentId,
-      fileKey,
-      mimeType,
-    });
-
-    this.logger.log(`Document ${documentId} queued for processing in KB ${knowledgeBaseId}`);
+    await this.processDocument(knowledgeBaseId, documentId, fileKey, mimeType);
+    this.logger.log(`Document ${documentId} processed directly for KB ${knowledgeBaseId}`);
   }
 
   async processDocument(

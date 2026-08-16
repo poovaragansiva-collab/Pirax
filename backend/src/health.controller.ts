@@ -2,7 +2,6 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Public } from './common';
 import { DatabaseService } from './modules/database';
-import { RedisService } from './modules/redis';
 import { QdrantService } from './modules/qdrant';
 
 interface HealthStatus {
@@ -11,7 +10,6 @@ interface HealthStatus {
   version: string;
   services: {
     database: boolean;
-    redis: boolean;
     qdrant: boolean;
   };
 }
@@ -21,7 +19,6 @@ interface HealthStatus {
 export class HealthController {
   constructor(
     private readonly database: DatabaseService,
-    private readonly redis: RedisService,
     private readonly qdrant: QdrantService,
   ) {}
 
@@ -30,14 +27,13 @@ export class HealthController {
   @ApiOperation({ summary: 'Health check endpoint' })
   @ApiResponse({ status: 200, description: 'Service health status' })
   async health(): Promise<HealthStatus> {
-    const [dbHealth, redisHealth, qdrantHealth] = await Promise.all([
+    const [dbHealth, qdrantHealth] = await Promise.all([
       this.database.healthCheck().catch(() => false),
-      this.redis.healthCheck().catch(() => false),
       this.qdrant.healthCheck().catch(() => false),
     ]);
 
-    const allHealthy = dbHealth && redisHealth && qdrantHealth;
-    const anyHealthy = dbHealth || redisHealth || qdrantHealth;
+    const allHealthy = dbHealth && qdrantHealth;
+    const anyHealthy = dbHealth || qdrantHealth;
 
     return {
       status: allHealthy ? 'healthy' : anyHealthy ? 'degraded' : 'unhealthy',
@@ -45,7 +41,6 @@ export class HealthController {
       version: process.env.npm_package_version || '1.0.0',
       services: {
         database: dbHealth,
-        redis: redisHealth,
         qdrant: qdrantHealth,
       },
     };

@@ -8,11 +8,12 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcrypt';
+import { createHash } from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import * as jwt from 'jsonwebtoken';
 import jwksClient from 'jwks-rsa';
 import { UsersService } from '../users/users.service';
-import { RedisService } from '../redis/redis.service';
+import { DatabaseService } from '../database/database.service';
 import { EmailService } from '../email/email.service';
 import { SubscriptionService } from '../subscription/subscription.service';
 import { RegisterDto, LoginDto, RefreshTokenDto, OAuthDto, SubscriptionDto } from './dto';
@@ -41,7 +42,7 @@ export class AuthService {
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
     private readonly configService: ConfigService,
-    private readonly redisService: RedisService,
+    private readonly databaseService: DatabaseService,
     private readonly emailService: EmailService,
     private readonly subscriptionService: SubscriptionService,
   ) {
@@ -78,7 +79,7 @@ export class AuthService {
 
     // Send verification email
     const verifyToken = uuidv4();
-    await this.redisService.set(`email-verify:${verifyToken}`, user.id, 24 * 60 * 60);
+    await this.storeToken('email_verification_tokens', verifyToken, user.id, 24 * 60 * 60);
     await this.emailService.sendVerificationEmail(user.email, verifyToken);
 
     // Send welcome email
@@ -129,7 +130,7 @@ export class AuthService {
         secret: this.configService.get<string>('JWT_REFRESH_SECRET'),
       });
 
-      const isBlacklisted = await this.redisService.exists(`blacklist:${dto.refreshToken}`);
+      const isBlacklisted = await this.isTokenRevoked(dto.refreshToken);
       if (isBlacklisted) {
         throw new UnauthorizedException('Token has been revoked');
       }
@@ -283,7 +284,7 @@ export class AuthService {
     const resetToken = uuidv4();
     const resetExpiry = 60 * 60; // 1 hour
 
-    await this.redisService.set(`password-reset:${resetToken}`, user.id, resetExpiry);
+    await this.storeToken('password_reset_tokens', resetToken, user.id, resetExpiry);
 
     // Send password reset email
     const emailSent = await this.emailService.sendPasswordResetEmail(email, resetToken);
@@ -295,14 +296,14 @@ export class AuthService {
   }
 
   async resetPassword(token: string, newPassword: string): Promise<void> {
-    const userId = await this.redisService.get(`password-reset:${token}`);
+    const userId = await this.getUserIdForToken('password_reset_tokens', token);
     if (!userId) {
       throw new BadRequestException('Invalid or expired reset token');
     }
 
     const hashedPassword = await bcrypt.hash(newPassword, 12);
     await this.usersService.updatePassword(userId, hashedPassword);
-    await this.redisService.del(`password-reset:${token}`);
+    await this.clearToken('password_reset_tokens', token);
 
     this.logger.log(`Password reset completed for user ${userId}`);
   }
@@ -323,13 +324,13 @@ export class AuthService {
   }
 
   async verifyEmail(token: string): Promise<void> {
-    const userId = await this.redisService.get(`email-verify:${token}`);
+    const userId = await this.getUserIdForToken('email_verification_tokens', token);
     if (!userId) {
       throw new BadRequestException('Invalid or expired verification token');
     }
 
     await this.usersService.verifyEmail(userId);
-    await this.redisService.del(`email-verify:${token}`);
+    await this.clearToken('email_verification_tokens', token);
   }
 
   async resendVerificationEmail(userId: string): Promise<void> {
@@ -345,7 +346,7 @@ export class AuthService {
     const verifyToken = uuidv4();
     const verifyExpiry = 24 * 60 * 60; // 24 hours
 
-    await this.redisService.set(`email-verify:${verifyToken}`, user.id, verifyExpiry);
+    await this.storeToken('email_verification_tokens', verifyToken, user.id, verifyExpiry);
 
     // Send verification email
     const emailSent = await this.emailService.sendVerificationEmail(user.email, verifyToken);
@@ -394,10 +395,108 @@ export class AuthService {
       const payload = this.jwtService.decode(token) as { exp?: number };
       const ttl = payload?.exp ? payload.exp - Math.floor(Date.now() / 1000) : 60 * 60 * 24 * 7;
       if (ttl > 0) {
-        await this.redisService.set(`blacklist:${token}`, '1', ttl);
+        await this.revokeToken(token, ttl);
       }
     } catch {
       // Token invalid, no need to blacklist
     }
+  }
+
+  private async ensureTokenTables(): Promise<void> {
+    await this.databaseService.query(`
+      CREATE TABLE IF NOT EXISTS email_verification_tokens (
+        token_hash TEXT PRIMARY KEY,
+        user_id UUID NOT NULL,
+        expires_at TIMESTAMPTZ NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+
+    await this.databaseService.query(`
+      CREATE TABLE IF NOT EXISTS password_reset_tokens (
+        token_hash TEXT PRIMARY KEY,
+        user_id UUID NOT NULL,
+        expires_at TIMESTAMPTZ NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+
+    await this.databaseService.query(`
+      CREATE TABLE IF NOT EXISTS revoked_refresh_tokens (
+        token_hash TEXT PRIMARY KEY,
+        expires_at TIMESTAMPTZ NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+  }
+
+  private async storeToken(
+    table: 'email_verification_tokens' | 'password_reset_tokens',
+    token: string,
+    userId: string,
+    ttlSeconds: number,
+  ): Promise<void> {
+    await this.ensureTokenTables();
+    const tokenHash = this.hashToken(token);
+    const expiresAt = new Date(Date.now() + ttlSeconds * 1000);
+
+    await this.databaseService.query(
+      `INSERT INTO ${table} (token_hash, user_id, expires_at, created_at)
+       VALUES ($1, $2, $3, NOW())
+       ON CONFLICT (token_hash) DO UPDATE SET user_id = EXCLUDED.user_id, expires_at = EXCLUDED.expires_at, created_at = NOW()`,
+      [tokenHash, userId, expiresAt],
+    );
+  }
+
+  private async getUserIdForToken(
+    table: 'email_verification_tokens' | 'password_reset_tokens',
+    token: string,
+  ): Promise<string | null> {
+    await this.ensureTokenTables();
+    const tokenHash = this.hashToken(token);
+    const result = await this.databaseService.queryOne<{ user_id: string }>(
+      `SELECT user_id FROM ${table}
+       WHERE token_hash = $1 AND expires_at > NOW()
+       LIMIT 1`,
+      [tokenHash],
+    );
+
+    return result?.user_id ?? null;
+  }
+
+  private async clearToken(
+    table: 'email_verification_tokens' | 'password_reset_tokens',
+    token: string,
+  ): Promise<void> {
+    await this.ensureTokenTables();
+    const tokenHash = this.hashToken(token);
+    await this.databaseService.query(`DELETE FROM ${table} WHERE token_hash = $1`, [tokenHash]);
+  }
+
+  private async isTokenRevoked(token: string): Promise<boolean> {
+    await this.ensureTokenTables();
+    const tokenHash = this.hashToken(token);
+    const result = await this.databaseService.queryOne<{ token_hash: string }>(
+      `SELECT token_hash FROM revoked_refresh_tokens WHERE token_hash = $1 AND expires_at > NOW() LIMIT 1`,
+      [tokenHash],
+    );
+    return !!result;
+  }
+
+  private async revokeToken(token: string, ttlSeconds?: number): Promise<void> {
+    await this.ensureTokenTables();
+    const tokenHash = this.hashToken(token);
+    const expiresAt = new Date(Date.now() + (ttlSeconds ?? 60 * 60 * 24 * 7) * 1000);
+
+    await this.databaseService.query(
+      `INSERT INTO revoked_refresh_tokens (token_hash, expires_at, created_at)
+       VALUES ($1, $2, NOW())
+       ON CONFLICT (token_hash) DO UPDATE SET expires_at = EXCLUDED.expires_at, created_at = NOW()`,
+      [tokenHash, expiresAt],
+    );
+  }
+
+  private hashToken(token: string): string {
+    return createHash('sha256').update(token).digest('hex');
   }
 }

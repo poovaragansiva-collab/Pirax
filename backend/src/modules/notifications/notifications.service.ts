@@ -2,7 +2,6 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { v4 as uuidv4 } from 'uuid';
 import { DatabaseService } from '../database/database.service';
-import { RedisService } from '../redis/redis.service';
 import { FirebaseService } from '../firebase/firebase.service';
 import { AppGateway } from '../../common/gateways/app.gateway';
 
@@ -41,7 +40,6 @@ export class NotificationsService {
   constructor(
     private readonly configService: ConfigService,
     private readonly db: DatabaseService,
-    private readonly redis: RedisService,
     private readonly firebase: FirebaseService,
     private readonly appGateway: AppGateway,
   ) {}

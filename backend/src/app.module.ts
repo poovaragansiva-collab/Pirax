@@ -5,10 +5,8 @@ import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 
 // Global Infrastructure Modules
 import { DatabaseModule } from './modules/database';
-import { RedisModule } from './modules/redis';
 import { QdrantModule } from './modules/qdrant';
 import { ClickhouseModule } from './modules/clickhouse';
-import { QueueModule } from './modules/queue';
 import { StorageModule } from './modules/storage';
 import { AiModule } from './modules/ai';
 import { EmailModule } from './modules/email';
@@ -69,10 +67,8 @@ import { HealthController } from './health.controller';
 
     // Global Infrastructure (order matters - database first)
     DatabaseModule,
-    RedisModule,
     QdrantModule,
     ClickhouseModule,
-    QueueModule,
     StorageModule,
     AiModule,
     EmailModule,
