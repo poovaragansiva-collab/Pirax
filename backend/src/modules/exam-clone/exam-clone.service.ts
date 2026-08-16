@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { DatabaseService } from '../database/database.service';
 import { AiService } from '../ai/ai.service';
 import { StorageService } from '../storage/storage.service';
-import { QueueService } from '../queue/queue.service';
 import pdfParse from 'pdf-parse';
 
 export interface ExamClone {
@@ -64,7 +63,6 @@ export class ExamCloneService {
     private readonly db: DatabaseService,
     private readonly aiService: AiService,
     private readonly storageService: StorageService,
-    private readonly queueService: QueueService,
   ) {}
 
   async create(userId: string, dto: CreateExamCloneDto): Promise<ExamClone> {
@@ -79,7 +77,7 @@ export class ExamCloneService {
     );
 
     if (dto.examText) {
-      await this.queueService.addJob('exam-clone', 'analyze', { examCloneId: id });
+      await this.analyze(id);
     }
 
     this.logger.log(`Exam clone created: ${id}`);
@@ -107,11 +105,7 @@ export class ExamCloneService {
         [url, new Date(), examCloneId],
       );
 
-      await this.queueService.addJob('exam-clone', 'process-file', {
-        examCloneId,
-        fileUrl: url,
-        mimeType,
-      });
+      await this.processFile(examCloneId, url, mimeType);
     } catch (storageError) {
       // Storage not configured - process file directly without storing
       this.logger.warn(`Storage upload failed, processing file directly: ${storageError.message}`);

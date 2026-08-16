@@ -26,7 +26,7 @@ if [ ! -f backend/.env ]; then
 fi
 
 # Start infrastructure services with docker-compose
-docker compose --env-file .env.docker up -d postgres redis qdrant clickhouse
+docker compose --env-file .env.docker up -d postgres qdrant clickhouse
 
 # Wait for services to be healthy
 echo -e "${BLUE}Waiting for services to be healthy...${NC}"
@@ -51,15 +51,6 @@ if [ $counter -ge $timeout ]; then
     exit 1
 fi
 
-# Check Redis health
-echo -n "Checking Redis... "
-if docker compose --env-file .env.docker ps | grep -q "studyield-redis.*healthy"; then
-    echo -e "${GREEN}healthy!${NC}"
-else
-    echo -e "${YELLOW}waiting...${NC}"
-    sleep 5
-fi
-
 # Show service URLs
 echo ""
 echo -e "${GREEN}================================================${NC}"
@@ -68,7 +59,6 @@ echo -e "${GREEN}================================================${NC}"
 echo ""
 echo -e "${BLUE}Service URLs:${NC}"
 echo -e "   PostgreSQL:     ${GREEN}localhost:5432${NC}"
-echo -e "   Redis:          ${GREEN}localhost:6379${NC}"
 echo -e "   Qdrant:         ${GREEN}http://localhost:6333/dashboard${NC}"
 echo -e "   ClickHouse:     ${GREEN}localhost:8123${NC}"
 echo ""
