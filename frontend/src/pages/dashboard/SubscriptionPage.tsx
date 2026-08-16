@@ -7,8 +7,58 @@ import { Check, AlertCircle, Sparkles, Shield, Zap, ArrowLeft } from 'lucide-rea
 import { Link } from 'react-router-dom';
 import api from '@/services/api';
 
+interface RazorpayOrderResponse {
+  orderId: string;
+  amount: number;
+  keyId: string;
+}
+
+interface RazorpayPaymentResponse {
+  razorpay_order_id: string;
+  razorpay_payment_id: string;
+  razorpay_signature: string;
+}
+
+interface RazorpayCheckoutOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  order_id: string;
+  handler: (paymentResponse: RazorpayPaymentResponse) => Promise<void>;
+  prefill: {
+    name: string;
+    email: string;
+  };
+  theme: {
+    color: string;
+  };
+  modal: {
+    ondismiss: () => void;
+  };
+}
+
+interface RazorpayCheckoutInstance {
+  on: (event: 'payment.failed', callback: () => void) => void;
+  open: () => void;
+}
+
+interface RazorpayWindow extends Window {
+  Razorpay?: new (options: RazorpayCheckoutOptions) => RazorpayCheckoutInstance;
+}
+
+const getApiErrorMessage = (error: unknown, fallback: string): string => {
+  if (typeof error === 'object' && error !== null && 'response' in error) {
+    const response = (error as { response?: { data?: { message?: string } } }).response;
+    return response?.data?.message ?? fallback;
+  }
+
+  return fallback;
+};
+
 const loadRazorpayScript = () => {
-  return new Promise((resolve) => {
+  return new Promise<boolean>((resolve) => {
     const script = document.createElement('script');
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.async = true;
@@ -41,18 +91,18 @@ export default function SubscriptionPage() {
 
     try {
       // 1. Call backend create-order
-      const response = await api.post('/subscription/razorpay/create-order');
+      const response = await api.post<RazorpayOrderResponse>('/subscription/razorpay/create-order');
       const { orderId, amount, keyId } = response.data;
 
       // 2. Open Razorpay checkout options
-      const options = {
+      const options: RazorpayCheckoutOptions = {
         key: keyId,
         amount: amount,
         currency: 'INR',
         name: 'PIRAX Pro',
         description: 'One-time upgrade to PIRAX Pro',
         order_id: orderId,
-        handler: async (paymentResponse: any) => {
+        handler: async (paymentResponse: RazorpayPaymentResponse) => {
           setIsVerifying(true);
           try {
             // 3. Send payment verification to backend
@@ -64,8 +114,8 @@ export default function SubscriptionPage() {
 
             setSuccess(true);
             await refreshUser();
-          } catch (err: any) {
-            setError(err.response?.data?.message || 'Payment verification failed');
+          } catch (err: unknown) {
+            setError(getApiErrorMessage(err, 'Payment verification failed'));
           } finally {
             setIsVerifying(false);
             setIsLoading(false);
@@ -86,14 +136,21 @@ export default function SubscriptionPage() {
         },
       };
 
-      const rzp = new (window as any).Razorpay(options);
+      const RazorpayCtor = (window as RazorpayWindow).Razorpay;
+      if (!RazorpayCtor) {
+        setError('Failed to load Razorpay SDK. Please check your connection.');
+        setIsLoading(false);
+        return;
+      }
+
+      const rzp = new RazorpayCtor(options);
       rzp.on('payment.failed', function () {
         setError("Payment wasn't completed. You were not charged for a successful purchase.");
         setIsLoading(false);
       });
       rzp.open();
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to initiate checkout. Please try again.');
+    } catch (err: unknown) {
+      setError(getApiErrorMessage(err, 'Failed to initiate checkout. Please try again.'));
       setIsLoading(false);
     }
   };
