@@ -2,6 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SESService } from './ses.service';
 import { DatabaseService } from '../database/database.service';
+import * as nodemailer from 'nodemailer';
 
 export interface EmailOptions {
   from?: string;
@@ -41,6 +42,7 @@ export interface EmailTemplate {
 export class EmailService {
   private readonly logger = new Logger(EmailService.name);
   private readonly appUrl: string;
+  private readonly transporter: nodemailer.Transporter | null = null;
 
   constructor(
     private readonly configService: ConfigService,
@@ -48,6 +50,26 @@ export class EmailService {
     private readonly db: DatabaseService,
   ) {
     this.appUrl = this.configService.get<string>('APP_URL', 'http://localhost:3000');
+    
+    const mailHost = this.configService.get<string>('MAIL_HOST');
+    const mailPort = this.configService.get<number>('MAIL_PORT', 587);
+    const mailUsername = this.configService.get<string>('MAIL_USERNAME');
+    const mailPassword = this.configService.get<string>('MAIL_PASSWORD');
+
+    if (mailHost && mailUsername && mailPassword) {
+      this.transporter = nodemailer.createTransport({
+        host: mailHost,
+        port: Number(mailPort),
+        secure: Number(mailPort) === 465,
+        auth: {
+          user: mailUsername,
+          pass: mailPassword,
+        },
+      });
+      this.logger.log(`Email Service initialized using Brevo SMTP (host: ${mailHost}, port: ${mailPort})`);
+    } else {
+      this.logger.log('SMTP not fully configured. Falling back to AWS SES checks.');
+    }
   }
 
   async sendEmail(
@@ -68,15 +90,45 @@ export class EmailService {
           : [emailOptions.bcc]
         : undefined;
 
-      const result = await this.sesService.sendEmail({
-        from: emailOptions.from,
-        to,
-        cc,
-        bcc,
-        subject: emailOptions.subject,
-        text: emailOptions.text,
-        html: emailOptions.html,
-      });
+      let result: { status: 'sent' | 'failed'; messageId?: string; error?: string };
+
+      if (this.transporter) {
+        const from = emailOptions.from || this.configService.get('EMAIL_DEFAULT_FROM', 'noreply@studyield.com');
+        const info = await this.transporter.sendMail({
+          from,
+          to,
+          cc,
+          bcc,
+          subject: emailOptions.subject,
+          text: emailOptions.text,
+          html: emailOptions.html,
+        });
+
+        this.logger.log(
+          `Email sent successfully via SMTP: ${emailOptions.subject} to ${to.join(', ')}`,
+        );
+        this.logger.log(`SMTP Message ID: ${info.messageId}`);
+
+        result = {
+          status: 'sent',
+          messageId: info.messageId,
+        };
+      } else {
+        const sesResult = await this.sesService.sendEmail({
+          from: emailOptions.from,
+          to,
+          cc,
+          bcc,
+          subject: emailOptions.subject,
+          text: emailOptions.text,
+          html: emailOptions.html,
+        });
+        result = {
+          status: sesResult.status,
+          messageId: sesResult.messageId,
+          error: sesResult.error,
+        };
+      }
 
       await this.logEmail({
         userId,
@@ -256,11 +308,22 @@ export class EmailService {
   }
 
   isReady(): boolean {
-    return this.sesService.isReady();
+    return this.transporter !== null || this.sesService.isReady();
   }
 
   getConfiguration() {
-    return this.sesService.getConfiguration();
+    if (this.transporter) {
+      return {
+        provider: 'SMTP',
+        host: this.configService.get<string>('MAIL_HOST'),
+        defaultFrom: this.configService.get('EMAIL_DEFAULT_FROM', 'noreply@studyield.com'),
+        hasCredentials: true,
+      };
+    }
+    return {
+      provider: 'SES',
+      ...this.sesService.getConfiguration(),
+    };
   }
 
   private getVerificationTemplate(verifyUrl: string): EmailTemplate {

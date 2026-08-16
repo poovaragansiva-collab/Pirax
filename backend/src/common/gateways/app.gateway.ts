@@ -19,7 +19,6 @@ import { BaseGateway } from './base.gateway';
   },
 })
 export class AppGateway extends BaseGateway {
-  protected readonly logger = new Logger(AppGateway.name);
 
   @SubscribeMessage('ping')
   handlePing(@ConnectedSocket() _client: Socket): { event: string; data: string } {

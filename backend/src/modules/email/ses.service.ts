@@ -43,9 +43,12 @@ export class SESService {
     const secretAccessKey = this.configService.get<string>('AWS_SECRET_ACCESS_KEY');
 
     if (!accessKeyId || !secretAccessKey) {
-      this.logger.warn(
-        'AWS credentials not configured. Email sending will be disabled. Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.',
-      );
+      const mailHost = this.configService.get<string>('MAIL_HOST');
+      if (!mailHost) {
+        this.logger.warn(
+          'AWS credentials not configured. Email sending will be disabled. Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.',
+        );
+      }
       this.isConfigured = false;
     } else {
       const sesConfig: SESClientConfig = {

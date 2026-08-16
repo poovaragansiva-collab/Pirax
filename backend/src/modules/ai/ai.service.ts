@@ -21,6 +21,7 @@ import { REQUEST } from '@nestjs/core';
 import OpenAI from 'openai';
 import { DatabaseService } from '../database/database.service';
 import { v4 as uuidv4 } from 'uuid';
+import { decrypt, encrypt } from '../../common/utils/crypto';
 
 // Default models
 const DEFAULT_MODEL = 'openai/gpt-4o-mini';
@@ -119,30 +120,68 @@ export class AiService implements OnModuleInit {
       const userKey = user?.preferences?.openRouterKey;
 
       if (userKey && userKey.trim() !== '') {
+        const encryptionKey =
+          this.configService.get<string>('BYOK_ENCRYPTION_KEY') ||
+          'default-fallback-encryption-key-for-dev';
+        let decryptedKey = userKey;
+
+        // Auto-migrate plaintext OpenRouter key safely and idempotently
+        if (userKey.startsWith('sk-or-') && !userKey.includes(':')) {
+          try {
+            const encryptedKey = encrypt(userKey, encryptionKey);
+            const updatedPreferences = { ...user.preferences, openRouterKey: encryptedKey };
+            await this.db.query(
+              'UPDATE users SET preferences = $1, updated_at = NOW() WHERE id = $2',
+              [JSON.stringify(updatedPreferences), userId],
+            );
+            decryptedKey = userKey;
+            this.logger.log(`Automatically migrated plaintext OpenRouter API key to encrypted format for user ${userId}`);
+          } catch (err: any) {
+            this.logger.error(`Failed to auto-migrate OpenRouter key for user ${userId}: ${err.message}`);
+          }
+        } else if (userKey.includes(':') && userKey.split(':').length === 3) {
+          // Decrypt Key
+          try {
+            decryptedKey = decrypt(userKey, encryptionKey);
+          } catch (err: any) {
+            throw new BadRequestException('Failed to decrypt your AI API key. Please check your provider settings.');
+          }
+        } else {
+          // Key is neither plaintext nor encrypted in the correct format
+          throw new BadRequestException('Invalid OpenRouter API key format. Please update your key in Settings.');
+        }
+
         return new OpenAI({
-          apiKey: userKey,
+          apiKey: decryptedKey,
           baseURL: 'https://openrouter.ai/api/v1',
           defaultHeaders: {
             'HTTP-Referer': this.configService.get<string>('FRONTEND_URL', 'http://localhost:5189'),
-            'X-Title': 'PIRAX',
+            'X-Title': 'SPIRAX',
           },
           timeout: 120000,
         });
       }
+
+      // Authenticated user request without their own API key must fail immediately
+      throw new BadRequestException(
+        'No OpenRouter API key configured. Add your own API key in AI Provider Settings.',
+      );
     }
 
-    // Fallback: Use system OpenRouter client
-    if (this.openRouterClient) {
-      return this.openRouterClient;
-    }
+    // Unauthenticated context fallback (only allowed for non-production environments)
+    const isProduction = this.configService.get<string>('NODE_ENV') === 'production';
+    if (!isProduction) {
+      if (this.openRouterClient) {
+        return this.openRouterClient;
+      }
 
-    // Fallback: Direct OpenAI
-    if (this.openaiClient) {
-      return this.openaiClient;
+      if (this.openaiClient) {
+        return this.openaiClient;
+      }
     }
 
     throw new BadRequestException(
-      'No AI API key configured. Please configure your OpenRouter API key in Settings -> AI Providers.',
+      'No OpenRouter API key configured. Add your own API key in AI Provider Settings.',
     );
   }
 

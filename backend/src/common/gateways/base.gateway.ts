@@ -14,10 +14,17 @@ import { WsExceptionFilter } from '../filters/ws-exception.filter';
 export abstract class BaseGateway
   implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
 {
-  protected abstract readonly logger: Logger;
+  private _logger?: Logger;
+
+  protected get logger(): Logger {
+    if (!this._logger) {
+      this._logger = new Logger(this.constructor.name || 'BaseGateway');
+    }
+    return this._logger;
+  }
 
   @WebSocketServer()
-  protected server: Server;
+  protected server!: Server;
 
   afterInit(_server: Server) {
     this.logger.log('WebSocket gateway initialized');
@@ -25,7 +32,10 @@ export abstract class BaseGateway
 
   handleConnection(client: Socket) {
     const userId = client.data.user?.sub;
-    this.logger.log(`Client connected: ${client.id} (user: ${userId || 'unauthenticated'})`);
+
+    this.logger.log(
+      `Client connected: ${client.id} (user: ${userId || 'unauthenticated'})`,
+    );
 
     if (userId) {
       client.join(`user:${userId}`);
@@ -34,7 +44,10 @@ export abstract class BaseGateway
 
   handleDisconnect(client: Socket) {
     const userId = client.data.user?.sub;
-    this.logger.log(`Client disconnected: ${client.id} (user: ${userId || 'unauthenticated'})`);
+
+    this.logger.log(
+      `Client disconnected: ${client.id} (user: ${userId || 'unauthenticated'})`,
+    );
   }
 
   protected emitToUser(userId: string, event: string, data: unknown) {
@@ -59,7 +72,9 @@ export abstract class BaseGateway
     this.logger.debug(`Client ${client.id} left room: ${room}`);
   }
 
-  protected getUserFromSocket(client: Socket): { sub: string; email: string; role: string } | null {
+  protected getUserFromSocket(
+    client: Socket,
+  ): { sub: string; email: string; role: string } | null {
     return client.data.user || null;
   }
 }

@@ -76,7 +76,7 @@ export class UsersController {
       educationLevel: profile.educationLevel,
       subjects: profile.subjects,
       profileCompleted: profile.profileCompleted,
-      preferences: profile.preferences,
+      preferences: this.sanitizePreferences(profile.preferences),
       plan: planDisplay,
       billingCycle: plan === 'free' ? null : plan,
       subscription: subscriptionData,
@@ -133,7 +133,7 @@ export class UsersController {
       educationLevel: profile.educationLevel,
       subjects: profile.subjects,
       profileCompleted: profile.profileCompleted,
-      preferences: profile.preferences,
+      preferences: this.sanitizePreferences(profile.preferences),
       plan: planDisplay,
       billingCycle: plan === 'free' ? null : plan,
       subscription: subscriptionData,
@@ -186,5 +186,14 @@ export class UsersController {
       avatarUrl: user.avatarUrl,
       createdAt: user.createdAt,
     };
+  }
+
+  private sanitizePreferences(preferences: Record<string, any> | undefined): Record<string, any> {
+    if (!preferences) return {};
+    const sanitized = { ...preferences };
+    if (sanitized.openRouterKey) {
+      sanitized.openRouterKey = 'sk-or-••••••••';
+    }
+    return sanitized;
   }
 }

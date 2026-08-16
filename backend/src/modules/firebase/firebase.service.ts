@@ -11,9 +11,18 @@ export class FirebaseService implements OnModuleInit {
   onModuleInit() {
     try {
       const projectId = this.configService.get<string>('FIREBASE_PROJECT_ID');
-      const privateKey = this.configService
-        .get<string>('FIREBASE_PRIVATE_KEY')
-        ?.replace(/\\n/g, '\n'); // Replace escaped newlines
+      let privateKey = this.configService.get<string>('FIREBASE_PRIVATE_KEY');
+
+      if (privateKey) {
+        // Strip surrounding double or single quotes if present
+        if (privateKey.startsWith('"') && privateKey.endsWith('"')) {
+          privateKey = privateKey.slice(1, -1);
+        } else if (privateKey.startsWith("'") && privateKey.endsWith("'")) {
+          privateKey = privateKey.slice(1, -1);
+        }
+        privateKey = privateKey.replace(/\\n/g, '\n');
+      }
+
       const clientEmail = this.configService.get<string>('FIREBASE_CLIENT_EMAIL');
 
       if (!projectId || !privateKey || !clientEmail) {

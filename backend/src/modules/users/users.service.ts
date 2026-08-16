@@ -1,6 +1,8 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { v4 as uuidv4 } from 'uuid';
 import { DatabaseService } from '../database/database.service';
+import { encrypt } from '../../common/utils/crypto';
 
 export interface User {
   id: string;
@@ -44,7 +46,10 @@ export interface UpdateUserDto {
 export class UsersService {
   private readonly logger = new Logger(UsersService.name);
 
-  constructor(private readonly db: DatabaseService) {}
+  constructor(
+    private readonly db: DatabaseService,
+    private readonly configService: ConfigService,
+  ) {}
 
   async create(dto: CreateUserDto): Promise<User> {
     const id = uuidv4();
@@ -130,8 +135,21 @@ export class UsersService {
       values.push(dto.profileCompleted);
     }
     if (dto.preferences !== undefined) {
+      const preferences = { ...dto.preferences };
+      if (
+        preferences.openRouterKey &&
+        typeof preferences.openRouterKey === 'string' &&
+        preferences.openRouterKey.trim() !== ''
+      ) {
+        const encryptionKey =
+          this.configService.get<string>('BYOK_ENCRYPTION_KEY') ||
+          'default-fallback-encryption-key-for-dev';
+        if (preferences.openRouterKey.startsWith('sk-or-')) {
+          preferences.openRouterKey = encrypt(preferences.openRouterKey, encryptionKey);
+        }
+      }
       updates.push(`preferences = $${paramIndex++}`);
-      values.push(JSON.stringify(dto.preferences));
+      values.push(JSON.stringify(preferences));
     }
 
     updates.push(`updated_at = $${paramIndex++}`);

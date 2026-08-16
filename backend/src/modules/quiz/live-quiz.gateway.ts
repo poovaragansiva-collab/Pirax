@@ -22,7 +22,6 @@ import { SubscriptionService } from '../subscription/subscription.service';
   },
 })
 export class LiveQuizGateway extends BaseGateway implements OnModuleInit {
-  protected readonly logger = new Logger(LiveQuizGateway.name);
 
   constructor(
     private readonly liveQuizService: LiveQuizService,
